@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>折腾：Stable Diffusion Webui 个人向经验 - 低温结晶</title>
+
+  
+    <meta name="description" content="说是经验，实际上只有一点点关于模型和 prompt 的踩坑总结，主要是提醒一下自己。当然，希望对你也有帮助。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="折腾：Stable Diffusion Webui 个人向经验">
+<meta property="og:url" content="https://cryovit.github.io/SD/index.html">
+<meta property="og:site_name" content="低温结晶">
+<meta property="og:description" content="说是经验，实际上只有一点点关于模型和 prompt 的踩坑总结，主要是提醒一下自己。当然，希望对你也有帮助。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-03-22T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-23T07:13:56.469Z">
+<meta property="article:author" content="CryoVit">
+<meta property="article:tag" content="journal, cs, cryovit, blog, hexo">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/image/favicon.png">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">低温结晶</div><div class="sub cap">Cryogenic Vitriol</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">折腾：Stable Diffusion Webui 个人向经验</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-text">环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8"><span class="toc-text">启动</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-text">模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#animefull-final-pruned-ckpt-925997e9"><span class="toc-text">animefull-final-pruned.ckpt [925997e9]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#anythingV3-fp16-ckpt-38c1ebe3-VAE"><span class="toc-text">anythingV3_fp16.ckpt [38c1ebe3] + VAE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#momoko-e-ckpt-a2a802b2-x2F-momoko-p-ckpt-5d916d1e"><span class="toc-text">momoko-e.ckpt [a2a802b2] &#x2F; momoko-p.ckpt [5d916d1e]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wd-v1-3-float16-ckpt-x"><span class="toc-text">wd-v1-3-float16.ckpt [x]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HD-16-ckpt-x"><span class="toc-text">HD-16.ckpt [x]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HD-17-ckpt-3a0cfc1c-VAE"><span class="toc-text">HD-17.ckpt [3a0cfc1c] + VAE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HD-19-ckpt-x"><span class="toc-text">HD-19.ckpt [x]</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="toc-text">杂项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE"><span class="toc-text">标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE"><span class="toc-text">设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PNG-Info"><span class="toc-text">PNG Info</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B-1"><span class="toc-text">模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%8D%E6%9D%A1%E6%9F%A5%E6%89%BE"><span class="toc-text">词条查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%99%E7%A8%8B"><span class="toc-text">教程</span></a></li></ol></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Technical/">Technical</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-03-22T00:00:00.000Z">2023-03-22</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>折腾：Stable Diffusion Webui 个人向经验</span></h1>
+<p>说是经验，实际上只有一点点关于模型和 prompt 的踩坑总结，主要是提醒一下自己。当然，希望对你也有帮助。</p>
+<span id="more"></span>
+
+<p>（真的会有人来看这个博客吗？哦对了，可能有不准确的地方，欢迎指正。）</p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>我应该不是来讲基础知识的……不过既然下面放了这么多链接，这里也加一条：<a target="_blank" rel="noopener" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion Webui</a> 的项目地址。</p>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><p>由于显存只有 4GB，我选择用以下参数启动：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python launch.py --medvram --opt-split-attention</span><br></pre></td></tr></table></figure>
+
+<p>显然是有办法通过修改配置文件保留这两个启动参数的，但是我懒得折腾了，所以，我的解决方案是：写一个以上内容的 <code>.bat</code> 文件，这样就连命令行都不用打开了，一键启动。</p>
+<p>这样至少能生成 768x768 的图片，并且显存远远没有接近满载。</p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><p>以下按照我接触到的顺序列出模型。</p>
+<p>模型下载后放在 <code>/stable-diffusion-webui/models/Stable-diffusion</code> 目录下（其中 <code>/stable-diffusion-webui</code> 是根目录）。在此目录应该有一个空文件 <code>Put Stable Diffusion checkpoints here.txt</code>。</p>
+<p>以下的文件大小均为 Windows 资源管理器显示的大小，与网站上的大小可能不同。文件名后的括号内为文件的 SHA256 哈希值，可以在 Webui 左上角检查。</p>
+<h3 id="animefull-final-pruned-ckpt-925997e9"><a href="#animefull-final-pruned-ckpt-925997e9" class="headerlink" title="animefull-final-pruned.ckpt [925997e9]"></a><code>animefull-final-pruned.ckpt</code> [<code>925997e9</code>]</h3><ul>
+<li>Size: 3.97GB</li>
+<li>Download: <a target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1OWwzaL2RTrORQ87UOEGLeDopRHQkNNT_">novelaileak</a></li>
+</ul>
+<p>相对位置是 <code>/novelaileak/stableckpt/anime-final-pruned/model.ckpt</code>。无需下载其他任何文件（包括同目录下的 <code>config.yaml</code>）。</p>
+<blockquote>
+<p>显然是知名度最高的模型。<br>我没怎么用过，因为这玩意我半年前就下载了，一直在硬盘里积灰，等我重新捡起来 Stable diffusion，已经变成奔着别的模型去了。<br>当然，NovelAI 确实下了很多功夫，只可惜没有人更新 leak，这玩意也难以满足被鲜艳色彩养叼的审美了。</p>
+</blockquote>
+<h3 id="anythingV3-fp16-ckpt-38c1ebe3-VAE"><a href="#anythingV3-fp16-ckpt-38c1ebe3-VAE" class="headerlink" title="anythingV3_fp16.ckpt [38c1ebe3] + VAE"></a><code>anythingV3_fp16.ckpt</code> [<code>38c1ebe3</code>] + VAE</h3><ul>
+<li>Size: 1.98GB</li>
+<li>Download: <a target="_blank" rel="noopener" href="https://civitai.com/models/66">Anything V3 - Civitai</a></li>
+</ul>
+<p>需要搭配 VAE 文件 (784 MB) 使用，否则色彩会比较灰暗。</p>
+<p>上面的链接可以一并下载 VAE 文件（<code>animevae.pt</code>），不过也可以在 <code>novelaileak</code> 的根目录找到。</p>
+<p>下载之后，更名为<code>anythingV3_fp16.vae.pt</code>(格式为 <code>模型名.vae.pt</code>)，放在 <code>/stable-diffusion-webui/models/VAE</code> 目录下。（和旧版一样放在模型同一目录下也是可以的）</p>
+<p>只有明确指定需要 VAE 的模型才应该使用 VAE。</p>
+<blockquote>
+<p>相比 <code>animefull-final-pruned</code> 优势明显。<br>除此之外，比起下面的 <code>momoko</code> 还是有优点的。比如说，同一个 seed 下，略微修改 prompt，<code>anything</code> 产生的多张图片一致性会更好一些，适合用来做差分(?)图。</p>
+</blockquote>
+<h3 id="momoko-e-ckpt-a2a802b2-x2F-momoko-p-ckpt-5d916d1e"><a href="#momoko-e-ckpt-a2a802b2-x2F-momoko-p-ckpt-5d916d1e" class="headerlink" title="momoko-e.ckpt [a2a802b2] &#x2F; momoko-p.ckpt [5d916d1e]"></a><code>momoko-e.ckpt</code> [<code>a2a802b2</code>] &#x2F; <code>momoko-p.ckpt</code> [<code>5d916d1e</code>]</h3><ul>
+<li>Size: 1.98GB &#x2F; 1.98GB</li>
+<li>Download: <a target="_blank" rel="noopener" href="https://huggingface.co/ouo/momoko/tree/main">momoko - Hugging Face</a></li>
+</ul>
+<blockquote>
+<p>鲜艳，生动，enough said.<br>另外，本篇文章中唯一的 <code>sfw</code> 模型是 <code>momoko-e</code>。<br>再另外，这两个模型本质上不是同一个，使用同样的 prompt 和 seed，结果肯定不同。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>本来我以为关于模型的探索就到这里了，但是，当我发现本地没有一个模型能正常地识别 <code>1boy</code> 之后，不得不说，这个世界还是很大的。</p>
+</blockquote>
+<h3 id="wd-v1-3-float16-ckpt-x"><a href="#wd-v1-3-float16-ckpt-x" class="headerlink" title="wd-v1-3-float16.ckpt [x]"></a><code>wd-v1-3-float16.ckpt</code> [x]</h3><ul>
+<li>Size: &lt; 3GB</li>
+<li>Download: <a target="_blank" rel="noopener" href="https://huggingface.co/hakurei/waifu-diffusion-v1-3/tree/main">Waifu Diffusion - Hugging Face</a></li>
+</ul>
+<blockquote>
+<p>为什么没有 Hash 和准确大小呢？因为我早就删除了。<br><strong>别用</strong>。这玩意是 <code>final</code> 的话，前面的 <code>epoach</code> 我都不敢想象。</p>
+</blockquote>
+<h3 id="HD-16-ckpt-x"><a href="#HD-16-ckpt-x" class="headerlink" title="HD-16.ckpt [x]"></a><code>HD-16.ckpt</code> [x]</h3><ul>
+<li>Size: &lt; 7GB</li>
+<li>Download: <a target="_blank" rel="noopener" href="https://huggingface.co/Deltaadams/HentaiDiffusion/tree/main">Hentai Diffusion - Hugging Face</a></li>
+</ul>
+<blockquote>
+<p><strong>别用</strong>。虽然我知道可能是我的问题，但是它的艺术风格确实是领先人类艺术的。<br>画 <code>classroom</code> 我不知道是哪里的小学生涂鸦，或者是黑色幽默；连 <code>illustration</code> 都救不回来。</p>
+</blockquote>
+<h3 id="HD-17-ckpt-3a0cfc1c-VAE"><a href="#HD-17-ckpt-3a0cfc1c-VAE" class="headerlink" title="HD-17.ckpt [3a0cfc1c] + VAE"></a><code>HD-17.ckpt</code> [<code>3a0cfc1c</code>] + VAE</h3><ul>
+<li>Size: 3.58GB</li>
+<li>Download: <a target="_blank" rel="noopener" href="https://huggingface.co/Deltaadams/HentaiDiffusion/tree/main">Hentai Diffusion - Hugging Face</a></li>
+</ul>
+<p>我没见有人说过 HD-17 需要 VAE，但是我确实观察到色彩灰暗的现象，并且在使用 VAE 之后有所改善。</p>
+<p>然而，由于是真的没人说过，所以也没人提供 VAE 文件。</p>
+<p>解决方案也很简单，直接用 <code>novelaileak</code> 的 VAE 文件就行了。</p>
+<blockquote>
+<p>首先，比起 <code>HD-16</code> 可谓是天壤之别，进步显著，至少像是个二次元模型。<br>其次，能够识别 <code>1boy</code>，比起别的已经赢太多了。<br>再次，也不要抱太高期望，写 <code>1girl, 1boy</code>，会产出大量的可能性，包括但不限于 <code>1girl</code>, <code>2girls</code>, <code>1girl, 2boys</code>……不过这和别的 prompt 以及我自己的使用方式也有关系。</p>
+</blockquote>
+<h3 id="HD-19-ckpt-x"><a href="#HD-19-ckpt-x" class="headerlink" title="HD-19.ckpt [x]"></a><code>HD-19.ckpt</code> [x]</h3><ul>
+<li>Hash: <code>52c1e757</code></li>
+<li>Size: 7.17GB</li>
+<li>Download: <a target="_blank" rel="noopener" href="https://huggingface.co/Deltaadams/HentaiDiffusion/tree/main">Hentai Diffusion - Hugging Face</a></li>
+</ul>
+<p>与 HD-17 不同，不需要 VAE。</p>
+<blockquote>
+<p><strong>别用</strong>。逆天。全是古神。就算身体结构没问题手也是夸张得令人发指。<br>和上面两个“别用”级模型不同的是，这玩意至少是二次元的，就是问题实在是太多了。<br>相比 HD-17 应该说还是有点进步。<br>其一是色彩比较鲜艳。如果还用 <code>anime coloring</code>，饱和度会有些过高了。<br>其二是对动作的描绘更加到位了，代价就是某些情况下手很抽象。<br>未有进步的方面，性别和人物数量还是不准确。<br>Hugging Face 的项目上还有一个 Universal negative prompt，并不能解决古神问题。<br>不是版本号越高越好，这是非常重要的教训。好在，自己试一试也不会有什么损失——就是有的时候会吃不下饭。</p>
+</blockquote>
+<h2 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h2><h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>显然，如果你想学习 prompt 怎么写，应该去找元素法典等教程及工具网站。我在下面推荐了一些。</p>
+<p>这里只讲一点个人经验。对，就是上面提到的 <code>1boy</code> 问题：</p>
+<p><code>masterpiece, best quality, 1 &lt;长修饰语&gt; girl, (1boy:1.35), &lt;细节&gt;</code></p>
+<p>由于使用了长魔法吟唱，<code>girl</code> 的细节在一定程度上会受限，但是至少能够正确地画出 <code>1girl, 1boy</code> 了。</p>
+<h3 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h3><p>启动后进入 <code>Settings</code> 页面，找到 <code>Stable Diffusion</code> 设置中的 <code>Stop At last layers of CLIP model</code>，改为 <code>2</code>。</p>
+<h3 id="PNG-Info"><a href="#PNG-Info" class="headerlink" title="PNG Info"></a>PNG Info</h3><p><code>PNG Info</code> 可以识别 Stable Diffusion 生成图片的信息，包括 prompt、negative prompt、seed 等生成参数。</p>
+<p>注意：<code>Send to txt2img</code> <strong>会使用相同的 seed，如果你想用同样的标签生成不同的图，记得重置！</strong></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>这里的参考网站当然不够全面。因为有很多人写文章列了太多链接，难免让人有些迷茫。所以，只列出了最重要的。</p>
+<h3 id="模型-1"><a href="#模型-1" class="headerlink" title="模型"></a>模型</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://rentry.co/sdmodels">rentry.co</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.123114514.xyz/models/ckpt/">123114514.xyz</a></li>
+</ul>
+<p>没法用磁链怎么办？问问神奇的搜索引擎，以及 <a target="_blank" rel="noopener" href="https://huggingface.co/">Hugging Face</a>。</p>
+<h3 id="词条查找"><a href="#词条查找" class="headerlink" title="词条查找"></a>词条查找</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://tags.novelai.dev/">Danbooru 标签超市</a></li>
+<li><a target="_blank" rel="noopener" href="https://wolfchen.top/tag/">wolfchen.top</a></li>
+</ul>
+<h3 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.qq.com/doc/DWHl3am5Zb05QbGVs">元素法典</a></li>
+</ul>
+<p>元素同典的链接在上述文档中。</p>
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0/">署名-相同方式共享 4.0 国际许可协议</a>，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/JR2303/">复制：2023 年 3 月</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/JR2302/">重构：2023 年 2 月</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p><a target="_blank" rel="noopener" href="https://github.com/CryoVit">@CryoVit</a> Overclocked by <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/stellar/">Stellar</a> </p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
