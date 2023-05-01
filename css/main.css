@@ -4973,3 +4973,7 @@ img[fancybox='true'] {
 .swiper-slide {
   cursor: zoom-in;
 }
+.cmt-body.beaudar {
+  margin: 0 -4px;
+  width: calc(100% + 8px);
+}
