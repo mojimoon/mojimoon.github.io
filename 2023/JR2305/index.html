@@ -36,9 +36,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/CryoVit/bangumi-anime-ranking/main/data/stat/rank_avg.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/CryoVit/bangumi-anime-ranking/main/data/stat/vote_breakdown.png">
 <meta property="article:published_time" content="2023-05-01T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-12T02:48:44.127Z">
+<meta property="article:modified_time" content="2023-05-12T07:16:39.138Z">
 <meta property="article:author" content="CryoVit">
-<meta property="article:tag" content="cryovit, computer science, galgame, visual novel, blog, hexo">
+<meta property="article:tag" content="cryovit, computer science, python, blog, hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/CryoVit/bangumi-anime-ranking/main/data/stat/avg.png">
   
@@ -159,7 +159,9 @@
 <p>不过有一点是无可争议的：</p>
 <h3 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h3><p>如果作品卖的不是剧情，剧情太好只会是可持续性的竭泽而渔，长远而言对作者和读者都有负面影响。</p>
 <h3 id="Copilot-的完美算术教室"><a href="#Copilot-的完美算术教室" class="headerlink" title="Copilot 的完美算术教室"></a>Copilot 的完美算术教室</h3><p>昨天兴致偶发，开始统计 Bangumi 上的动画评分，到今天为止已经完成了所有的数据获取和宏观统计。</p>
-<p>项目地址在这里：<a target="_blank" rel="noopener" href="https://github.com/CryoVit/bangumi-anime-ranking">CryoVit&#x2F;bangumi-anime-ranking</a>，点进去能看到更详细的说明和更多统计结果。</p>
+<div class="tag-plugin note" color="purple"><div class="body"><p><strong>项目地址：<a target="_blank" rel="noopener" href="https://github.com/CryoVit/bangumi-anime-ranking">CryoVit&#x2F;bangumi-anime-ranking</a></strong></p></div></div>
+
+<p>点进去能看到更详细的说明和更多统计结果。</p>
 <div class="tag-plugin quot"><p class="content" type="text">都看到这里了就麻烦点个 Star 吧！</p></div>
 
 <p>这里不讲技术细节、代码实现。总之，大概思路是，先用爬虫一页一页地爬取排行榜，获取到每个条目的 ID，再访问 API 来下载 JSON 数据，之后的处理分析真没啥好说的。当然，更重要的是，看这节标题你也知道，从 <code>README.md</code> 到 <code>stat.py</code>，全都是 Copilot 在干苦工。</p>
@@ -258,13 +260,12 @@
 <h2 id="2023-年-5-月-6-日，星期六"><a href="#2023-年-5-月-6-日，星期六" class="headerlink" title="2023 年 5 月 6 日，星期六"></a>2023 年 5 月 6 日，星期六</h2><h3 id="脚本道，堂堂连载"><a href="#脚本道，堂堂连载" class="headerlink" title="脚本道，堂堂连载"></a>脚本道，堂堂连载</h3><p>我已经 10 分钟没有炫耀我的脚本了。如果你还没有听说过，首先，</p>
 <div class="tag-plugin quot"><p class="content" type="text">都看到这里了就麻烦点个 Star 吧！</p></div>
 
-<ul>
-<li>博客上的发布页：<a href="../BGM/index.html"><strong>Bangumi：用户悬浮面板</strong></a></li>
-<li>项目地址：<a target="_blank" rel="noopener" href="https://github.com/CryoVit/bangumi-script">CryoVit&#x2F;bangumi-script</a></li>
-</ul>
 <blockquote>
 <p>原来发布页的内容就写在这里，显得太杂乱了。所以把它独立成一篇文章了。</p>
 </blockquote>
+<div class="tag-plugin note" color="purple"><div class="body"><p><strong>博客上的发布页：<a href="../BGM/index.html">Bangumi：用户悬浮面板</a></strong></p></div></div>
+<div class="tag-plugin note" color="purple"><div class="body"><p><strong>项目地址：<a target="_blank" rel="noopener" href="https://github.com/CryoVit/bangumi-script">CryoVit&#x2F;bangumi-script</a></strong></p></div></div>
+
 <p>好吧，我当然知道，没有人想再看一遍我复制粘贴了多少遍的文字。</p>
 <p>接下来分享点<del>君の知らない物語</del>花絮吧。</p>
 <h3 id="CSS-is-awesome-min-js"><a href="#CSS-is-awesome-min-js" class="headerlink" title="CSS_is_awesome.min.js"></a>CSS_is_awesome.min.js</h3><p>首先，我的前端水平非常糟糕。好吧，无论是哪一门编程语言，我在语言层面上的掌握都非常有限，现在想起来以前在 Leetcode 上填“精通 C++”真是贻笑大方了。</p>
