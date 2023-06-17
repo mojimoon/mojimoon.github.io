@@ -67,7 +67,7 @@
 }
 pre {
   font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   tab-size: 4;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -329,7 +329,7 @@ code {
 }
 p>code:not([class]),
 li>code:not([class]) {
-  font-size: 85%;
+  font-size: 0.875rem;
   background: var(--block);
   padding: 0.2em;
   border-radius: 4px;
@@ -358,7 +358,7 @@ pre:not([class]):has(>code) {
 }
 .md-text .highlight figcaption {
   color: var(--text-p2);
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 500;
   margin-left: 0.5rem;
   display: inline-block;
@@ -693,7 +693,7 @@ table:not([class]) {
   outline: none;
 }
 html {
-  font-family: "Noto Serif SC", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Lato, Arial, "Noto Serif SC", "Microsoft Yahei", "WenQuanYi Micro Hei", Helvetica, sans-serif;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -3015,7 +3015,7 @@ details.folding[child=iframe] >div.body {
   display: block;
 }
 .md-text.indent .tag-plugin.tabs .tab-content p:not([class]) {
-  text-indent: calc(0.9375rem * 2);
+  text-indent: calc(1rem * 2);
 }
 .md-text.indent .tag-plugin.tabs .tab-content p:not([class]) a {
   text-indent: 0;
@@ -3855,7 +3855,7 @@ nav.menu a.nav-item:hover {
   padding: 0.5rem 0;
   line-height: 1;
   box-sizing: border-box;
-  font-family: "Noto Serif SC", "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Lato, Arial, "Noto Serif SC", "Microsoft Yahei", "WenQuanYi Micro Hei", Helvetica, sans-serif;
   color: var(--text-p0);
 }
 .search-wrapper.noresult .search-icon {
@@ -4673,7 +4673,7 @@ h1.article-title {
   overflow: hidden;
 }
 .md-text.content.indent >p:not([class]) {
-  text-indent: calc(0.9375rem * 2);
+  text-indent: calc(1rem * 2);
   text-align: left;
 }
 .md-text.content.indent >p:not([class]) a {
@@ -4813,7 +4813,7 @@ h1.article-title {
   margin-top: -0.5rem;
 }
 .md-text p {
-  font-size: 0.9375rem;
+  font-size: 1rem;
 }
 .md-text pre {
   -webkit-font-smoothing: auto;
