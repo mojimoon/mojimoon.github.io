@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://cryovit.github.io/image/2023/06/chatlog_4.png">
 <meta property="og:image" content="https://cryovit.github.io/image/2023/06/zerd_1.png">
 <meta property="article:published_time" content="2023-06-10T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-17T07:16:50.270Z">
+<meta property="article:modified_time" content="2023-06-19T03:06:01.980Z">
 <meta property="article:author" content="Cryovit">
 <meta property="article:tag" content="cryovit, computer science, python, blog, hexo">
 <meta name="twitter:card" content="summary">
@@ -231,7 +231,7 @@
 <p>那个博客在我退役（2019 年 11 月）之前就结束了它的使命。</p>
 <p>后来不知道为啥我删除了博客的本地仓库，同时以 HTML 的形式保留了两篇文章。这到底是想去还是想留，就不得而知了。</p>
 <hr>
-<p>Bangumi 爬虫。我<a href="../JR2305/index.html#Copilot-%E7%9A%84%E5%AE%8C%E7%BE%8E%E7%AE%97%E6%9C%AF%E6%95%99%E5%AE%A4">上个月</a>已经提到过了。</p>
+<p>Bangumi 爬虫。我<a href="../202305/index.html#Copilot-%E7%9A%84%E5%AE%8C%E7%BE%8E%E7%AE%97%E6%9C%AF%E6%95%99%E5%AE%A4">上个月</a>已经提到过了。</p>
 <p>可以鉴赏一下当时完全没有前端知识储备的我是如何解析网页的：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">findLink = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;a class=&quot;l&quot; href=&quot;(.*?)&quot;&gt;(.*?)&lt;/a&gt;&#x27;</span>)</span><br><span class="line">findTitle = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;small class=&quot;grey&quot;&gt;(.*)&lt;/small&gt;&#x27;</span>)</span><br><span class="line">findRating = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;small class=&quot;fade&quot;&gt;(.*)&lt;/small&gt;&#x27;</span>)</span><br><span class="line">findJudge = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;span class=&quot;tip_j&quot;&gt;\((\d*)人评分\)&lt;/span&gt;&#x27;</span>)</span><br><span class="line">findRank = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;span class=&quot;rank&quot;&gt;&lt;small&gt;Rank &lt;/small&gt;(\d*)&lt;/span&gt;&#x27;</span>)</span><br><span class="line">findInfo = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;p class=&quot;info tip&quot;&gt;(.*?)&lt;/p&gt;&#x27;</span>, re.S)</span><br><span class="line">findDeta = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;a href=&quot;javascript:void\(0\)&quot; title=&quot;(\d*)人评分&quot;&gt;&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
