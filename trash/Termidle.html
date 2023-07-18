@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Terminal Idle - 终端放置 - Cryovit = random</title>
+
+  
+    <meta name="description" content="Read Before ProceedingThe content of this article is purely fictional and is not related to any organisation or individual in real life. In addition, it contains GPT-3.5 generated text, which may not">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Terminal Idle - 终端放置">
+<meta property="og:url" content="https://cryovit.github.io/trash/Termidle.html">
+<meta property="og:site_name" content="Cryovit &#x3D; random">
+<meta property="og:description" content="Read Before ProceedingThe content of this article is purely fictional and is not related to any organisation or individual in real life. In addition, it contains GPT-3.5 generated text, which may not">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-18T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-18T02:16:11.450Z">
+<meta property="article:author" content="Cryovit">
+<meta property="article:tag" content="cryovit, computer science, python, blog, hexo">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/image/favicon.png">
+  
+
+  
+
+  
+
+
+  
+    
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+    
+      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    
+  
+</head>
+
+<body>
+  
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='page'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">Cryovit = random</div><div class="sub normal cap">City University of Hong Kong</div><div class="sub hover cap" style="opacity:0"> Computer Science</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Terminal Idle - 终端放置</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Stage-Previews-%E6%B8%B8%E6%88%8F%E5%88%86%E9%98%B6%E6%AE%B5%E9%A2%84%E8%A7%88"><span class="toc-text">Stage Previews - 游戏分阶段预览</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Terminal-%E7%BB%88%E7%AB%AF"><span class="toc-text">Terminal - 终端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Information-I-%E4%BF%A1%E6%81%AF"><span class="toc-text">Information (I) - 信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Adder-AD1%E2%80%A6AD8-%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-text">Adder (AD1…AD8) - 加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ALU-Binary-Lifting-BL-%E5%AD%97%E9%95%BF%E5%80%8D%E5%A2%9E"><span class="toc-text">ALU Binary Lifting (BL) - 字长倍增</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bit-Overflow-BO-%E4%BD%8D%E6%BA%A2%E5%87%BA"><span class="toc-text">Bit Overflow (BO) - 位溢出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Main-Frequency-MF-%E4%B8%BB%E9%A2%91"><span class="toc-text">Main Frequency (MF) - 主频</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Overclock-OC-%E8%B6%85%E9%A2%91"><span class="toc-text">Overclock (OC) - 超频</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Infinity-%E6%97%A0%E9%99%90"><span class="toc-text">Infinity - 无限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Entropy-E-%E7%86%B5"><span class="toc-text">Entropy (E) - 熵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Entropy-Lifting-EL-%E7%86%B5%E5%80%8D%E5%A2%9E"><span class="toc-text">Entropy Lifting (EL) - 熵倍增</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Entropy-Test-ET-%E7%86%B5%E6%A3%80%E9%AA%8C"><span class="toc-text">Entropy Test (ET) - 熵检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Entropy-Overflow-EO-%E7%86%B5%E6%BA%A2%E5%87%BA"><span class="toc-text">Entropy Overflow (EO) - 熵溢出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multiplier-ML1%E2%80%A6ML8-%E4%B9%98%E6%B3%95%E5%99%A8"><span class="toc-text">Multiplier (ML1…ML8) - 乘法器</span></a></li></ol></li></ol></li></ol></div></div></widget>
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+  
+
+<header class="header mobile-only"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">Cryovit = random</div><div class="sub normal cap">City University of Hong Kong</div><div class="sub hover cap" style="opacity:0"> Computer Science</div></a></div></header>
+
+
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/trash/Termidle.html">Terminal Idle - 终端放置</a></div></div>
+<article class="md-text content page"><h1 class="article-title"><span>Terminal Idle - 终端放置</span></h1><div class="tag-plugin note" color="warning"><div class="title"><strong>Read Before Proceeding</strong></div><div class="body"><p>The content of this article is purely fictional and is not related to any organisation or individual in real life. </p><p>In addition, it contains GPT-3.5 generated text, which may not be accurate or reliable. Please read with caution.</p><p>This article was created on <strong>2023-04-18</strong>. Have fun reading!</p></div></div>
+
+<hr>
+<h2 id="Stage-Previews-游戏分阶段预览"><a href="#Stage-Previews-游戏分阶段预览" class="headerlink" title="Stage Previews - 游戏分阶段预览"></a>Stage Previews - 游戏分阶段预览</h2><h3 id="Terminal-终端"><a href="#Terminal-终端" class="headerlink" title="Terminal - 终端"></a>Terminal - 终端</h3><h4 id="Information-I-信息"><a href="#Information-I-信息" class="headerlink" title="Information (I) - 信息"></a>Information (I) - 信息</h4><p>游戏的基本货币。</p>
+<h4 id="Adder-AD1…AD8-加法器"><a href="#Adder-AD1…AD8-加法器" class="headerlink" title="Adder (AD1…AD8) - 加法器"></a>Adder (AD1…AD8) - 加法器</h4><p>游戏的第一种生产器。</p>
+<p>共有8级，从低级到高级分别为：(1)半加器、(2)全加器、(3)4位加法器、(4)8位加法器、(5)16位加法器、(6)32位加法器、(7)64位加法器、(8)128位加法器。</p>
+<p>每一级加法器生产低一级的加法器，最低级的半加器生产信息。</p>
+<p>游戏开始时，只解锁到8位加法器。</p>
+<p>所有 AD 都用信息购买。每购买同一级 AD 10个，就会给一个 x2 的乘数，同时价格大幅度提升。</p>
+<h4 id="ALU-Binary-Lifting-BL-字长倍增"><a href="#ALU-Binary-Lifting-BL-字长倍增" class="headerlink" title="ALU Binary Lifting (BL) - 字长倍增"></a>ALU Binary Lifting (BL) - 字长倍增</h4><p>第一级重置，重置所有到目前为止的进度 (包括 I, AD, BO, MF) 来解锁更高级的加法器或者获得更大的乘数：</p>
+<ul>
+<li>前 4 次 BL：第 n 次 BL 需求 20 个目前最高级的 AD(n+3)。解锁下一级 AD(n+4)，并给 AD1…AD(n) 一个 x2 的乘数。</li>
+<li>第 5 次 BL：需求 20 个 AD8。解锁机制 BO，并给 AD1…AD5 一个 x2 的乘数。</li>
+<li>第 6 次 BL 开始：每次比前一次额外需求 15 个 AD8，并给 AD1…AD(min(n, 8)) 一个 x2 的乘数.</li>
+</ul>
+<h4 id="Bit-Overflow-BO-位溢出"><a href="#Bit-Overflow-BO-位溢出" class="headerlink" title="Bit Overflow (BO) - 位溢出"></a>Bit Overflow (BO) - 位溢出</h4><p>第 5 次 BL 解锁。清空所有的 AD1…AD7，根据 AD1 的数量给 AD8 提供一个大量的乘数。</p>
+<p>BO 并不算作重置，其优先级是最低的。BL 及以上的任何重置都会清空 BO。</p>
+<h4 id="Main-Frequency-MF-主频"><a href="#Main-Frequency-MF-主频" class="headerlink" title="Main Frequency (MF) - 主频"></a>Main Frequency (MF) - 主频</h4><p>主频可以提高 AD 的生产效率。</p>
+<p>MF 用信息购买。每次购买 MF 时，MF 乘以一个固定值 Basic Frequency (BF, 基频)。</p>
+<h4 id="Overclock-OC-超频"><a href="#Overclock-OC-超频" class="headerlink" title="Overclock (OC) - 超频"></a>Overclock (OC) - 超频</h4><p>第二级重置，重置所有到目前为止的进度 (包括 I, AD, BO, MF, BL) 来提高 BF。</p>
+<p>BF 随着超频数量指数增长。</p>
+<h3 id="Infinity-无限"><a href="#Infinity-无限" class="headerlink" title="Infinity - 无限"></a>Infinity - 无限</h3><p>达到 2^1024 (约 1.79e308) 信息时，终端会因为过量的信息而湮灭，画面会出现 Information Recycle (IR，信息回收)。点击即进行一次重置并进入无限层。</p>
+<h4 id="Entropy-E-熵"><a href="#Entropy-E-熵" class="headerlink" title="Entropy (E) - 熵"></a>Entropy (E) - 熵</h4><p>无限层的基本货币，根据信息回收时的信息数量计算。</p>
+<h4 id="Entropy-Lifting-EL-熵倍增"><a href="#Entropy-Lifting-EL-熵倍增" class="headerlink" title="Entropy Lifting (EL) - 熵倍增"></a>Entropy Lifting (EL) - 熵倍增</h4><p>EL 是无限层的升级，提供大量增益来提高生产效率。其中有一个升级，每级加倍获得的熵，因此这些升级被命名为熵倍增。</p>
+<h4 id="Entropy-Test-ET-熵检验"><a href="#Entropy-Test-ET-熵检验" class="headerlink" title="Entropy Test (ET) - 熵检验"></a>Entropy Test (ET) - 熵检验</h4><p>ET 是无限层的挑战，需要在一定条件下达到无限。挑战的奖励是解锁自动购买器的升级。</p>
+<h4 id="Entropy-Overflow-EO-熵溢出"><a href="#Entropy-Overflow-EO-熵溢出" class="headerlink" title="Entropy Overflow (EO) - 熵溢出"></a>Entropy Overflow (EO) - 熵溢出</h4><p>当 IR 自动购买器的间隔升级到 0.05 秒时，可以解锁 EO。解锁后，I 可以突破 1.79e308，随着 I 的提升，每次 IR 时的 E 也会提升。</p>
+<p>价格超过 1.79e308 后，AD 和 MF 的价格开始超指数增长。</p>
+<p>解锁一套全新的升级 (Overflow Upgrades，溢出升级) 和挑战 (Overflow Tests，溢出检验)。</p>
+<h4 id="Multiplier-ML1…ML8-乘法器"><a href="#Multiplier-ML1…ML8-乘法器" class="headerlink" title="Multiplier (ML1…ML8) - 乘法器"></a>Multiplier (ML1…ML8) - 乘法器</h4><p>游戏的第二种生产器。</p>
+<p>共有8级，从低级到高级分别为：(1)基乘器、(2)2位乘法器、(3)4位乘法器、(4)8位乘法器、(5)16位乘法器、(6)32位乘法器、(7)64位乘法器、(8)128位乘法器。</p>
+<p>每一级乘法器生产低一级的乘法器，最低级的基乘器生产 Multipliee (MP，被乘数)。</p>
+<p>ML 的主要作用是给 AD 提供乘数，这个乘数的基础值为 MP 的七次方。</p>
+<p>所有 ML 都用熵购买。每购买同一级 ML 10个，就会给一个 x5 的乘数，同时价格大幅度提升。</p>
+<p>ML 在信息回收时，购买不会被重置，但乘数、各维度数量及已生产的 MP 会被重置。</p>
+</article>
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="CryoVit/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories/">分类</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">站点</span><a target="_blank" rel="noopener" href="https://steamcommunity.com/id/unreset/">Steam</a><a target="_blank" rel="noopener" href="https://bgm.tv/user/788548">Bangumi</a><a target="_blank" rel="noopener" href="https://github.com/Cryovit">Github</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/2023/about/">关于</a><a href="/">友链</a><a href="/">留言板</a></div></div><div class="text"><p><a target="_blank" rel="noopener" href="https://github.com/Cryovit">@CryoVit</a> Overclocked by <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/stellar/">Stellar</a></p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

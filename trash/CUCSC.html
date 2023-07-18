@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>CityU Ultimate Computer Science Challenge 2023 - Cryovit = random</title>
+
+  
+    <meta name="description" content="Read Before ProceedingThe content of this article is purely fictional and is not related to any organisation or individual in real life. In addition, it contains GPT-3.5 generated text, which may not">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CityU Ultimate Computer Science Challenge 2023">
+<meta property="og:url" content="https://cryovit.github.io/trash/CUCSC.html">
+<meta property="og:site_name" content="Cryovit &#x3D; random">
+<meta property="og:description" content="Read Before ProceedingThe content of this article is purely fictional and is not related to any organisation or individual in real life. In addition, it contains GPT-3.5 generated text, which may not">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-20T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-18T02:16:15.754Z">
+<meta property="article:author" content="Cryovit">
+<meta property="article:tag" content="cryovit, computer science, python, blog, hexo">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/image/favicon.png">
+  
+
+  
+
+  
+
+
+  
+    
+      <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
+    
+      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    
+  
+</head>
+
+<body>
+  
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='page'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">Cryovit = random</div><div class="sub normal cap">City University of Hong Kong</div><div class="sub hover cap" style="opacity:0"> Computer Science</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">CityU Ultimate Computer Science Challenge 2023</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Registration"><span class="toc-text">Registration</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Preliminary-Round"><span class="toc-text">Preliminary Round</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Final-Round"><span class="toc-text">Final Round</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prizes"><span class="toc-text">Prizes</span></a></li></ol></div></div></widget>
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+  
+
+<header class="header mobile-only"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">Cryovit = random</div><div class="sub normal cap">City University of Hong Kong</div><div class="sub hover cap" style="opacity:0"> Computer Science</div></a></div></header>
+
+
+
+      
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/trash/CUCSC.html">CityU Ultimate Computer Science Challenge 2023</a></div></div>
+<article class="md-text content page"><h1 class="article-title"><span>CityU Ultimate Computer Science Challenge 2023</span></h1><div class="tag-plugin note" color="warning"><div class="title"><strong>Read Before Proceeding</strong></div><div class="body"><p>The content of this article is purely fictional and is not related to any organisation or individual in real life. </p><p>In addition, it contains GPT-3.5 generated text, which may not be accurate or reliable. Please read with caution.</p><p>This article was created on <strong>2023-05-20</strong>. Have fun reading!</p></div></div>
+
+<hr>
+<p>CityU Ultimate Computer Science Challenge (CUCSC) is a competition for undergraduate students, open to all students in Hong Kong. It is organized by the CityU CS Department, collaborating with CityU EE and Data Science Department, as well as PolyU COMP Department.</p>
+<p>The competition features a series of challenges covering all aspects in computer science, including but not limited to: algorithms, data structures, programming, operating systems, computer networks, databases, machine learning, web security, and cryptography.</p>
+<p>Participants should form a team of 2-3 members, and compete in the online preliminary round. The top 10 teams will be invited to the on-site final round, where they will compete for the championship.</p>
+<h2 id="Registration"><a href="#Registration" class="headerlink" title="Registration"></a>Registration</h2><p>Registration is open to all undergraduate students in Hong Kong. You must provide your Hong Kong ID, student ID, and email address.</p>
+<p>Each team should have 2-3 members. You can register as a team, or as an individual. If you register as an individual, you will be randomly assigned to a team (with individuals from the same school if possible).</p>
+<p>Registration is free, and will be open from 2023-02-01 to 2023-02-28.</p>
+<h2 id="Preliminary-Round"><a href="#Preliminary-Round" class="headerlink" title="Preliminary Round"></a>Preliminary Round</h2><ul>
+<li>Registration: 2023-02-01 to 2023-02-28</li>
+<li>Date: 2023-03-04 09:00 to 2023-03-04 21:00 (12 hours)</li>
+<li>Format: Online</li>
+</ul>
+<p>Preliminary round features about 40 problems. The result will be ranked according to ICPC rules (i.e., first by number of problems solved, then by submission time).</p>
+<p>All teams who have solved at least one problem will receive a certificate of participation. The top 10 teams will be invited to the on-site final round.</p>
+<p>Since the round is online, cheating and unauthorized assistance are strictly prohibited. Any team found cheating will be disqualified.</p>
+<p>Participants will only be allowed to communicate with their teammates, or ask for clarification from the organizers, on a Discord server. (Participants from the same team will be invited to a private channel so the other teams cannot see their messages, but admins can still see them. Clarification can be asked in public or private channels.) Any other form of communication is prohibited.</p>
+<p>On the other hand, refering to online resources is allowed. However, you should not copy code from other sources, and anti-plagiarism tools will be used to detect cheating.</p>
+<h2 id="Final-Round"><a href="#Final-Round" class="headerlink" title="Final Round"></a>Final Round</h2><ul>
+<li>Date: 2023-03-11 09:00 to 2023-03-11 21:00 (12 hours)</li>
+<li>Format: On-site</li>
+<li>Venue: CityU Computer Lab</li>
+</ul>
+<p>Final round features about 10 problems. The result will be ranked according to ICPC rules (i.e., first by number of problems solved, then by submission time).</p>
+<p>Each team will be assigned three computers in the lab, pre-installed with Ubuntu 20.04 and some third-party software (refer to official rules for details). You can bring your own keyboard, mouse, and headphones, but no other electronic devices are allowed.</p>
+<p>Participants can leave for lunch and dinner during given break times (11:30-14:00 and 17:00-19:30). However, here are a few rules to prevent cheating:</p>
+<ul>
+<li>At least one member of each team must stay in the lab at all times.</li>
+<li>Each member can only leave the lab once for no more than 60 minutes each break. (Care for your teammates - don’t stay out for too long!)</li>
+<li>Leave and return will be recorded by the organizers.</li>
+</ul>
+<h2 id="Prizes"><a href="#Prizes" class="headerlink" title="Prizes"></a>Prizes</h2><ul>
+<li>Champion: HKD 8,192 + trophy + medals + certificates</li>
+<li>1st runner-up: HKD 4,096 + medals + certificates</li>
+<li>2nd runner-up: HKD 2,048 + medals + certificates</li>
+<li>All other finalists: HKD 512 + certificates</li>
+</ul>
+<p>Note: There is only one trophy for Champion. For medals and certificates, each team member will receive one.</p>
+<ul>
+<li>Preliminary round top 20%: certificate of excellence</li>
+<li>Preliminary round top 50%: certificate of merit</li>
+<li>Preliminary round, at least one problem solved: certificate of participation</li>
+</ul>
+</article>
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="CryoVit/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories/">分类</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">站点</span><a target="_blank" rel="noopener" href="https://steamcommunity.com/id/unreset/">Steam</a><a target="_blank" rel="noopener" href="https://bgm.tv/user/788548">Bangumi</a><a target="_blank" rel="noopener" href="https://github.com/Cryovit">Github</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/2023/about/">关于</a><a href="/">友链</a><a href="/">留言板</a></div></div><div class="text"><p><a target="_blank" rel="noopener" href="https://github.com/Cryovit">@CryoVit</a> Overclocked by <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/stellar/">Stellar</a></p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
