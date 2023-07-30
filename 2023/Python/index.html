@@ -20,23 +20,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>笔记：Python 爬虫/数据分析简易教程 - Cryovit = random</title>
+  <title>笔记：Python 爬虫/数据分析简易教程 - もじもんの文字門</title>
 
   
     <meta name="description" content="哪怕连 HTML 都不懂，也能通过分析模式和结构，想办法爬取数据。两年前的我确实这样做了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="笔记：Python 爬虫&#x2F;数据分析简易教程">
-<meta property="og:url" content="https://cryovit.github.io/2023/Python/index.html">
-<meta property="og:site_name" content="Cryovit &#x3D; random">
+<meta property="og:url" content="https://mojimoon.github.io/2023/Python/index.html">
+<meta property="og:site_name" content="もじもんの文字門">
 <meta property="og:description" content="哪怕连 HTML 都不懂，也能通过分析模式和结构，想办法爬取数据。两年前的我确实这样做了。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cryovit.github.io/image/2023/05/PY_regex.png">
+<meta property="og:image" content="https://mojimoon.github.io/image/2023/05/PY_regex.png">
 <meta property="article:published_time" content="2023-05-12T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-17T01:38:34.223Z">
-<meta property="article:author" content="Cryovit">
-<meta property="article:tag" content="cryovit, computer science, python, blog, hexo">
+<meta property="article:modified_time" content="2023-07-30T00:30:03.682Z">
+<meta property="article:author" content="mojimoon">
+<meta property="article:tag" content="mojimoon, computer science, python, blog, hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cryovit.github.io/image/2023/05/PY_regex.png">
+<meta name="twitter:image" content="https://mojimoon.github.io/image/2023/05/PY_regex.png">
   
   
 
@@ -79,7 +79,7 @@
 
   
 
-<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">Cryovit = random</div><div class="sub normal cap">City University of Hong Kong</div><div class="sub hover cap" style="opacity:0"> Computer Science</div></a></div>
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">もじもんの文字門</div><div class="sub normal cap">City University of Hong Kong</div><div class="sub hover cap" style="opacity:0"> Computer Science</div></a></div>
 
 <nav class="menu dis-select"></nav>
 </header>
@@ -113,7 +113,7 @@
 <h2 id="楔子"><a href="#楔子" class="headerlink" title="楔子"></a>楔子</h2><p>我相信点进这篇文章的你肯定听说过爬虫及其原理，简单来说，就是模拟浏览器，向网站发送请求，然后，解析网站返回的数据，从中提取需要的信息。</p>
 <p>爬虫还有更加丰富的功能与技巧，我们今天不讲。就讲最基础的：读取 HTML 和 JSON，然后，提取信息。这个功能，足以应付大部分的爬虫需求。</p>
 <p>既然选择 Python，那么我们也可以非常轻松地把爬虫和数据分析结合起来。例如，爬取某个网站的排行榜，把统计数据输出到 CSV 文件，同时用 <code>matplotlib</code> 绘制图表。</p>
-<p>本文中的代码全部来自我的项目 <a target="_blank" rel="noopener" href="https://github.com/CryoVit/bangumi-anime-ranking">CryoVit&#x2F;bangumi-anime-ranking</a>，顺便给我点个 star 吧。</p>
+<p>本文中的代码全部来自我的项目 <a target="_blank" rel="noopener" href="https://github.com/mojimoon/bangumi-anime-ranking">mojimoon&#x2F;bangumi-anime-ranking</a>，顺便给我点个 star 吧。</p>
 <p>希望对你有所帮助。</p>
 <h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>包括后续分析数据的步骤在内，你很有可能需要用到下表中的第三方库：</p>
 <table>
@@ -249,7 +249,7 @@
 
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>最后一提，不要硬编码。这是一个非常严肃的问题，硬编码让你这次写起来方便，以后要改就麻烦了。Python 提供了非常强大的 <code>try...except...</code> 语法，提高代码的鲁棒性。另外，在判断异常的时候，也不能只考虑数据在多少页结束这个问题，还要纳入网络不稳定等因素，例如，<code>requests</code> 库提供了 <code>r.raise_for_status()</code> 方法，可以在请求失败的时候抛出异常。</p>
 <p>好吧，这期简易教程就写到这里。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/CryoVit/bangumi-anime-ranking">CryoVit&#x2F;bangumi-anime-ranking</a> 这个项目的统计结果可以在项目的 <code>README.md</code> 中找到，点进去看看吧。</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/mojimoon/bangumi-anime-ranking">mojimoon&#x2F;bangumi-anime-ranking</a> 这个项目的统计结果可以在项目的 <code>README.md</code> 中找到，点进去看看吧。</p>
 <div class="tag-plugin quot"><p class="content" type="text">都看到这里了就麻烦点个 Star 吧！</p></div>
 
 
@@ -274,7 +274,7 @@
 
 <svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
 
-<div id="beaudar" repo="CryoVit/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+<div id="beaudar" repo="mojimoon/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
 
     </section>
   </div>
@@ -282,7 +282,7 @@
 
 
       
-<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories/">分类</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">站点</span><a target="_blank" rel="noopener" href="https://steamcommunity.com/id/unreset/">Steam</a><a target="_blank" rel="noopener" href="https://bgm.tv/user/788548">Bangumi</a><a target="_blank" rel="noopener" href="https://github.com/Cryovit">Github</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/2023/about/">关于</a><a href="/">友链</a><a href="/">留言板</a></div></div><div class="text"><p><a target="_blank" rel="noopener" href="https://github.com/Cryovit">@CryoVit</a> Overclocked by <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/stellar/">Stellar</a></p>
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories/">分类</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">站点</span><a target="_blank" rel="noopener" href="https://steamcommunity.com/id/unreset/">Steam</a><a target="_blank" rel="noopener" href="https://bgm.tv/user/788548">Bangumi</a><a target="_blank" rel="noopener" href="https://github.com/mojimoon">Github</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/2023/about/">关于</a><a href="/">友链</a><a href="/">留言板</a></div></div><div class="text"><p><a target="_blank" rel="noopener" href="https://github.com/mojimoon">@mojimoon</a> Overclocked by <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/stellar/">Stellar</a></p>
 </div></footer>
 
       <div class='float-panel mobile-only blur' style='display:none'>
