@@ -20,18 +20,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>Project Sekai：Rating - もじもんの文字門</title>
+  <title>雀魂个人巡回赛 (Majsoul Individual Tournament) - もじもんの文字門</title>
 
   
-    <meta name="description" content="Read Before ProceedingThe content of this article is purely fictional and is not related to any organisation or individual in real life.In addition, it contains GPT-3.5 generated text, which may not b">
+    <meta name="description" content="阅前须知本文内容纯属虚构，与现实生活中的任何组织、个人均无关系。此外，包含 GPT-3.5 生成的内容。本文创作于 2023 年 6 月 27 日。祝您读得愉快！  由于麻雀是四人游戏，而又要决出个人胜负，一般的小组赛和淘汰赛机制都不适用。我们基于瑞士轮制定制了一套赛制，以保证每个选手都能和其他选手进行一定数量的对局，从而决出个人的胜负。  分区赛 64名选手随机分为 A, B, C, D 四个分">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Project Sekai：Rating">
-<meta property="og:url" content="https://mojimoon.github.io/trash/pjsk-rating.html">
+<meta property="og:title" content="雀魂个人巡回赛 (Majsoul Individual Tournament)">
+<meta property="og:url" content="https://mojimoon.github.io/test/MIT.html">
 <meta property="og:site_name" content="もじもんの文字門">
-<meta property="og:description" content="Read Before ProceedingThe content of this article is purely fictional and is not related to any organisation or individual in real life.In addition, it contains GPT-3.5 generated text, which may not b">
+<meta property="og:description" content="阅前须知本文内容纯属虚构，与现实生活中的任何组织、个人均无关系。此外，包含 GPT-3.5 生成的内容。本文创作于 2023 年 6 月 27 日。祝您读得愉快！  由于麻雀是四人游戏，而又要决出个人胜负，一般的小组赛和淘汰赛机制都不适用。我们基于瑞士轮制定制了一套赛制，以保证每个选手都能和其他选手进行一定数量的对局，从而决出个人的胜负。  分区赛 64名选手随机分为 A, B, C, D 四个分">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-07-07T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-07-18T02:16:11.450Z">
+<meta property="article:published_time" content="2023-06-27T00:00:00.000Z">
+<meta property="article:modified_time" content="2023-07-18T02:16:37.921Z">
 <meta property="article:author" content="mojimoon">
 <meta property="article:tag" content="mojimoon, computer science, python, blog, hexo">
 <meta name="twitter:card" content="summary">
@@ -89,7 +89,7 @@
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Project Sekai：Rating</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#base-rating"><span class="toc-text"> Base Rating</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#match-rating"><span class="toc-text"> Match Rating</span></a></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">雀魂个人巡回赛 (Majsoul Individual Tournament)</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%8C%BA%E8%B5%9B"><span class="toc-text"> 分区赛</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%98%E6%B1%B0%E8%B5%9B"><span class="toc-text"> 淘汰赛</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%98%E6%B1%B0%E8%B5%9B%E7%AC%AC%E4%B8%80%E8%BD%AE"><span class="toc-text"> 淘汰赛第一轮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%98%E6%B1%B0%E8%B5%9B%E7%AC%AC%E4%BA%8C%E8%BD%AE"><span class="toc-text"> 淘汰赛第二轮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E5%86%B3%E8%B5%9B"><span class="toc-text"> 半决赛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B3%E8%B5%9B"><span class="toc-text"> 决赛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E5%90%8D%E6%AC%A1"><span class="toc-text"> 最终名次</span></a></li></ol></div></div></widget>
 </div>
 
 
@@ -105,79 +105,144 @@
       
 
 
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/trash/pjsk-rating.html">Project Sekai：Rating</a></div></div>
-<article class="md-text content page"><h1 class="article-title"><span>Project Sekai：Rating</span></h1><div class="tag-plugin note" color="warning"><div class="title"><strong>Read Before Proceeding</strong></div><div class="body"><p>The content of this article is purely fictional and is not related to any organisation or individual in real life.</p><p>In addition, it contains GPT-3.5 generated text, which may not be accurate or reliable. Please read with caution.</p><p>This article was created on <strong>2023-07-07</strong>. Have fun reading!</p></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/test/MIT.html">雀魂个人巡回赛 (Majsoul Individual Tournament)</a></div></div>
+<article class="md-text content page"><h1 class="article-title"><span>雀魂个人巡回赛 (Majsoul Individual Tournament)</span></h1><div class="tag-plugin note" color="warning"><div class="title"><strong>阅前须知</strong></div><div class="body"><p>本文内容纯属虚构，与现实生活中的任何组织、个人均无关系。</p><p>此外，包含 GPT-3.5 生成的内容。</p><p>本文创作于 <strong>2023 年 6 月 27 日</strong>。祝您读得愉快！</p></div></div>
 <hr />
-<p>Rating consists of 2 parts: Base Rating and Match Rating.</p>
-<h2 id="base-rating"><a class="markdownIt-Anchor" href="#base-rating"></a> Base Rating</h2>
-<p>Rating for each chart is calculated based on the following formula:</p>
-<p>R = (5 + LV) * ACC ^ 4</p>
-<p>where <code>R</code> is the rating, <code>LV</code> is the level of the chart, and <code>ACC</code> is the accuracy in percentage.</p>
-<p>Different judgment types have different <code>ACC</code> values:</p>
+<p>由于麻雀是四人游戏，而又要决出个人胜负，一般的小组赛和淘汰赛机制都不适用。我们基于瑞士轮制定制了一套赛制，以保证每个选手都能和其他选手进行一定数量的对局，从而决出个人的胜负。</p>
+<h2 id="分区赛"><a class="markdownIt-Anchor" href="#分区赛"></a> 分区赛</h2>
+<p>64名选手随机分为 A, B, C, D 四个分区，每个分区随机分为 1, 2, 3, 4 四个小组，每个小组的四名成员编号 a, b, c, d。</p>
+<p>在每个分区内，按照以下模式进行 16 场半庄：</p>
+<table>
+<thead>
+<tr>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1a</td>
+<td>2a</td>
+<td>3a</td>
+<td>4a</td>
+</tr>
+<tr>
+<td>1b</td>
+<td>2b</td>
+<td>3b</td>
+<td>4b</td>
+</tr>
+<tr>
+<td>1c</td>
+<td>2c</td>
+<td>3c</td>
+<td>4c</td>
+</tr>
+<tr>
+<td>1d</td>
+<td>2d</td>
+<td>3d</td>
+<td>4d</td>
+</tr>
+<tr>
+<td>1a</td>
+<td>2b</td>
+<td>3c</td>
+<td>4d</td>
+</tr>
+<tr>
+<td>1b</td>
+<td>2c</td>
+<td>3d</td>
+<td>4a</td>
+</tr>
+<tr>
+<td>1c</td>
+<td>2d</td>
+<td>3a</td>
+<td>4b</td>
+</tr>
+<tr>
+<td>1d</td>
+<td>2a</td>
+<td>3b</td>
+<td>4c</td>
+</tr>
+<tr>
+<td>1a</td>
+<td>2c</td>
+<td>3b</td>
+<td>4c</td>
+</tr>
+<tr>
+<td>1b</td>
+<td>2d</td>
+<td>3c</td>
+<td>4d</td>
+</tr>
+<tr>
+<td>1c</td>
+<td>2a</td>
+<td>3d</td>
+<td>4a</td>
+</tr>
+<tr>
+<td>1d</td>
+<td>2b</td>
+<td>3a</td>
+<td>4b</td>
+</tr>
+<tr>
+<td>1a</td>
+<td>2d</td>
+<td>3d</td>
+<td>4b</td>
+</tr>
+<tr>
+<td>1b</td>
+<td>2a</td>
+<td>3a</td>
+<td>4c</td>
+</tr>
+<tr>
+<td>1c</td>
+<td>2b</td>
+<td>3b</td>
+<td>4d</td>
+</tr>
+<tr>
+<td>1d</td>
+<td>2c</td>
+<td>3c</td>
+<td>4a</td>
+</tr>
+</tbody>
+</table>
+<p>如此赛程保证每个选手都和同一分区其他 3 个小组的 12 名选手进行了一次对局，总共 4 场对局。</p>
+<p>分区赛的比赛总数为 4x16=64 场半庄。</p>
+<p>分区赛结束后根据段位赛的积分系统计算各个选手的个人积分，每个分区内的前 4 名选手晋级下一轮。</p>
+<h2 id="淘汰赛"><a class="markdownIt-Anchor" href="#淘汰赛"></a> 淘汰赛</h2>
+<p>共有 4x4=16 名选手晋级淘汰赛。</p>
+<h3 id="淘汰赛第一轮"><a class="markdownIt-Anchor" href="#淘汰赛第一轮"></a> 淘汰赛第一轮</h3>
+<p>将 16 名选手随机分为 4 组，每组内进行 2 场半庄。结束后每组得点最低的 1 名选手淘汰，其余 3 名选手晋级下一轮。</p>
+<p>本轮的积分计算方式为：分区赛积分(4) / 4 + 淘汰赛第一轮积分(2)。</p>
+<h3 id="淘汰赛第二轮"><a class="markdownIt-Anchor" href="#淘汰赛第二轮"></a> 淘汰赛第二轮</h3>
+<p>将 12 名选手随机分为 3 组，每组内进行 2 场半庄。结束后全场得点最低的 4 名选手淘汰，其余 8 名选手晋级下一轮。</p>
+<p>本轮的积分计算方式为：(分区赛积分(4) / 4 + 淘汰赛第一轮积分(2)) / 3 + 淘汰赛第二轮积分(2)。</p>
+<h3 id="半决赛"><a class="markdownIt-Anchor" href="#半决赛"></a> 半决赛</h3>
+<p>将 8 名选手随机分为 2 组，每组内进行 1 场半庄。结束后每组第三、第四名选手淘汰，其余 4 名选手晋级下一轮。</p>
+<h3 id="决赛"><a class="markdownIt-Anchor" href="#决赛"></a> 决赛</h3>
+<p>进行 1 场半庄，决出冠军。决赛名次作为前四名的最终名次。</p>
+<p>淘汰赛的总比赛场数为 4x2+3x2+2+1=15 场半庄。</p>
+<h2 id="最终名次"><a class="markdownIt-Anchor" href="#最终名次"></a> 最终名次</h2>
 <ul>
-<li>Perfect: 1.0</li>
-<li>Great: 0.6</li>
-<li>Good: 0.2</li>
-<li>Bad: 0.0</li>
-<li>Miss: 0.0</li>
-</ul>
-<p>The final ACC is weighted average of all notes, where the weight of each note is the same as the weight in calculating score.</p>
-<ul>
-<li>Tap: 1</li>
-<li>Critical Tap: 2 (2x)</li>
-<li>Slide (Head and Tail): 1</li>
-<li>Critical Slide (Head and Tail): 2 (2x)</li>
-<li>Slide (Body): 0.1</li>
-<li>Critical Slide (Body): 0.1 (1x)</li>
-<li>Slide (Body Special): 0.1</li>
-<li>Critical Slide (Body Special): 0.2 (2x)</li>
-<li>Flick: 2</li>
-<li>Critical Flick: 6 (3x)</li>
-</ul>
-<p>All chart rating is rounded down to 2 decimal places.</p>
-<p>The total base rating is the sum of best 30 chart ratings, rounded down to nearest integer.</p>
-<p>As of current version, theoretically the maximum base rating is 850.</p>
-<h2 id="match-rating"><a class="markdownIt-Anchor" href="#match-rating"></a> Match Rating</h2>
-<p>Match rating is determined by match rank.</p>
-<p>There are 7 ranks in total: Rookie, Bronze, Silver, Gold, Platinum, Diamond, and Master.</p>
-<p>Match score is calculated based on all notes judgement in the match, regardless of the note type:</p>
-<ul>
-<li>Perfect: +1</li>
-<li>Great: 0</li>
-<li>Good: -2</li>
-<li>Bad: -10</li>
-<li>Miss: -20</li>
-</ul>
-<p>Additionally, there are some bonus points:</p>
-<ul>
-<li>Combo Bonus: +(max combo / 100)</li>
-<li>All Perfect: +30</li>
-<li>Full Combo: +10</li>
-<li>Fail: -100</li>
-<li>Facing a higher rank opponent: +10</li>
-</ul>
-<p>You gain +1 match XP for winning, 0 for draw, and -1 for losing.</p>
-<p>You don’t lose match XP in Rookie rank.</p>
-<p>You advance to next rank when you reach certain amount of match XP:</p>
-<ul>
-<li>Rookie: 3</li>
-<li>Bronze: 6</li>
-<li>Silver: 9</li>
-<li>Gold: 12</li>
-<li>Platinum: 15</li>
-<li>Diamond: 20</li>
-</ul>
-<p>… and start from 1 match XP in the next rank.</p>
-<p>You demote to previous rank when you reach -2 match XP, and start from 2 match XP in the previous rank.</p>
-<p>Match rating is determined by your current rank:</p>
-<ul>
-<li>Rookie: 0</li>
-<li>Bronze: 10</li>
-<li>Silver: 30</li>
-<li>Gold: 60</li>
-<li>Platinum: 100</li>
-<li>Diamond: 150</li>
-<li>Master: 200 + match XP / 10, rounded down</li>
+<li>1至4名：决赛名次</li>
+<li>5至8名：到半决赛为止的积分排名。计算方式为：淘汰赛第二轮积分(2) / 2 + 半决赛积分(1)。</li>
+<li>9至12名：到淘汰赛第二轮为止的积分排名。</li>
+<li>13至16名：到淘汰赛第一轮为止的积分排名。</li>
+<li>17至64名：先按照马点排名。马点相同的情况下按照分区赛积分排名。</li>
 </ul>
 </article>
 
