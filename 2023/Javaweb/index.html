@@ -20,12 +20,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>技术：JavaWeb 项目环境配置 - もじもんの文字門</title>
+  <title>JavaWeb 项目环境配置 - もじもんの文字門</title>
 
   
     <meta name="description" content="个人向踩坑记录，包括 IDEA、Tomcat、MySQL、Maven 等环境配置。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="技术：JavaWeb 项目环境配置">
+<meta property="og:title" content="JavaWeb 项目环境配置">
 <meta property="og:url" content="https://mojimoon.github.io/2023/Javaweb/index.html">
 <meta property="og:site_name" content="もじもんの文字門">
 <meta property="og:description" content="个人向踩坑记录，包括 IDEA、Tomcat、MySQL、Maven 等环境配置。">
@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://mojimoon.github.io/image/2023/06/javaweb_11.png">
 <meta property="og:image" content="https://mojimoon.github.io/image/2023/06/javaweb_12.png">
 <meta property="article:published_time" content="2023-06-28T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-06-28T06:12:28.230Z">
+<meta property="article:modified_time" content="2023-10-16T12:15:01.776Z">
 <meta property="article:author" content="mojimoon">
 <meta property="article:tag" content="mojimoon, computer science, python, blog, hexo">
 <meta name="twitter:card" content="summary">
@@ -104,7 +104,7 @@
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">技术：JavaWeb 项目环境配置</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-text"> 环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idea-%E5%AF%BC%E5%85%A5-eclipse-%E9%A1%B9%E7%9B%AE"><span class="toc-text"> IDEA 导入 Eclipse 项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5"><span class="toc-text"> 配置数据库连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#idea-%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E9%93%BE%E6%8E%A5"><span class="toc-text"> IDEA 配置数据库链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5"><span class="toc-text"> 测试数据库连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-tomcat-%E7%8E%AF%E5%A2%83"><span class="toc-text"> 配置 Tomcat 环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-tomcat"><span class="toc-text"> 下载 Tomcat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text"> 配置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-idea-%E4%B8%AD%E9%85%8D%E7%BD%AE-tomcat-%E5%92%8C%E4%BE%9D%E8%B5%96"><span class="toc-text"> 在 IDEA 中配置 Tomcat 和依赖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-tomcat-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text"> 配置 Tomcat 服务器</span></a></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">JavaWeb 项目环境配置</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83"><span class="toc-text"> 环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idea-%E5%AF%BC%E5%85%A5-eclipse-%E9%A1%B9%E7%9B%AE"><span class="toc-text"> IDEA 导入 Eclipse 项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5"><span class="toc-text"> 配置数据库连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#idea-%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E9%93%BE%E6%8E%A5"><span class="toc-text"> IDEA 配置数据库链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5"><span class="toc-text"> 测试数据库连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-tomcat-%E7%8E%AF%E5%A2%83"><span class="toc-text"> 配置 Tomcat 环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD-tomcat"><span class="toc-text"> 下载 Tomcat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text"> 配置环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-idea-%E4%B8%AD%E9%85%8D%E7%BD%AE-tomcat-%E5%92%8C%E4%BE%9D%E8%B5%96"><span class="toc-text"> 在 IDEA 中配置 Tomcat 和依赖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE-tomcat-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-text"> 配置 Tomcat 服务器</span></a></li></ol></div></div></widget>
 
 
 
@@ -123,7 +123,7 @@
 <div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Tech/">Tech</a></div><div id="post-meta">发布于&nbsp;<time datetime="2023-06-28T00:00:00.000Z">2023-06-28</time></div></div>
 
 <article class='md-text content post'>
-<h1 class="article-title"><span>技术：JavaWeb 项目环境配置</span></h1>
+<h1 class="article-title"><span>JavaWeb 项目环境配置</span></h1>
 <p>话说在前头，如果你像我一样对 JavaWeb 的基础知识了解不够，光是配置环境以运行别人的项目就可以让你欲仙欲死。</p>
 <p>不过我还是希望这篇文章能够帮助到你（也提醒自己）。因此，请务必一步步仔细阅读、操作，有问题可以在评论区留言。</p>
 <h2 id="环境"><a class="markdownIt-Anchor" href="#环境"></a> 环境</h2>
