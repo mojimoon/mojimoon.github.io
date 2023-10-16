@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
   <meta charset="utf-8">
   
 
@@ -37,6 +37,8 @@
 <meta name="twitter:card" content="summary">
   
   
+  
+  <meta name="keywords" content="mojimoon, computer science, python, blog, hexo">
 
   <!-- feed -->
   
@@ -62,6 +64,8 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     
+      <link rel="stylesheet" href="/css/override.css">
+    
   
 </head>
 
@@ -85,7 +89,7 @@
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Binary Search</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Template-I"><span class="toc-text">Template I</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Template-II"><span class="toc-text">Template II</span></a></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Binary Search</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#template-i"><span class="toc-text"> Template I</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#template-ii"><span class="toc-text"> Template II</span></a></li></ol></div></div></widget>
 </div>
 
 
@@ -103,21 +107,22 @@
 
 <div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/misc/Binary.html">Binary Search</a></div></div>
 <article class="md-text content page"><h1 class="article-title"><span>Binary Search</span></h1><div class="tag-plugin note" color="warning"><div class="title"><strong>Read Before Proceeding</strong></div><div class="body"><p>This article is still under construction.</p><p>In addition, it contains GPT-3.5 generated text, which may not be accurate or reliable. Please read with caution.</p><p>This article was created on <strong>2023-06-09</strong>. Have fun reading!</p></div></div>
-
-<hr>
+<hr />
 <p>Binary search is a search algorithm that finds the position of a target value within a sorted array.</p>
 <p>The core idea of binary search is to use the information that the array is sorted, each time eliminate half of the elements by comparing the target value with the value of the middle element. Time complexity is O(logn).</p>
 <p>Binary search might seem trivial at first, but there are many subtle details that are worth studying. This includes: the proper way of calculating the middle element, the proper way of updating the range of search, and the termination condition.</p>
 <p>This article will discuss three templates of binary search, analyze their differences, and provide examples to help you understand them better.</p>
-<h2 id="Template-I"><a href="#Template-I" class="headerlink" title="Template I"></a>Template I</h2><p>This template is the most basic and elementary form of binary search.</p>
+<h2 id="template-i"><a class="markdownIt-Anchor" href="#template-i"></a> Template I</h2>
+<p>This template is the most basic and elementary form of binary search.</p>
 <p>If you simply have to compare [mid] with the target value, then this template is the best choice.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">nums, target</span>):</span><br><span class="line">    l, r = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">        mid = l + (r - l) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> nums[mid] == target:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">elif</span> nums[mid] &lt; target:</span><br><span class="line">            l = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            r = mid - <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
 <p>The above snippet looks for the index of the target value in a sorted array. If the target value does not exist in the array, it returns -1.</p>
 <p>Let’s inspect the details mentioned above:</p>
 <ul>
-<li>How to calculate the middle element?<ul>
-<li>In most of the cases, <code>mid</code> is simply <code>(l + r) / 2</code>, rounded down. However, here are a few language-specific details you should take a look at:<ul>
+<li>How to calculate the middle element?
+<ul>
+<li>In most of the cases, <code>mid</code> is simply <code>(l + r) / 2</code>, rounded down. However, here are a few language-specific details you should take a look at:
+<ul>
 <li>In Java, if <code>l</code> and <code>r</code> are both too large, <code>l + r</code> may cause an overflow. You can use <code>l + (r - l) / 2</code> instead. Also, do not use <code>&gt;&gt;&gt; 1</code> (unsigned right shift). (While array index usually does not cause an overflow, it can becomes a problem when you are trying to find some number that is larger than <code>Integer.MAX_VALUE / 2</code>.)</li>
 <li>In Python, there are no integer overflows, but remember to use integer division to get <code>mid</code> (<code>//</code> in Python 3).</li>
 </ul>
@@ -125,22 +130,26 @@
 <li>In specific cases, you may want to use rounding-up instead of rounding-down. In that case, you can use <code>mid = l + (r - l + 1) / 2</code> instead.</li>
 </ul>
 </li>
-<li>How to update the range of search?<ul>
+<li>How to update the range of search?
+<ul>
 <li>If <code>nums[mid] &lt; target</code>, then the range must begins at <code>mid + 1</code> instead of <code>mid</code>.</li>
 <li>If <code>nums[mid] &gt; target</code>, then the range must ends at <code>mid - 1</code> instead of <code>mid</code>.</li>
 <li>This means each step, the length of the range will be reduced by 1 or more than 1. And eventually, you will be left with an empty range.</li>
 <li>There won’t be any infinite loop.</li>
 </ul>
 </li>
-<li>How to make sure the target value is not missed?<ul>
+<li>How to make sure the target value is not missed?
+<ul>
 <li>This is the most tricky part of binary search.</li>
 <li>The proper way to make sure the target value is not missed is using <code>l &lt;= r</code> as the loop condition, because we are always discarding half of the range, and there are totally <code>r - l + 1</code> iterations (or recursive calls) before the loop ends.</li>
 <li>Thus, after the loop ends, <code>l</code> must be greater than <code>r</code> (or exactly, <code>l = r + 1</code>), and <code>target</code> is not in <code>[l, r]</code>. Therefore, <code>target</code> is not in <code>[l, r]</code> means <code>target</code> is not in <code>nums</code>.</li>
 <li>If you are using <code>l &lt; r</code> as the loop condition, you must make sure the target value is not omitted when <code>r = l + 1</code>. In that case, you need to adjust the middle element to the right by <code>mid = l + (r - l + 1) / 2</code>. (Some regard this as another template, but it is only bringing more complexity to the code, so I don’t recommend it.)</li>
 </ul>
 </li>
-<li>Any special cases?<ul>
-<li>For array with length 0, 1, 2, the above code still works. However, it is always a good habit to check them out.<ul>
+<li>Any special cases?
+<ul>
+<li>For array with length 0, 1, 2, the above code still works. However, it is always a good habit to check them out.
+<ul>
 <li>If the array is empty, then <code>l = 0, r = -1</code>, and the loop will not be entered.</li>
 <li>If the array contains only one element, then <code>l = r = 0</code>, and the loop will be entered only once.</li>
 <li>If the array contains only two elements, then <code>l = 0, r = 1</code>, and the loop will be entered twice.</li>
@@ -149,7 +158,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="Template-II"><a href="#Template-II" class="headerlink" title="Template II"></a>Template II</h2><p>This template is an advanced form of Binary Search.</p>
+<h2 id="template-ii"><a class="markdownIt-Anchor" href="#template-ii"></a> Template II</h2>
+<p>This template is an advanced form of Binary Search.</p>
 <p>By comparing with [mid + 1] and [mid - 1], you can decide whether [mid] is the target value or not, and then decide whether to include [mid] in the next search range or not.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">nums, target</span>):</span><br><span class="line">    l, r = <span class="number">0</span>, <span class="built_in">len</span>(nums) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> l &lt;= r:</span><br><span class="line">        mid = l + (r - l) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> nums[mid] == target:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">        <span class="keyword">elif</span> nums[mid] &lt; target:</span><br><span class="line">            l = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            r = mid - <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure></article>
 
@@ -246,6 +256,9 @@
     // 从 butterfly 和 volantis 获得灵感
     loadScript: (src, opt) => new Promise((resolve, reject) => {
       var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
       script.src = src;
       if (opt) {
         for (let key of Object.keys(opt)) {
@@ -274,8 +287,8 @@
       }
     }
   };
-  stellar.version = '1.18.5';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -284,6 +297,7 @@
       day: '天前',
       month: '个月前',
     },
+    root : '/',
   };
 
   // required plugins (only load if needs)
@@ -322,6 +336,9 @@
   }
   if ('false' == 'true') {
     stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
   }
 </script>
 

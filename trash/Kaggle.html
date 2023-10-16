@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
   <meta charset="utf-8">
   
 
@@ -23,12 +23,12 @@
   <title>Kaggle New Ranking System - もじもんの文字門</title>
 
   
-    <meta name="description" content="Read Before ProceedingThe content of this article is purely fictional and is not related to any organisation or individual in real life. In addition, it contains GPT-3.5 generated text, which may not">
+    <meta name="description" content="Read Before ProceedingThe content of this article is purely fictional and is not related to any organisation or individual in real life.In addition, it contains GPT-3.5 generated text, which may not b">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Kaggle New Ranking System">
 <meta property="og:url" content="https://mojimoon.github.io/trash/Kaggle.html">
 <meta property="og:site_name" content="もじもんの文字門">
-<meta property="og:description" content="Read Before ProceedingThe content of this article is purely fictional and is not related to any organisation or individual in real life. In addition, it contains GPT-3.5 generated text, which may not">
+<meta property="og:description" content="Read Before ProceedingThe content of this article is purely fictional and is not related to any organisation or individual in real life.In addition, it contains GPT-3.5 generated text, which may not b">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-17T00:00:00.000Z">
 <meta property="article:modified_time" content="2023-07-18T02:16:11.446Z">
@@ -37,6 +37,8 @@
 <meta name="twitter:card" content="summary">
   
   
+  
+  <meta name="keywords" content="mojimoon, computer science, python, blog, hexo">
 
   <!-- feed -->
   
@@ -62,6 +64,8 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     
+      <link rel="stylesheet" href="/css/override.css">
+    
   
 </head>
 
@@ -85,7 +89,7 @@
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Kaggle New Ranking System</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Performance-Points"><span class="toc-text">Performance Points</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ranking-Tiers"><span class="toc-text">Ranking Tiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Medals"><span class="toc-text">Medals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PP-Calculation"><span class="toc-text">PP Calculation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Competition-PP"><span class="toc-text">Competition PP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contribution-PP"><span class="toc-text">Contribution PP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kernels-Discussions-and-Datasets"><span class="toc-text">Kernels, Discussions, and Datasets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Comments"><span class="toc-text">Comments</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A"><span class="toc-text">Q&amp;A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Why-do-you-introduce-the-new-ranking-system"><span class="toc-text">Q: Why do you introduce the new ranking system?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Can-I-reach-higher-tier-without-satisfying-lower-tier-requirements"><span class="toc-text">Q: Can I reach higher tier without satisfying lower tier requirements?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Can-I-reach-higher-tier-without-satisfying-the-PP-requirement"><span class="toc-text">Q: Can I reach higher tier without satisfying the PP requirement?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-Contributing-to-communities-is-not-as-hard-as-winning-competitions-Why-do-you-treat-them-equally"><span class="toc-text">Q: Contributing to communities is not as hard as winning competitions. Why do you treat them equally?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-How-rare-is-the-platinum-medal"><span class="toc-text">Q: How rare is the platinum medal?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-How-is-the-%E2%80%9Chot%E2%80%9D-content-calculated"><span class="toc-text">Q: How is the “hot” content calculated?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-How-is-the-%E2%80%9Ctop%E2%80%9D-content-calculated"><span class="toc-text">Q: How is the “top” content calculated?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-What-will-you-do-with-current-rankings"><span class="toc-text">Q: What will you do with current rankings?</span></a></li></ol></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Kaggle New Ranking System</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#performance-points"><span class="toc-text"> Performance Points</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ranking-tiers"><span class="toc-text"> Ranking Tiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#medals"><span class="toc-text"> Medals</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pp-calculation"><span class="toc-text"> PP Calculation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contribution-pp"><span class="toc-text"> Contribution PP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#kernels-discussions-and-datasets"><span class="toc-text"> Kernels, Discussions, and Datasets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#comments"><span class="toc-text"> Comments</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#qa"><span class="toc-text"> Q&amp;A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#q-why-do-you-introduce-the-new-ranking-system"><span class="toc-text"> Q: Why do you introduce the new ranking system?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q-can-i-reach-higher-tier-without-satisfying-lower-tier-requirements"><span class="toc-text"> Q: Can I reach higher tier without satisfying lower tier requirements?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q-can-i-reach-higher-tier-without-satisfying-the-pp-requirement"><span class="toc-text"> Q: Can I reach higher tier without satisfying the PP requirement?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q-contributing-to-communities-is-not-as-hard-as-winning-competitions-why-do-you-treat-them-equally"><span class="toc-text"> Q: Contributing to communities is not as hard as winning competitions. Why do you treat them equally?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q-how-rare-is-the-platinum-medal"><span class="toc-text"> Q: How rare is the platinum medal?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q-how-is-the-hot-content-calculated"><span class="toc-text"> Q: How is the “hot” content calculated?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q-how-is-the-top-content-calculated"><span class="toc-text"> Q: How is the “top” content calculated?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#q-what-will-you-do-with-current-rankings"><span class="toc-text"> Q: What will you do with current rankings?</span></a></li></ol></li></ol></div></div></widget>
 </div>
 
 
@@ -102,12 +106,12 @@
 
 
 <div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/trash/Kaggle.html">Kaggle New Ranking System</a></div></div>
-<article class="md-text content page"><h1 class="article-title"><span>Kaggle New Ranking System</span></h1><div class="tag-plugin note" color="warning"><div class="title"><strong>Read Before Proceeding</strong></div><div class="body"><p>The content of this article is purely fictional and is not related to any organisation or individual in real life. </p><p>In addition, it contains GPT-3.5 generated text, which may not be accurate or reliable. Please read with caution.</p><p>This article was created on <strong>2023-05-17</strong>. Have fun reading!</p></div></div>
-
-<hr>
+<article class="md-text content page"><h1 class="article-title"><span>Kaggle New Ranking System</span></h1><div class="tag-plugin note" color="warning"><div class="title"><strong>Read Before Proceeding</strong></div><div class="body"><p>The content of this article is purely fictional and is not related to any organisation or individual in real life.</p><p>In addition, it contains GPT-3.5 generated text, which may not be accurate or reliable. Please read with caution.</p><p>This article was created on <strong>2023-05-17</strong>. Have fun reading!</p></div></div>
+<hr />
 <p>Previously, Kaggle ranking was based on the number of medals you have in four different fields: competitions, kernels, discussions, and datasets.</p>
 <p>Today we are introducing our brand new ranking system. The new ranking system is based on “best performances” in two different fields: competitions and communities (kernels, discussions, and datasets). Much more tiers are introduced in the new ranking system. The new ranking system is designed to encourage Kagglers to contribute to both competitions and communities.</p>
-<h2 id="Performance-Points"><a href="#Performance-Points" class="headerlink" title="Performance Points"></a>Performance Points</h2><p>Whether you are competing in competitions or contributing to communities, you will be awarded performance points (PP).</p>
+<h2 id="performance-points"><a class="markdownIt-Anchor" href="#performance-points"></a> Performance Points</h2>
+<p>Whether you are competing in competitions or contributing to communities, you will be awarded performance points (PP).</p>
 <ul>
 <li>PP for competitions are awarded based on your rank and the total number of competitors in the competition. All team and individual participants will be treated equally.</li>
 <li>PP for communities are awarded based on the number of net votes (positive votes minus negative votes) you receive on your kernels, discussions, and datasets.</li>
@@ -119,7 +123,8 @@
 <li>For communities, your PP will change one day after you publish your contribution, and updated daily with the same decay. If you create a private kernel, discussion, or dataset, your PP will change one day after you make it public. Once published, you cannot make it private or delete it (unless violating our <a target="_blank" rel="noopener" href="https://www.kaggle.com/terms">Terms of Use</a>). This makes new votes on older contributions less impactful.</li>
 </ul>
 <p>Before digging into the details, let’s take a look at the new ranking tiers.</p>
-<h2 id="Ranking-Tiers"><a href="#Ranking-Tiers" class="headerlink" title="Ranking Tiers"></a>Ranking Tiers</h2><p>Previously we only had four tiers: novice, contributor, expert, and master. The new ranking system has 9 tiers!</p>
+<h2 id="ranking-tiers"><a class="markdownIt-Anchor" href="#ranking-tiers"></a> Ranking Tiers</h2>
+<p>Previously we only had four tiers: novice, contributor, expert, and master. The new ranking system has 9 tiers!</p>
 <table>
 <thead>
 <tr>
@@ -128,7 +133,8 @@
 <th>Note</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>Novice</td>
 <td>0</td>
 <td></td>
@@ -136,12 +142,12 @@
 <tr>
 <td>Adept</td>
 <td>100</td>
-<td>1 comp&#x2F;comm</td>
+<td>1 comp/comm</td>
 </tr>
 <tr>
 <td>Specialist</td>
 <td>1000</td>
-<td>5 comp&#x2F;comm</td>
+<td>5 comp/comm</td>
 </tr>
 <tr>
 <td>Expert</td>
@@ -173,18 +179,30 @@
 <td>10000</td>
 <td>1 platinum medal</td>
 </tr>
-</tbody></table>
-<p>Note: comp&#x2F;comm means competitions or communities participation. Even negative-voted comments count as participation. Don’t hesitate to share your thoughts!</p>
-<h2 id="Medals"><a href="#Medals" class="headerlink" title="Medals"></a>Medals</h2><p>As you have noticed, we have introduced a new type of medal: platinum. Platinum medals are awarded to top 3 Kagglers in official competitions. For communities, platinum medals are awarded to the best of the best, to those who are categorized as “hot” content by our machine learning algorithm. The algorithm is designed to promote high quality content that is relevant to the community. The algorithm is still in beta and we will continue to improve it. It is estimated that we will have the same amount of competition and community platinum medals in the long run, which is roughly 15 per month. (Platinum medals are not awarded to past competitions and communities. Sorry!)</p>
+</tbody>
+</table>
+<p>Note: comp/comm means competitions or communities participation. Even negative-voted comments count as participation. Don’t hesitate to share your thoughts!</p>
+<h2 id="medals"><a class="markdownIt-Anchor" href="#medals"></a> Medals</h2>
+<p>As you have noticed, we have introduced a new type of medal: platinum. Platinum medals are awarded to top 3 Kagglers in official competitions. For communities, platinum medals are awarded to the best of the best, to those who are categorized as “hot” content by our machine learning algorithm. The algorithm is designed to promote high quality content that is relevant to the community. The algorithm is still in beta and we will continue to improve it. It is estimated that we will have the same amount of competition and community platinum medals in the long run, which is roughly 15 per month. (Platinum medals are not awarded to past competitions and communities. Sorry!)</p>
 <p>Gold, silver and bronze medals have changed a bit. Gold medals are awarded to top 10% Kagglers in official competitions. For communities, gold medals are awarded to the top 10% of the “hot” content. Silver medals are awarded to top 20% Kagglers in official competitions. For communities, silver medals are awarded to the top 20% of the “hot” content. Bronze medals are awarded to top 30% Kagglers in official competitions. For communities, bronze medals are awarded to the top 30% of the “hot” content.</p>
-<h2 id="PP-Calculation"><a href="#PP-Calculation" class="headerlink" title="PP Calculation"></a>PP Calculation</h2><p>PP does not simply addes up like 1+1&#x3D;2. Instead, it is calculated using the following formula:</p>
-<p>$$\mathrm{PP}&#x3D;\Sigma \mathrm{PP}_i\cdot 0.95^{i-1}$$ (*)</p>
-<p>Where, $\mathrm{PP}_i$ is the $i$-th highest competitions or communities PP you have earned, after applying the decay.</p>
-<p>For example, you have two competitions PP: 1000 and 500 (after decay). Your overall PP is 1000+500*0.95&#x3D;1475.</p>
-<p>This means the more PP you have, the less PP you will earn from new competitions or communities PP.</p>
-<p>Given the nature of geometric series, the maximum possible competition PP is roughly 1000&#x2F;(1-0.95)&#x3D;20000. This means you can keep your International Grandmaster tier even if you left Kaggle for a gap year! However, we sincerely wish you come back and contribute to Kaggle! You will soon get even more PP than before.</p>
-<h2 id="Competition-PP"><a href="#Competition-PP" class="headerlink" title="Competition PP"></a>Competition PP</h2><p>$$\mathrm{PP_i}&#x3D;(500+log_2(n_i))\cdot 0.995^{r_i-1}$$</p>
-<p>Where, $n_i$ is the number of competitors in the $i$-th competition, and $r_i$ is your rank in the $i$-th competition.</p>
+<h2 id="pp-calculation"><a class="markdownIt-Anchor" href="#pp-calculation"></a> PP Calculation</h2>
+<p>PP does not simply addes up like 1+1=2. Instead, it is calculated using the following formula:</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: Can&#039;t use function &#039;$&#039; in math mode at position 49: …cdot 0.95^{i-1}$̲$ (*)
+
+Where, $…'>\mathrm{PP}=\Sigma \mathrm{PP}_i\cdot 0.95^{i-1}$$ (*)
+
+Where, $\mathrm{PP}_i$ is the $i$-th highest competitions or communities PP you have earned, after applying the decay.
+
+For example, you have two competitions PP: 1000 and 500 (after decay). Your overall PP is 1000+500\*0.95=1475.
+
+This means the more PP you have, the less PP you will earn from new competitions or communities PP.
+
+Given the nature of geometric series, the maximum possible competition PP is roughly 1000/(1-0.95)=20000. This means you can keep your International Grandmaster tier even if you left Kaggle for a gap year! However, we sincerely wish you come back and contribute to Kaggle! You will soon get even more PP than before.
+
+## Competition PP
+
+$$\mathrm{PP_i}=(500+log_2(n_i))\cdot 0.995^{r_i-1}</p>
+<p>Where, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">n_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is the number of competitors in the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>-th competition, and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is your rank in the <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>-th competition.</p>
 <p>For example, you have a competition with 1000 competitors.</p>
 <ul>
 <li>If you rank 1st, your PP is 998.289.</li>
@@ -193,40 +211,54 @@
 <li>If you rank 500th, your PP is 81.841.</li>
 <li>If you rank 1000th, your PP is 6.676.</li>
 </ul>
-<p>The rank coefficient q&#x3D;0.995 might be adjusted for competitions with a larger number of competitors. Currently, the numbers are designed for ordinary competitions which usually comes with less than 2000 participants.</p>
+<p>The rank coefficient q=0.995 might be adjusted for competitions with a larger number of competitors. Currently, the numbers are designed for ordinary competitions which usually comes with less than 2000 participants.</p>
 <p>Note: only participants with submissions are counted.</p>
-<h2 id="Contribution-PP"><a href="#Contribution-PP" class="headerlink" title="Contribution PP"></a>Contribution PP</h2><h3 id="Kernels-Discussions-and-Datasets"><a href="#Kernels-Discussions-and-Datasets" class="headerlink" title="Kernels, Discussions, and Datasets"></a>Kernels, Discussions, and Datasets</h3><p>These three types of contributions are treated equally, and they are all counted as communities PP using the following formula:</p>
-<p>$$\mathrm{PP_i}&#x3D;\sgn(v_i)\cdot 10\cdot \frac{1-0.99^{|v_i|}}{1-0.99}$$</p>
-<p>Where, $v_i$ is the net votes (positive votes minus negative votes) you received on your $i$-th contribution.</p>
+<h2 id="contribution-pp"><a class="markdownIt-Anchor" href="#contribution-pp"></a> Contribution PP</h2>
+<h3 id="kernels-discussions-and-datasets"><a class="markdownIt-Anchor" href="#kernels-discussions-and-datasets"></a> Kernels, Discussions, and Datasets</h3>
+<p>These three types of contributions are treated equally, and they are all counted as communities PP using the following formula:</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: Undefined control sequence: \sgn at position 15: \mathrm{PP_i}=\̲s̲g̲n̲(v_i)\cdot 10\c…'>\mathrm{PP_i}=\sgn(v_i)\cdot 10\cdot \frac{1-0.99^{|v_i|}}{1-0.99}
+</p>
+<p>Where, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">v_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is the net votes (positive votes minus negative votes) you received on your <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>-th contribution.</p>
 <p>Finally your overall communities PP is calculated using formula (*).</p>
 <p>For example, you have a kernel with 100 upvotes and 10 downvotes. Your net votes is 90. Your PP is 595.268 (note: all PP are internally stored as floating numbers but displayed as integers, rounded to the nearest integer).</p>
-<p>Again, given the nature of geometric series, the maximum possible PP for a single contribution is roughly 10&#x2F;(1-0.99)&#x3D;1000.</p>
-<h3 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h3><p>Comments are not considered in the formula (*). However, you still earn or lose PP for comments.</p>
-<p>$$\mathrm{PP_i}&#x3D;\sgn(v_i)\log_2(|v_i|+1)$$</p>
-<p>Where, $v_i$ is the net votes (positive votes minus negative votes) you received on your $i$-th comment.</p>
+<p>Again, given the nature of geometric series, the maximum possible PP for a single contribution is roughly 10/(1-0.99)=1000.</p>
+<h3 id="comments"><a class="markdownIt-Anchor" href="#comments"></a> Comments</h3>
+<p>Comments are not considered in the formula (*). However, you still earn or lose PP for comments.</p>
+<p class='katex-block katex-error' title='ParseError: KaTeX parse error: Undefined control sequence: \sgn at position 15: \mathrm{PP_i}=\̲s̲g̲n̲(v_i)\log_2(|v_…'>\mathrm{PP_i}=\sgn(v_i)\log_2(|v_i|+1)
+</p>
+<p>Where, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">v_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> is the net votes (positive votes minus negative votes) you received on your <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span>-th comment.</p>
 <p>Comments PP adds up directly. If you have over 1000 comments PP, they will be 50% as effective. If you have over 2000 effective comments PP, they will be capped at 2000.</p>
 <p>The total maximum possible PP for communities is roughly 20000 from KDDs (kernel, discussion, and dataset) and 2000 from comments, which is 22000 in total.</p>
-<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="Q-Why-do-you-introduce-the-new-ranking-system"><a href="#Q-Why-do-you-introduce-the-new-ranking-system" class="headerlink" title="Q: Why do you introduce the new ranking system?"></a>Q: Why do you introduce the new ranking system?</h3><p>A: We want to encourage Kagglers to contribute to Kaggle in more ways. We also want to encourage Kagglers to keep contributing to Kaggle. The new ranking system is designed to achieve these goals.</p>
-<h3 id="Q-Can-I-reach-higher-tier-without-satisfying-lower-tier-requirements"><a href="#Q-Can-I-reach-higher-tier-without-satisfying-lower-tier-requirements" class="headerlink" title="Q: Can I reach higher tier without satisfying lower tier requirements?"></a>Q: Can I reach higher tier without satisfying lower tier requirements?</h3><p>A: Yes. For example, if you have 3000 PP with a silver medal, you will be promoted to Candidate Master tier, even if you haven’t got 5 bronze medals for Expert tier.</p>
+<h2 id="qa"><a class="markdownIt-Anchor" href="#qa"></a> Q&amp;A</h2>
+<h3 id="q-why-do-you-introduce-the-new-ranking-system"><a class="markdownIt-Anchor" href="#q-why-do-you-introduce-the-new-ranking-system"></a> Q: Why do you introduce the new ranking system?</h3>
+<p>A: We want to encourage Kagglers to contribute to Kaggle in more ways. We also want to encourage Kagglers to keep contributing to Kaggle. The new ranking system is designed to achieve these goals.</p>
+<h3 id="q-can-i-reach-higher-tier-without-satisfying-lower-tier-requirements"><a class="markdownIt-Anchor" href="#q-can-i-reach-higher-tier-without-satisfying-lower-tier-requirements"></a> Q: Can I reach higher tier without satisfying lower tier requirements?</h3>
+<p>A: Yes. For example, if you have 3000 PP with a silver medal, you will be promoted to Candidate Master tier, even if you haven’t got 5 bronze medals for Expert tier.</p>
 <p>If you have 3000 PP with a gold or even platinum medal, you will still be promoted to Candidate Master tier. That is, for the “medals” requirement, all higher medals count.</p>
-<h3 id="Q-Can-I-reach-higher-tier-without-satisfying-the-PP-requirement"><a href="#Q-Can-I-reach-higher-tier-without-satisfying-the-PP-requirement" class="headerlink" title="Q: Can I reach higher tier without satisfying the PP requirement?"></a>Q: Can I reach higher tier without satisfying the PP requirement?</h3><p>A: No. You must satisfy both the PP requirement and the medals requirement to reach higher tier.</p>
-<h3 id="Q-Contributing-to-communities-is-not-as-hard-as-winning-competitions-Why-do-you-treat-them-equally"><a href="#Q-Contributing-to-communities-is-not-as-hard-as-winning-competitions-Why-do-you-treat-them-equally" class="headerlink" title="Q: Contributing to communities is not as hard as winning competitions. Why do you treat them equally?"></a>Q: Contributing to communities is not as hard as winning competitions. Why do you treat them equally?</h3><p>A: The first is, there are two separate ranking systems, one for communities and another for competitions. By default the one with higher PP will be used to determine user handle color. However, you can choose to use the other one by clicking the “Primary” button on your profile page.</p>
+<h3 id="q-can-i-reach-higher-tier-without-satisfying-the-pp-requirement"><a class="markdownIt-Anchor" href="#q-can-i-reach-higher-tier-without-satisfying-the-pp-requirement"></a> Q: Can I reach higher tier without satisfying the PP requirement?</h3>
+<p>A: No. You must satisfy both the PP requirement and the medals requirement to reach higher tier.</p>
+<h3 id="q-contributing-to-communities-is-not-as-hard-as-winning-competitions-why-do-you-treat-them-equally"><a class="markdownIt-Anchor" href="#q-contributing-to-communities-is-not-as-hard-as-winning-competitions-why-do-you-treat-them-equally"></a> Q: Contributing to communities is not as hard as winning competitions. Why do you treat them equally?</h3>
+<p>A: The first is, there are two separate ranking systems, one for communities and another for competitions. By default the one with higher PP will be used to determine user handle color. However, you can choose to use the other one by clicking the “Primary” button on your profile page.</p>
 <p>The second is, yes, we regard communities as important as competitions. For highly ranked Kagglers, they are usually very good at competitions. However, they are also very good at sharing their knowledge and experience with others. We want to encourage them to do so.</p>
 <p>The third is, we have actually integrated the original KDD rankings into one, which makes it easier to understand and more competitive.</p>
-<h3 id="Q-How-rare-is-the-platinum-medal"><a href="#Q-How-rare-is-the-platinum-medal" class="headerlink" title="Q: How rare is the platinum medal?"></a>Q: How rare is the platinum medal?</h3><p>A: Very rare! You can check the number of platinum medals awarded in the past 30 days on the <a target="_blank" rel="noopener" href="https://www.kaggle.com/rankings">Kaggle Rankings</a> page. It is estimated that we will have the same amount of competition and community platinum medals in the long run, which is roughly 15 per month.</p>
-<h3 id="Q-How-is-the-“hot”-content-calculated"><a href="#Q-How-is-the-“hot”-content-calculated" class="headerlink" title="Q: How is the “hot” content calculated?"></a>Q: How is the “hot” content calculated?</h3><p>A: As a platform expertising in data science, we use a data-driven approach to determine the “hot” content. The “temperature” is determined by the following aspects:</p>
+<h3 id="q-how-rare-is-the-platinum-medal"><a class="markdownIt-Anchor" href="#q-how-rare-is-the-platinum-medal"></a> Q: How rare is the platinum medal?</h3>
+<p>A: Very rare! You can check the number of platinum medals awarded in the past 30 days on the <a target="_blank" rel="noopener" href="https://www.kaggle.com/rankings">Kaggle Rankings</a> page. It is estimated that we will have the same amount of competition and community platinum medals in the long run, which is roughly 15 per month.</p>
+<h3 id="q-how-is-the-hot-content-calculated"><a class="markdownIt-Anchor" href="#q-how-is-the-hot-content-calculated"></a> Q: How is the “hot” content calculated?</h3>
+<p>A: As a platform expertising in data science, we use a data-driven approach to determine the “hot” content. The “temperature” is determined by the following aspects:</p>
 <ul>
 <li>The number of net votes, and percentage of upvotes.</li>
 <li>The publishing time. The more recent the content is published, the more “hot” it is.</li>
 <li>The number of views.</li>
-<li>The reaction rates. For kernel, it is fork rate (fork &#x2F; view). For discussion, it is reply rate (reply &#x2F; view). For dataset, it is download rate (download &#x2F; view). Note these three rates are treated differently to make sure they are comparable. For example, fewer users are likely to download a dataset than to reply to a discussion. Therefore, the download rate is weighted more than the reply rate.</li>
+<li>The reaction rates. For kernel, it is fork rate (fork / view). For discussion, it is reply rate (reply / view). For dataset, it is download rate (download / view). Note these three rates are treated differently to make sure they are comparable. For example, fewer users are likely to download a dataset than to reply to a discussion. Therefore, the download rate is weighted more than the reply rate.</li>
 </ul>
 <p>These data provides a more comprehensive view of the content quality.</p>
 <p>The “hot” content is updated every 30 minutes, and will be cached for another 30 minutes (i.e., will keep for another 30 minutes even if it is no longer “hot”).</p>
 <p>We are also planning to add more features, like “rising stars” (for new, potential “hot” content), and “trending” (for content that is “hot” for a long time).</p>
-<h3 id="Q-How-is-the-“top”-content-calculated"><a href="#Q-How-is-the-“top”-content-calculated" class="headerlink" title="Q: How is the “top” content calculated?"></a>Q: How is the “top” content calculated?</h3><p>A: The peak “temperature” - not considering the publishing time - is used to determine the “top” content. Instead of publish time, the temperature will start to decay seven days after peak.</p>
+<h3 id="q-how-is-the-top-content-calculated"><a class="markdownIt-Anchor" href="#q-how-is-the-top-content-calculated"></a> Q: How is the “top” content calculated?</h3>
+<p>A: The peak “temperature” - not considering the publishing time - is used to determine the “top” content. Instead of publish time, the temperature will start to decay seven days after peak.</p>
 <p>The “top” content is updated daily, and will be cached for another day (i.e., will keep for another day even if it is no longer “top”).</p>
-<h3 id="Q-What-will-you-do-with-current-rankings"><a href="#Q-What-will-you-do-with-current-rankings" class="headerlink" title="Q: What will you do with current rankings?"></a>Q: What will you do with current rankings?</h3><p>A: The final current rankings will be frozen and archived when the new ranking system is launched on 2023-06-01 00:00 UTC. The archived rankings will be available on the <a target="_blank" rel="noopener" href="https://www.kaggle.com/rankings">Kaggle Rankings</a> page.</p>
+<h3 id="q-what-will-you-do-with-current-rankings"><a class="markdownIt-Anchor" href="#q-what-will-you-do-with-current-rankings"></a> Q: What will you do with current rankings?</h3>
+<p>A: The final current rankings will be frozen and archived when the new ranking system is launched on 2023-06-01 00:00 UTC. The archived rankings will be available on the <a target="_blank" rel="noopener" href="https://www.kaggle.com/rankings">Kaggle Rankings</a> page.</p>
 </article>
 
   <div class='related-wrap md-text reveal' id="comments">
@@ -322,6 +354,9 @@
     // 从 butterfly 和 volantis 获得灵感
     loadScript: (src, opt) => new Promise((resolve, reject) => {
       var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
       script.src = src;
       if (opt) {
         for (let key of Object.keys(opt)) {
@@ -350,8 +385,8 @@
       }
     }
   };
-  stellar.version = '1.18.5';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -360,6 +395,7 @@
       day: '天前',
       month: '个月前',
     },
+    root : '/',
   };
 
   // required plugins (only load if needs)
@@ -398,6 +434,9 @@
   }
   if ('false' == 'true') {
     stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
   }
 </script>
 

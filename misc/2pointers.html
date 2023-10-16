@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
   <meta charset="utf-8">
   
 
@@ -37,6 +37,8 @@
 <meta name="twitter:card" content="summary">
   
   
+  
+  <meta name="keywords" content="mojimoon, computer science, python, blog, hexo">
 
   <!-- feed -->
   
@@ -62,6 +64,8 @@
     
       <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     
+      <link rel="stylesheet" href="/css/override.css">
+    
   
 </head>
 
@@ -85,7 +89,7 @@
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
-<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Two Pointers</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples"><span class="toc-text">Examples</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-1-Two-pointers-with-different-speed"><span class="toc-text">Type 1: Two pointers with different speed</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Find-the-middle-of-a-linked-list"><span class="toc-text">Find the middle of a linked list</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Check-if-a-linked-list-has-a-cycle"><span class="toc-text">Check if a linked list has a cycle</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Find-the-start-of-a-cycle-in-a-linked-list"><span class="toc-text">Find the start of a cycle in a linked list</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Type-2-Two-pointers-with-different-start-positions"><span class="toc-text">Type 2: Two pointers with different start positions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Find-the-k-th-node-from-the-end-of-a-linked-list"><span class="toc-text">Find the k-th node from the end of a linked list</span></a></li></ol></li></ol></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Two Pointers</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#description"><span class="toc-text"> Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#examples"><span class="toc-text"> Examples</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#type-1-two-pointers-with-different-speed"><span class="toc-text"> Type 1: Two pointers with different speed</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#find-the-middle-of-a-linked-list"><span class="toc-text"> Find the middle of a linked list</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#check-if-a-linked-list-has-a-cycle"><span class="toc-text"> Check if a linked list has a cycle</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#find-the-start-of-a-cycle-in-a-linked-list"><span class="toc-text"> Find the start of a cycle in a linked list</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#type-2-two-pointers-with-different-start-positions"><span class="toc-text"> Type 2: Two pointers with different start positions</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#find-the-k-th-node-from-the-end-of-a-linked-list"><span class="toc-text"> Find the k-th node from the end of a linked list</span></a></li></ol></li></ol></li></ol></div></div></widget>
 </div>
 
 
@@ -103,10 +107,10 @@
 
 <div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/misc/2pointers.html">Two Pointers</a></div></div>
 <article class="md-text content page"><h1 class="article-title"><span>Two Pointers</span></h1><div class="tag-plugin note" color="warning"><div class="title"><strong>Read Before Proceeding</strong></div><div class="body"><p>This article is still under construction.</p><p>In addition, it contains GPT-3.5 generated text, which may not be accurate or reliable. Please read with caution.</p><p>This article was created on <strong>2023-06-08</strong>. Have fun reading!</p></div></div>
-
-<hr>
-<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Two pointers is a technique that is used to solve problems by iterating through the list with two pointers at different positions.</p>
-<p>As we only consider singly linked list in this chapter, the two pointers are usually called <code>fast</code> and <code>slow</code> pointers. </p>
+<hr />
+<h2 id="description"><a class="markdownIt-Anchor" href="#description"></a> Description</h2>
+<p>Two pointers is a technique that is used to solve problems by iterating through the list with two pointers at different positions.</p>
+<p>As we only consider singly linked list in this chapter, the two pointers are usually called <code>fast</code> and <code>slow</code> pointers.</p>
 <p>The <code>fast</code> pointer moves at double speed or starts at a different position than the <code>slow</code> pointer.</p>
 <p>While the <code>fast</code> pointer iterates through the list, the <code>slow</code> pointer tracks the position of desired node or element.</p>
 <p>Things to take care of when using two pointers:</p>
@@ -114,20 +118,24 @@
 <li>Check if a pointer is null before accessing its value or next node.</li>
 <li>Consider special cases, especially when the list is empty or has only one node. This can usually be mitigated by using a dummy node pointing to the head of the list.</li>
 </ul>
-<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><h3 id="Type-1-Two-pointers-with-different-speed"><a href="#Type-1-Two-pointers-with-different-speed" class="headerlink" title="Type 1: Two pointers with different speed"></a>Type 1: Two pointers with different speed</h3><p>In all the following examples, the <code>fast</code> pointer moves at double speed of the <code>slow</code> pointer.</p>
-<h4 id="Find-the-middle-of-a-linked-list"><a href="#Find-the-middle-of-a-linked-list" class="headerlink" title="Find the middle of a linked list"></a>Find the middle of a linked list</h4><p>Given a linked list, find the middle node of the list.</p>
+<h2 id="examples"><a class="markdownIt-Anchor" href="#examples"></a> Examples</h2>
+<h3 id="type-1-two-pointers-with-different-speed"><a class="markdownIt-Anchor" href="#type-1-two-pointers-with-different-speed"></a> Type 1: Two pointers with different speed</h3>
+<p>In all the following examples, the <code>fast</code> pointer moves at double speed of the <code>slow</code> pointer.</p>
+<h4 id="find-the-middle-of-a-linked-list"><a class="markdownIt-Anchor" href="#find-the-middle-of-a-linked-list"></a> Find the middle of a linked list</h4>
+<p>Given a linked list, find the middle node of the list.</p>
 <p>Solution: the <code>fast</code> pointer reaches the end of the list when the <code>slow</code> pointer reaches the middle of the list.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">middleNode</span>(<span class="params">self, head: ListNode</span>) -&gt; ListNode:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.<span class="built_in">next</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    slow = head</span><br><span class="line">    fast = head</span><br><span class="line">    <span class="keyword">while</span> fast <span class="keyword">and</span> fast.<span class="built_in">next</span>:</span><br><span class="line">        slow = slow.<span class="built_in">next</span></span><br><span class="line">        fast = fast.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> slow</span><br></pre></td></tr></table></figure>
-
-<h4 id="Check-if-a-linked-list-has-a-cycle"><a href="#Check-if-a-linked-list-has-a-cycle" class="headerlink" title="Check if a linked list has a cycle"></a>Check if a linked list has a cycle</h4><p>Given a linked list, determine if it has a cycle in it (which, if exists, starts from the tail and connects to some node in the list).</p>
+<h4 id="check-if-a-linked-list-has-a-cycle"><a class="markdownIt-Anchor" href="#check-if-a-linked-list-has-a-cycle"></a> Check if a linked list has a cycle</h4>
+<p>Given a linked list, determine if it has a cycle in it (which, if exists, starts from the tail and connects to some node in the list).</p>
 <p>Solution: if there is a cycle in the linked list, the <code>fast</code> pointer will eventually meet the <code>slow</code> pointer. Otherwise, the <code>fast</code> pointer will reach the end of the list.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hasCycle</span>(<span class="params">self, head: ListNode</span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.<span class="built_in">next</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    slow = head</span><br><span class="line">    fast = head.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">while</span> slow != fast:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> fast <span class="keyword">or</span> <span class="keyword">not</span> fast.<span class="built_in">next</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        slow = slow.<span class="built_in">next</span></span><br><span class="line">        fast = fast.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Find-the-start-of-a-cycle-in-a-linked-list"><a href="#Find-the-start-of-a-cycle-in-a-linked-list" class="headerlink" title="Find the start of a cycle in a linked list"></a>Find the start of a cycle in a linked list</h4><p>The same problem as above, but this time we need to return the node where the cycle starts.</p>
+<h4 id="find-the-start-of-a-cycle-in-a-linked-list"><a class="markdownIt-Anchor" href="#find-the-start-of-a-cycle-in-a-linked-list"></a> Find the start of a cycle in a linked list</h4>
+<p>The same problem as above, but this time we need to return the node where the cycle starts.</p>
 <p>Solution: after the <code>fast</code> and <code>slow</code> pointers meet, we reset the <code>slow</code> pointer to the head of the list and move both pointers at the same speed. The node where the two pointers meet is the start of the cycle.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">detectCycle</span>(<span class="params">self, head: ListNode</span>) -&gt; ListNode:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> head <span class="keyword">or</span> <span class="keyword">not</span> head.<span class="built_in">next</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    slow = head</span><br><span class="line">    fast = head</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> fast <span class="keyword">or</span> <span class="keyword">not</span> fast.<span class="built_in">next</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        slow = slow.<span class="built_in">next</span></span><br><span class="line">        fast = fast.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">if</span> slow == fast:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    slow = head</span><br><span class="line">    <span class="keyword">while</span> slow != fast:</span><br><span class="line">        slow = slow.<span class="built_in">next</span></span><br><span class="line">        fast = fast.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> slow</span><br></pre></td></tr></table></figure>
-
-<h3 id="Type-2-Two-pointers-with-different-start-positions"><a href="#Type-2-Two-pointers-with-different-start-positions" class="headerlink" title="Type 2: Two pointers with different start positions"></a>Type 2: Two pointers with different start positions</h3><h4 id="Find-the-k-th-node-from-the-end-of-a-linked-list"><a href="#Find-the-k-th-node-from-the-end-of-a-linked-list" class="headerlink" title="Find the k-th node from the end of a linked list"></a>Find the k-th node from the end of a linked list</h4><p>Given a linked list, find the k-th node from the end of the list.</p>
+<h3 id="type-2-two-pointers-with-different-start-positions"><a class="markdownIt-Anchor" href="#type-2-two-pointers-with-different-start-positions"></a> Type 2: Two pointers with different start positions</h3>
+<h4 id="find-the-k-th-node-from-the-end-of-a-linked-list"><a class="markdownIt-Anchor" href="#find-the-k-th-node-from-the-end-of-a-linked-list"></a> Find the k-th node from the end of a linked list</h4>
+<p>Given a linked list, find the k-th node from the end of the list.</p>
 <p>Solution: we first move the <code>fast</code> pointer k steps forward. Then we move both pointers at the same speed until the <code>fast</code> pointer reaches the end of the list. The <code>slow</code> pointer is the k-th node from the end of the list.</p>
 <p>Dummy node is used to handle the case where the list has less than k nodes.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">getKthFromEnd</span>(<span class="params">self, head: ListNode, k: <span class="built_in">int</span></span>) -&gt; ListNode:</span><br><span class="line">    dummy = ListNode(<span class="number">0</span>)</span><br><span class="line">    dummy.<span class="built_in">next</span> = head</span><br><span class="line">    slow = dummy</span><br><span class="line">    fast = dummy</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">        fast = fast.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">while</span> fast:</span><br><span class="line">        slow = slow.<span class="built_in">next</span></span><br><span class="line">        fast = fast.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> slow</span><br></pre></td></tr></table></figure>
@@ -226,6 +234,9 @@
     // 从 butterfly 和 volantis 获得灵感
     loadScript: (src, opt) => new Promise((resolve, reject) => {
       var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
       script.src = src;
       if (opt) {
         for (let key of Object.keys(opt)) {
@@ -254,8 +265,8 @@
       }
     }
   };
-  stellar.version = '1.18.5';
-  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
   stellar.config = {
     date_suffix: {
       just: '刚刚',
@@ -264,6 +275,7 @@
       day: '天前',
       month: '个月前',
     },
+    root : '/',
   };
 
   // required plugins (only load if needs)
@@ -302,6 +314,9 @@
   }
   if ('false' == 'true') {
     stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
   }
 </script>
 

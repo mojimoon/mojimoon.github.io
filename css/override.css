@@ -1,0 +1,5 @@
+/* override.css */
+
+*[aria-hidden="true"] {
+    display: none;
+}
