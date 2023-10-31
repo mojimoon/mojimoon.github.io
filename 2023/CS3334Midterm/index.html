@@ -31,7 +31,7 @@
 <meta property="og:description" content="CS3334 期中考试题解。为了这篇文章不得不启用 KaTeX 支持">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-17T00:00:00.000Z">
-<meta property="article:modified_time" content="2023-10-16T12:15:36.160Z">
+<meta property="article:modified_time" content="2023-10-31T06:14:11.137Z">
 <meta property="article:author" content="mojimoon">
 <meta property="article:tag" content="mojimoon, computer science, python, blog, hexo">
 <meta name="twitter:card" content="summary">
@@ -141,8 +141,8 @@
 <li>如果 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 小于等于栈顶元素的 <code>height</code>，则目前栈内 <code>height</code> 大于等于 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>a</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">a_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 的矩形均变为非法。
 <ul>
 <li>将他们出栈，计算出栈的矩形的有效面积，更新最大值</li>
-<li>考虑一个例子：即将出栈 <code>height1, width1</code>，<code>height2, width2</code> 两个矩形，根据单调栈有 <code>height1 &gt; height2</code>，则矩形 1 的有效面积为 <code>height1 * width1</code>；将矩形 1 的高度压缩到 <code>height2</code>，则两个矩形一样高，可以合并为一个矩形，其面积为 <code>(height1 + height2) * width1</code>，作为矩形 2 的有效面积</li>
-<li>因此，记录已经出栈的矩形总宽度 <code>totalWidth</code>，则目前矩形的有效面积为 <code>(height1 + height2) * totalWidth</code></li>
+<li>考虑一个例子：即将出栈 <code>height1, width1</code>，<code>height2, width2</code> 两个矩形，根据单调栈有 <code>height1 &gt; height2</code>，则矩形 1 的有效面积为 <code>height1 * width1</code>；将矩形 1 的高度压缩到 <code>height2</code>，则两个矩形一样高，可以合并为一个矩形，其面积为 <code>height2 * (width1 + width2)</code>，作为矩形 2 的有效面积。</li>
+<li>因此，记录已经出栈的矩形总宽度 <code>totalWidth</code>，则目前矩形的有效面积为 <code>height[i] * (totalWidth + width[i])</code>，更新最大值</li>
 <li>最后，将这些出栈矩形的高度全部压缩至 <code>a[i]</code>，则新增一个矩形 <code>height = a[i], width = totalWidth + 1</code>，将其入栈</li>
 </ul>
 </li>
