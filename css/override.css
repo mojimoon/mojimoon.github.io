@@ -1,5 +1,9 @@
 /* override.css */
 
-*[aria-hidden="true"] {
+.katex-html {
+    display: none;
+}
+
+.katex-mathml mo > mo {
     display: none;
 }
