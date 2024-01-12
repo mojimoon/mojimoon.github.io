@@ -78,7 +78,7 @@
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
-<widget class="widget-wrapper toc single" id="data-toc" collapse="false"><div class="widget-header cap dis-select"><span class="name">笔记：pandas 的常用操作</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6"><span class="toc-text"> 读取和写入文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E5%92%8C%E9%80%89%E6%8B%A9"><span class="toc-text"> 索引和选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iloc"><span class="toc-text"> iloc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loc"><span class="toc-text"> loc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="toc-text"> 条件选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E7%BB%BC%E8%BF%B0"><span class="toc-text"> 统计综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%A0%E5%B0%84"><span class="toc-text"> 映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%92%8C%E6%8E%92%E5%BA%8F"><span class="toc-text"> 分组和排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="toc-text"> 数据类型和缺失值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E5%92%8C%E5%90%88%E5%B9%B6%E8%A1%A8"><span class="toc-text"> 重命名和合并表</span></a></li></ol></div></div></widget>
+<widget class="widget-wrapper toc single" id="data-toc" collapse="false"><div class="widget-header cap dis-select"><span class="name">笔记：pandas 的常用操作</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6"><span class="toc-text">读取和写入文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E5%92%8C%E9%80%89%E6%8B%A9"><span class="toc-text">索引和选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#iloc"><span class="toc-text">iloc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#loc"><span class="toc-text">loc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E9%80%89%E6%8B%A9"><span class="toc-text">条件选择</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E7%BB%BC%E8%BF%B0"><span class="toc-text">统计综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%98%A0%E5%B0%84"><span class="toc-text">映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E5%92%8C%E6%8E%92%E5%BA%8F"><span class="toc-text">分组和排序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="toc-text">数据类型和缺失值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D%E5%92%8C%E5%90%88%E5%B9%B6%E8%A1%A8"><span class="toc-text">重命名和合并表</span></a></li></ol></div></div></widget>
 
 
 
@@ -101,21 +101,21 @@
 <article class='md-text content post'>
 <h1 class="article-title"><span>笔记：pandas 的常用操作</span></h1>
 <p>示例来自 Kaggle 的 <a target="_blank" rel="noopener" href="https://www.kaggle.com/learn/pandas">Pandas</a> 课程。</p>
-<h2 id="读取和写入文件"><a class="markdownIt-Anchor" href="#读取和写入文件"></a> 读取和写入文件</h2>
+<h2 id="读取和写入文件">读取和写入文件</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reviews = pd.read_csv(<span class="string">&quot;../input/wine-reviews/winemag-data_first150k.csv&quot;</span>, index_col=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>index_col=0</code>：将第一列作为索引。在 csv 的某一列已经是数字编号 (0, 1, 2, …) 的情况下使用。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reviews.to_csv(<span class="string">&quot;filename.csv&quot;</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="索引和选择"><a class="markdownIt-Anchor" href="#索引和选择"></a> 索引和选择</h2>
+<h2 id="索引和选择">索引和选择</h2>
 <p>二维 DataFrame 的索引方式：先行后列，用逗号分隔。只选择行，则不需要写出列名。<code>:</code> 表示所有行。</p>
-<h3 id="iloc"><a class="markdownIt-Anchor" href="#iloc"></a> <code>iloc</code></h3>
+<h3 id="iloc"><code>iloc</code></h3>
 <p><code>iloc</code> 用行/列的数字位置 (0, 1, 2, …) 来索引，类似于 Python 原生的列表索引，左闭右开。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">reviews.iloc[<span class="number">0</span>] <span class="comment"># 取出第一行</span></span><br><span class="line">reviews.description.iloc[<span class="number">0</span>] <span class="comment"># 取出 description 列的第一行</span></span><br><span class="line">reviews.iloc[-<span class="number">5</span>:] <span class="comment"># 取出最后五行</span></span><br><span class="line"></span><br><span class="line">reviews.iloc[:, <span class="number">0</span>] <span class="comment"># 取出第一列</span></span><br><span class="line">reviews.iloc[<span class="number">1</span>:<span class="number">3</span>, <span class="number">0</span>] <span class="comment"># 取出第 1-2 行的第一列</span></span><br></pre></td></tr></table></figure>
-<h3 id="loc"><a class="markdownIt-Anchor" href="#loc"></a> <code>loc</code></h3>
+<h3 id="loc"><code>loc</code></h3>
 <p><code>loc</code> 用行/列标签来索引，索引是左闭右闭的，除了数字，也可以取字符串区间。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">reviews.loc[:<span class="number">9</span>, <span class="string">&quot;description&quot;</span>] <span class="comment"># 取出第 0-9 行的 description 列</span></span><br><span class="line"><span class="comment"># description 是第 1 列 (0-indexed)，因此上述代码等价于</span></span><br><span class="line">reviews.iloc[:<span class="number">10</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-<h3 id="条件选择"><a class="markdownIt-Anchor" href="#条件选择"></a> 条件选择</h3>
+<h3 id="条件选择">条件选择</h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reviews.loc[(reviews.country == <span class="string">&#x27;Italy&#x27;</span>) &amp; (reviews.points &gt;= <span class="number">90</span>)]</span><br></pre></td></tr></table></figure>
 <p>运算符：<code>&amp;</code> (and)、<code>|</code> (or)、<code>~</code> (not)。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reviews.loc[reviews.country.isin([<span class="string">&#x27;Italy&#x27;</span>, <span class="string">&#x27;France&#x27;</span>])]</span><br></pre></td></tr></table></figure>
@@ -126,7 +126,7 @@
 <ul>
 <li><code>isnull</code>：判断是否为 NaN。</li>
 </ul>
-<h2 id="统计综述"><a class="markdownIt-Anchor" href="#统计综述"></a> 统计综述</h2>
+<h2 id="统计综述">统计综述</h2>
 <ul>
 <li><code>count</code>, <code>mean</code>, <code>median</code>, <code>min</code>, <code>max</code>, <code>std</code>：常用的统计量。忽略 NaN。</li>
 <li><code>describe</code>：返回上述统计量的汇总。</li>
@@ -134,7 +134,7 @@
 <li><code>unique</code>：返回所有唯一值构成的列表。即去重。</li>
 <li><code>value_counts</code>：返回每个值出现的次数。</li>
 </ul>
-<h2 id="映射"><a class="markdownIt-Anchor" href="#映射"></a> 映射</h2>
+<h2 id="映射">映射</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm = reviews.price.mean()</span><br><span class="line">centered_price = reviews.price.<span class="built_in">map</span>(<span class="keyword">lambda</span> p: p - rpm)</span><br></pre></td></tr></table></figure>
 <p>返回一个 Series，索引与原来相同，值为函数的返回值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bargain_idx = (reviews.points / reviews.price).idxmax()</span><br><span class="line">bargain_wine = reviews.loc[bargain_idx, <span class="string">&#x27;title&#x27;</span>]</span><br></pre></td></tr></table></figure>
@@ -144,7 +144,7 @@
 <ul>
 <li><code>apply</code>：对每一行/列应用函数。默认按列，<code>axis=&quot;columns&quot;</code> 按行。返回一个 Series。</li>
 </ul>
-<h2 id="分组和排序"><a class="markdownIt-Anchor" href="#分组和排序"></a> 分组和排序</h2>
+<h2 id="分组和排序">分组和排序</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reviews.groupby(<span class="string">&#x27;points&#x27;</span>).points.count()</span><br></pre></td></tr></table></figure>
 <p>按照 points 列的值进行分组，然后对每组的 points 列进行计数。也就是输出每个 points 值出现的次数。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">country_provinces = reviews.groupby([<span class="string">&#x27;country&#x27;</span>, <span class="string">&#x27;province&#x27;</span>])</span><br><span class="line">country_provinces.apply(<span class="keyword">lambda</span> df: df.loc[df.points.idxmax()])</span><br></pre></td></tr></table></figure>
@@ -163,7 +163,7 @@
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">countries_reviewed.sort_index()</span><br></pre></td></tr></table></figure>
 <p>按照列索引进行排序。</p>
-<h2 id="数据类型和缺失值"><a class="markdownIt-Anchor" href="#数据类型和缺失值"></a> 数据类型和缺失值</h2>
+<h2 id="数据类型和缺失值">数据类型和缺失值</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reviews.points.astype(<span class="string">&#x27;float64&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p>将 points 列的数据类型转换为 float64。</p>
 <p>一般地，整数使用 <code>int64</code>，浮点数使用 <code>float64</code>，字符串使用 <code>object</code>。</p>
@@ -171,7 +171,7 @@
 <p>将 region_2 列中的 NaN 填充为 “Unknown”。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reviews.taster_twitter_handle.replace(<span class="string">&quot;@kerinokeefe&quot;</span>, <span class="string">&quot;@kerino&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p>批量替换。</p>
-<h2 id="重命名和合并表"><a class="markdownIt-Anchor" href="#重命名和合并表"></a> 重命名和合并表</h2>
+<h2 id="重命名和合并表">重命名和合并表</h2>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reviews.rename(columns=&#123;<span class="string">&#x27;points&#x27;</span>: <span class="string">&#x27;score&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
 <p>将 points 列重命名为 score。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">canadian_youtube = pd.read_csv(<span class="string">&quot;../input/youtube-new/CAvideos.csv&quot;</span>)</span><br><span class="line">british_youtube = pd.read_csv(<span class="string">&quot;../input/youtube-new/GBvideos.csv&quot;</span>)</span><br><span class="line"></span><br><span class="line">pd.concat([canadian_youtube, british_youtube])</span><br></pre></td></tr></table></figure>
