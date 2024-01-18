@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.23.0" theme-name="Stellar" theme-version="1.23.0">
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>2024 年 1 月：大欺诈师 - もじもんの文字門</title>
+
+  
+    <meta name="description" content="人无法自发地对外物产生兴趣，他人的评价和内心的欲望完成了这一社会性的欺诈。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2024 年 1 月：大欺诈师">
+<meta property="og:url" content="https://mojimoon.github.io/2024/202401/index.html">
+<meta property="og:site_name" content="もじもんの文字門">
+<meta property="og:description" content="人无法自发地对外物产生兴趣，他人的评价和内心的欲望完成了这一社会性的欺诈。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-18T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-18T08:56:36.358Z">
+<meta property="article:author" content="mojimoon">
+<meta property="article:tag" content="mojimoon, computer science, python, blog, hexo">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  <meta name="keywords" content="mojimoon, computer science, python, blog, hexo">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/image/favicon.png">
+  
+
+  
+
+  
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/override.css">
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">もじもんの文字門</div><div class="sub normal cap">City University of Hong Kong</div><div class="sub hover cap" style="opacity:0"> Computer Science</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc" collapse="false"><div class="widget-header cap dis-select"><span class="name">2024 年 1 月：大欺诈师</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%81%A9%E6%B0%8F%E8%AE%A4%E7%9F%A5%E6%A8%A1%E5%9E%8B"><span class="toc-text">恩氏认知模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E9%80%A0%E5%92%8C%E5%A4%8D%E7%8E%B0"><span class="toc-text">创造和复现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9E%92%E5%A4%A9%E8%BF%87%E6%B5%B7"><span class="toc-text">瞒天过海</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E4%B9%8B%E5%8C%A3%E7%9A%84%E6%89%80%E6%9C%89%E7%BB%93%E5%B1%80"><span class="toc-text">时序之匣的所有结局</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%91%87"><span class="toc-text">动摇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%96%A0%E3%81%8A%E5%B9%B8%E3%81%9B%E3%81%AB"><span class="toc-text">■お幸せに</span></a></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Journal/">Journal</a></div><div id="post-meta"><span class="author">发布于</span>
+    <span class="created"><time datetime="2024-01-18T00:00:00.000Z">2024-01-18</time></span>
+    
+    <span class="updated">，更新于&nbsp;<time datetime="2024-01-18T08:56:36.358Z">2024-01-18</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>2024 年 1 月：大欺诈师</span></h1>
+<p>人无法自发地对外物产生兴趣，他人的评价和内心的欲望完成了这一社会性的欺诈。</p>
+<span id="more"></span>
+<h2 id="恩氏认知模型">恩氏认知模型</h2>
+<p>E. Tanner 恩氏认知模型（E. Tanner’s Existence Cognition Model）是一种用于描述人类认知过程的模型。它将人类认知过程分为 9 个阶段，以螺旋上升的方式描述人类认知某一具体事物的过程。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">#</th>
+<th style="text-align:left">Level</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:left">Existence Cognition 存在认知</td>
+<td style="text-align:left">首次认知到某个事物的存在，但除了这个存在本身，没有任何其他信息</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:left">Existence Acknowledgement 存在确认</td>
+<td style="text-align:left">认知到该事物的存在，并且知道该事物的部分特征，但不足以推断任何其他信息</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:left">Existence Understanding 存在理解</td>
+<td style="text-align:left">认知到该事物的存在，并且知道该事物的关键特征，能将其分类</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:left">Interest Cognition 兴趣认知</td>
+<td style="text-align:left">开始对该事物产生兴趣，但还不足以产生任何行动</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:left">Interest Acknowledgement 兴趣确认</td>
+<td style="text-align:left">对该事物产生兴趣，采取最低限度的反射性质行动以维持这种兴趣</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:left">Interest Understanding 兴趣理解</td>
+<td style="text-align:left">对该事物产生兴趣，采取有意识的行动以维持这种兴趣</td>
+</tr>
+<tr>
+<td style="text-align:center">6</td>
+<td style="text-align:left">Desire Cognition 欲望认知</td>
+<td style="text-align:left">开始思考该事物与自身的关系，但本能性地回避这种思考</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:left">Desire Acknowledgement 欲望确认</td>
+<td style="text-align:left">思考该事物与自身的关系，承认自己的欲望，考虑有计划地满足这种欲望</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:left">Desire Understanding 欲望理解</td>
+<td style="text-align:left">思考该事物与自身的关系，承认自己的欲望，主动且直接地满足这种欲望</td>
+</tr>
+</tbody>
+</table>
+<h2 id="创造和复现">创造和复现</h2>
+<p>我非常清楚自己是个缺乏创造力的人。也就是说，我很难从零开始创造出什么东西来。在做大作业的时候，我也会选择一些比较常规的题目，比如 —— 图书馆管理系统。</p>
+<p>当然这没有什么不好。毕竟不是毕业设计，只是一门课的大作业而已。且别说图书馆管理系统简单；进行高度系统性的设计和开发，也确实很能锻炼人的能力。</p>
+<p>不过有一条好消息 —— 同时也是坏消息 —— 生成式 AI 并没有我们想象中的那么有创造力。说白了，它们只是在复现而已。它们的创造力，只是在于它们能够从一堆数据中，复现出我们认为有创造力的东西而已。</p>
+<p>AI 很适合进行本来就高度机械化的工作，比如上面提到的图书馆管理系统。进一步讲，软件开发本身也不是一件创造性的工作。软件开发的本质，是将需求，即某种符合人类认知的体系，翻译成某种符合计算机认知的体系。虽然这也并不是一件那么容易的事情。</p>
+<p>但，每当我在这里写下日志，肯定是受内心的矛盾与动摇所驱使。而我今天的思考就是 —— 如果我没有创造力，AI 也没有，为何我会如此渴求某种携带创造力的存在呢？</p>
+<p>譬如说，我想让 AI 虚构出某款游戏的简介。Prompt 大概是这样的：</p>
+<blockquote>
+<p>假设 5pb. 和 Nitroplus 推出了一部名为《时序之匣》（クロノロジカルのハコ）的悬疑系 AVG 游戏，带有时间旅行、多重世界等元素，巧用叙述性诡计上演了一场瞒天过海的大欺诈。请写一段有趣的游戏简介，交代故事背景，埋下一个疑点。</p>
+</blockquote>
+<p>…… 然后 AI 就基本上只是 paraphase 了一下，看起来还真有点游戏简介的样子，但仅限于此了。</p>
+<p>等下，我觉得它实在太缺乏想象力了，我都想以自己的理解稍微改写一下了。</p>
+<details class="tag-plugin colorful folding" color="blue"><summary><span>NewBing</span></summary><div class="body"><p>《时序之匣》是一款由 5pb. 和 Nitroplus 联合制作的悬疑系 AVG 游戏，故事围绕着一个神秘的黑色盒子展开，盒子中隐藏着能够改变历史的力量。游戏中，你将扮演一名叫做藤原智也的大学生，他因为一次意外而卷入了一场涉及盒子的阴谋。你将面对以下的挑战：</p><ul><li>探索不同的时间线，寻找盒子的真相，以及它与你的过去的关联。</li><li>与多位有着各自目的和秘密的角色互动，建立信任或敌意，影响故事的走向。</li><li>利用盒子的力量，操纵时间，改变事件的结果，创造出不同的结局。</li><li>揭开盒子背后的巨大阴谋，以及一个隐藏在游戏中的惊天秘密。</li></ul><p>《时序之匣》是一款充满悬念和惊喜的游戏，它将带你进入一个充满谎言和欺骗的世界，你能否找到真相，取决于你的选择。</p></div></details>
+<details class="tag-plugin colorful folding" color="green" open><summary><span>Rewrite</span></summary><div class="body"><p>《时序之匣》是一款由 5pb. 和 Nitroplus 联合制作的悬疑系 AVG 游戏，故事围绕着一个神秘的黑色匣子展开，匣子中隐藏着能够改变历史的力量。</p><p>自幼失去双亲的主人公藤原智也，在一次车祸后失去了大部分记忆。在医院收到的慰问品中，有一个小小的匣子引发了他的注意。</p><p>匣子设计非常简约，上面刻着一行字：「忘れてられない」。除此之外，似乎只有纯粹的黑色。但是，当智也拿起匣子的时候，他感觉到了一股强烈的不安。</p><p>然后，他看到了 ——</p><p>神秘的少女、意外的邂逅、不可思议的旅程。</p><p>丧失的过去、诡异的现在、不应存在的未来。</p><p>神秘的力量、惊人的阴谋、不被允许的真相。</p><p>与多位目的各异、秘密重重的伙伴，利用匣子的力量，操纵时间，改变事件的结果，创造出不同的结局。</p><p>借此漫漫旅途，拾回失去的记忆，觅得真实的自我，与不可抗拒的命运抗争。</p><p>惊喜与恐惧，谎言与真相，欺诈与信任，一切都将在匣中徐徐展开。</p></div></details>
+<p>…… 是不是有点中二过头了。不过，毕竟这种东西写出来就是为了自己爽一爽，既然 AI 做不到，那我就自己动手吧。</p>
+<p>毕竟这个游戏压根不会存在，不用顾忌版权问题，所以我毫无保留的塞了很多私货。不管阅读的时候有几分既视感，反正我自己是很爽的。</p>
+<p>稍微写个注解吧。</p>
+<ol>
+<li>「クロノロジカルのハコ」这个名字，首先是捏它 Chrono Box，但和这部游戏一点关系都没有。其次是捏它 アオのハコ，但同样地，和这本漫画也没有任何关系。（如果你 Google 一下这个名字，基本都是 アオのハコ 的结果。）</li>
+<li>哪怕你对 5pb. 和 Nitroplus 不熟，也肯定听说过《命运石之门》，不过整个「科学 ADV 系列」都很有意思，我推荐你去看看。</li>
+<li>「忘れてられない」（不想忘记）是捏它 結束バンド 的同名乐曲。但让我对这个名字产生兴趣的，是有网友把这首歌和 sakanaction 的「忘れられないの」（不能忘记）MASHUP 了一下。顺便一提，「忘れられない」这个短语太常用了，所以我们还是需要一些陌生化的手段。</li>
+<li>设定部分的三行排比句，只是因为我没有设计人设，才随便找点名词凑数的。并不太押韵。</li>
+</ol>
+<p>好吧，接下来才是重头戏。毕竟这个游戏压根不会存在，我可以直接给出完全剧透。</p>
+<h2 id="瞒天过海">瞒天过海</h2>
+<p>有必要重复一句，因为我自己确实没有创造力，所以可能你已经一眼看出来这个故事的真相了。</p>
+<p>首先，非常不值得一提的是，AI 非常纠结于「怎么让主人公接触到匣子」这个问题，以至于最后非常笼统地写「因为一次意外而卷入了一场涉及盒子的阴谋」。</p>
+<p>大部分故事都是以特定的契机开始的。这个契机可以与故事主题紧密相关，当作伏笔，也可以与故事主题无关 —— 只是给主人公一个改变生活方式的机会，外加一点喜剧效果。不管是悬疑还是喜剧，作为作品的楔子，写得引人入胜就好。</p>
+<p>所以，哪怕是雨夜在桥洞里捡到匣子，迷之少女把匣子送上门，挖时间胶囊发现多了个匣子，甚至是从梦境中带回来匣子，都可以作为故事的开端。当然，作为一部悬疑作品，在讲这么一件简单的事情时，楔子应该不会写得平铺直叙，而是开始创造悬念。</p>
+<p>但是，AI 似乎连这点可能性都没有考虑到。</p>
+<p>其次，真相。真相就是对每一处疑点的解释。但由于这个故事甚至都不存在，因此我简要地抛出各种可能的解释，以博读者一笑。（这个世界的可能性太多了，以至于我能非常轻松地想到两种完全对立的解释，但它们都可以以不同的方式指向故事的主题。）</p>
+<blockquote>
+<p>自幼失去双亲的主人公藤原智也</p>
+</blockquote>
+<p>从故事设计上来说，作为主人公孤僻性格的表面原因。</p>
+<p>这之中也有无数种可能性。比如说，主人公在非常疏远的亲戚家长大，因此对人类社会产生了不信任感。也有可能，实际上是在淳朴善良的环境中长大，只是因为自己的心理阴影，不愿意主动与人交往。</p>
+<p>从故事主题上来说，「失去双亲」只是一个表象。</p>
+<ul>
+<li>有可能是在车祸中失去了对双亲的记忆，而双亲因为某种原因没有露面，因此潜意识将记忆改写成了「自幼失去双亲」。</li>
+<li>有可能是凭借匣子的力量，历史发生了种种改变，关于双亲的记忆在逻辑上不再成立，而系统给出的解释是「自幼失去双亲」。这是整个死局中的一环；前提即终点，无法推翻。</li>
+<li>有可能是主人公的双亲在某种意义上已经死了，但仍然以时序之匣的引领，与主人公保持着某种联系。而他们可能正是为了拯救未来的孩子，让其得以跳出死局，才选择了这种手段。</li>
+<li>有可能是主人公幼时就出车祸丧命了，但双亲为了拯救他，利用匣子的力量，为他创造了一个新的世界。代价就是，他们不再能出现在这个世界上。而主人公发现这个秘密的时候，想要逃出这个世界，但又无法牺牲自己，只能选择再次利用匣子的力量，寻找新的世界。</li>
+<li>有可能是他们根本不是主人公的双亲，生物学意义上的双亲跟这个故事一点关系都没有，甚至不在一个时代。两个冒名的替死鬼，在「未来会发生某件大事」的布局下，成为了一个符号性的存在。至于主人公的记忆，出于实用主义的考量，能简则简，所以关于双亲的部分只剩下这么一句陈述。</li>
+</ul>
+<blockquote>
+<p>在一次车祸后失去了大部分记忆</p>
+</blockquote>
+<p>从故事设计上来说，是故事前期的主要推动力。</p>
+<p>毕竟，主人公完全丧失了自主行动能力，哪怕遇到各种奇怪的（変わった）事情，也只能被动地接受，与其他角色互动，最终又不得不卷入这场阴谋之中。（这并没有什么奇怪的（変な）意思。AVG 里面，尤其是共通线，不奇怪的事情才比较少见吧。）</p>
+<p>而丧失大部分记忆 —— 选择性遗忘，既是一种非常合理的创伤反应，也「非常好用」 —— 便于叙述性诡计的上演。要想，既然失忆了，之前的朋友会来讲述过去的故事 —— 呃，虽然在现实生活中，如果身边真的有失忆患者，未经允许地絮叨往事是非常不负责任的行为。大家千万不要学。 —— 而他人的叙述，不一定与事实相符，也可能因为略去了某些细节而误导读者。甚至可以说，他人的叙述可以改写主人公的记忆；如果他选择相信，那么即使对面正在进行一场瞒天过海的大欺诈，他也不会有任何察觉。</p>
+<p>另外，也便于后续追加设定，以碎片化叙事的方式，在各种可能性的终点，将真相的碎片一点点拼凑起来。</p>
+<p>从故事主题上来说，这件事也可以有很多种解释。</p>
+<p>先假设「失去记忆」一事是真，不管因为何种原因，主人公确实失去了大部分记忆。</p>
+<ul>
+<li>有可能「失去记忆」是利用匣子力量的代价，而出车祸则仅仅是对「失去记忆」的解释之一。也存在别的解释，比如坐在屋子里被雷劈了，比如在光天化日下晕过去醒来就忘了。出车祸只是比较平平无奇的可能性之一。</li>
+<li>但也要注意，「出车祸」一事并不一定为真。也许只是潜意识中的一种解释，也许只是别人告诉他「你出车祸了」，也许只是他自己想象出来的一种场景。也即，仅从合理性的角度考虑，「提供一个合理的解释」这件事本身也有可能只是一种解释，而不是真相。只有最终呈现的结果，即「失去记忆」，才是真相。</li>
+<li>而如果另有人知道真相，在后续发展中，也可以利用这个虚构的解释与事实之间的差距，在不点明的情况下，给读者创造一种违和感。因此这可以用做一个比较浑然天成的伏笔。</li>
+</ul>
+<p>不过这里有一个更广泛的问题值得讨论。</p>
+<p>首先，我们还没有确定这个故事到底是科幻还是奇幻。</p>
+<p>如果是以时间旅行为题材的科幻，把失去不应该存在的记忆当作一种必然的副作用，是非常合理的。至于，这些记忆到底是被其他内容填充，还是直接尽数消失，就要看具体的设定了，不同世界观下的时间旅行并不完全一样。要靠时间旅行解开死局也是一个比较经典的设定，但个中可能性太多，而且笔者并不太懂科幻，就不展开讨论了。</p>
+<p>而如果是奇幻，时间旅行只是工具之一，那么失去记忆的原因就可以更加随意一些。<strong>反思主义</strong> —— 原本用于形容「需要付出代价的超能力」 —— 算是在奇幻中的一种常见设定，而且一般都会推波助澜，用一种不可逆的方式，将主人公推向死局。比如说，随着时间旅行的次数增加，主人公的记忆会越来越模糊，最终会完全丧失「自我」 —— 而只是变成一个名为「藤原智也」的无关存在。如果设定如此，那么基本可以确定丧失自我是整个旅程中的一个必然结果，但绝非终点。</p>
+<p>不过既然要追求死局，有必要更加彻底一些，让读者陷入抓狂的绝望之中，然后再完成一场瞒天过海的逆转，完成作为一部悬疑作品的使命。</p>
+<p>比如说，死局的其中一环就是，「消除过去的自己的记忆」。为何要做到如此境界呢？肯定是有足够充分的原因的：</p>
+<ul>
+<li>因为之前在「没有消除记忆」这个前设下，已经尝试过很多次，但都没有成功。这同样是个死局，而我们切换到这个世界，只是为了寻找一个新的可能性。新的世界也是一个死局，只不过是从 loop topology 中的一个环切换到了另一个环，但是既然有了破环的可能性，就要尝试一下。</li>
+<li>因为之前尝试了「在没有消除记忆的情况下时间旅行」，反而造成了更大的混乱。因此，只能选择「消除记忆」这个极端的解决方案。</li>
+<li>因为在这个多重宇宙的世界观下，记忆承载的是逻辑顺序下的时间线，而不是时间线本身。因此，只有消除记忆，才能真正地回到过去，而不是在一个新的世界中重复之前的错误。</li>
+</ul>
+<p>…… 我甚至可以想象未来的主人公对过去的自己哭喊着「正是因为不想让你看到我这幅模样」的场景。</p>
+<blockquote>
+<p>匣子设计非常简约，上面刻着一行字：「忘れてられない」。除此之外，似乎只有纯粹的黑色。但是，当智也拿起匣子的时候，他感觉到了一股强烈的不安。</p>
+</blockquote>
+<p>既视感。</p>
+<p>既视感几乎是一个类似 bug 的存在。不过他既然存在，必然有其存在的意义 —— 引导主人公走出死局。</p>
+<p>既视感 —— 也就是「这个东西我好像见过」的感觉 —— 本身就是一种记忆。某种存在确认的记忆，作为「失去记忆」的副作用存在。</p>
+<p>别看只有这么三句话，只要作者想，怎样都可以当作一个非常深刻的伏笔。</p>
+<p>比如说，到底是谁说出的「忘れてられない」这句话，不想忘的又是什么 —— 这句话在后文肯定会出现不止一次，而且会有不同的解释。不管这句话原本的意义是什么，主人公也会在某些情景下非常自发地说出这句话。</p>
+<p>比如，黑匣子 —— 是的，这也能当作伏笔。有可能原本是一个光鲜亮丽的匣子，在时间旅行的过程中，色彩连同记忆尽数消失；有可能是一个白匣子，在为了尝试跳出死局做出某些不可逆的改变之后，变成了黑匣子。而黑匣子作为一个符号，也会在后续的故事中频频出现。</p>
+<p>匣子还增添了一种合理性 —— 即，匣子承载了某种事物。有可能它真的只是一个时间旅行的机器，有可能它里面确实装了什么东西，或者什么都没有，或者在故事的进程中消失了 —— 这些都有待在真结局中解释。不过，在某个世界线的终点打开盒子发现什么都没有，定会为歇斯底里的主人公增添一丝绝望。</p>
+<blockquote>
+<p>与多位目的各异、秘密重重的伙伴，利用匣子的力量，操纵时间，改变事件的结果，创造出不同的结局。</p>
+</blockquote>
+<p>我设想中的玩法。</p>
+<p>不采用选择支，而是提供一个类似流程图的画面，上面标记了很多事件的因果关系。</p>
+<p>譬如说，有两个事件形成了死局。想要解锁一个结局，就要解除对应角色或者事件的死局。</p>
+<p>这时玩家需要做的是，通过修改其他事件的因果关系，使得这个死局中的一环不再成立。玩家选中这个环，然后选择另一个事件，令其介入这个环，通过修改记忆，使得这个环不再成立。</p>
+<p>当然，哪怕同样是逃脱了死局，取决于拼接的记忆是否合理，也有可能指向不同的结局。借此，推理的过程也可以成为一种游戏性。</p>
+<p>而最终玩家会发现，整个故事的主线，这个死局没法解除。但是没关系，故事的最终幕当然是要让主人公来主演的，玩家引导他们走到这里，也可以走出幕后，到台前来观赏戏剧的结局。</p>
+<h2 id="时序之匣的所有结局">时序之匣的所有结局</h2>
+<p>不过，关于匣子的真相，才是最值得说道的。如果真当有这么一部游戏，创作者肯定在一开始就确定了匣子的真相，而不是随意地抛出可能性。</p>
+<p>而可能性既然存在，就有其存在的意义。</p>
+<p>(1) 智也是个 DID 患者。</p>
+<p>虽然看起来和前面的设定一点关系都没有，但诚如上述，只要创作者想，披着科幻的设定也能写毒电波。虽说我并不感冒，只是确认了其存在的可能性。</p>
+<p>另一方面，读者受到了极大的欺骗，某种意义上，确实做到了瞒天过海 —— 就是，手笔可能有点太大了，不成功便成仁。</p>
+<hr>
+<p>(2) 匣子并不真正提供时间旅行的能力。</p>
+<p>智也通过将自己的心智投射到过去，来改变历史。这个过程中，他的记忆会被改写，最终被改写成一个与原来的自我完全不同的人。</p>
+<p>整个故事的契机是，——</p>
+<p>稍等一下，我们还需要考虑如何设计底层动机。</p>
+<p>考虑到，如果是不幸发生在别人身上，智也想要改变这个事实而以自己的记忆为代价寻求一个新的世界，最后会变成情感大戏。这当然不错，但是会比较多地牺牲故事的逻辑性，因为动机太过于主观，导致歇斯底里的主人公做出了不可理喻的行为。</p>
+<p>但还有可能性若干。</p>
+<p>一个就是科幻方向的自我救赎。哪怕一切的楔子只是「车祸」，也完全可以引出「因为自己出车祸，带来了其他的不幸」这样的设定。这样，智也就有了一个比较客观的动机，强于单纯的自我救赎。而想要解决这么多的问题，时间旅行是唯一的解决方案。</p>
+<p>注意这之中有两个死局，一环扣一环，让智也既能在特定可能性下帮助某个人，又能最终完成自我救赎。</p>
+<p>另一个就是奇幻方向的自我救赎。未来的他在遭遇某种不幸，或者做出某种不可原谅的行为之后，选择回到了一切的起点，一个比较久远的过去，重新生活。而只要他凭借既视感或者某种预言，看到这个环的一部分，就会想起自己的过去，使得事情不再重复。</p>
+<p>再一个是反射性的自我救赎。智也遭遇了不幸，但另有他者为了拯救智也，为他创造了一个新的世界，作为代价，他们不再能出现在这个世界上。（复读了一遍上文的设定。）</p>
+<p>这个设定的好处是，很能误导读者，同时将「救人＝救己」的双重动机归为一体，而且 —— 都这样写了，不可能没有死局吧？不过我们最终仍然要跳出一换一的死局，可以稍微展开一下：</p>
+<ul>
+<li>我们将这个「代价」形象化为一种契约，「只要智也还活着，他们就不会出现在这个世界上」。那么就可以考虑卡 bug。比如说，智也是由于车祸丧命的，「智也活着」和「车祸」绑定了，那就通过伪造一场车祸来骗过世界 —— 要注意这是最终的结论，从故事开头走到这个设想还会经过别的可能性与大量的尝试，所以并没有看起来这么简单。</li>
+<li>在此之前，先考虑对后半部分动手脚，改变「他们」这个词的定义，或者改变世界。虽然这样写着看起来很突兀，但实际上，如果世界观允许，可能性就存在。而在经历这些可能性之后，真结局也会变得更加来之不易。</li>
+</ul>
+<p>—— 那么话说回来，「心智回到过去」和真正的「时间旅行」有什么区别呢？</p>
+<p>其一是，心智回到过去期间的各种行为，都没有真实发生。也就是说，其他人并没有关于这些事件的记忆，只是改变了智也的记忆而已。而最终，这些不应该存在的记忆会被消除 —— 既然记忆不再，某些存在也就不再。</p>
+<p>可能看到真结局会难以释怀吧。新的故事开始了，旧的故事完全没有发生过，而很多事情也变得不一样了，但仅从结果来说，完成救赎比什么都重要。</p>
+<p>其二是，作用于心智，可以让同一件事在不同的可能性中得到不同的解释，而智也的记忆会随着这些解释的改变而改变，方便了碎片化叙事的展开。</p>
+<p>其三是，打感情牌。只要人有强烈的感情，即便是「不应该存在的记忆」，也会在某种程度上影响到现实。因为不会触及时间旅行的逻辑，在文学上更加容易被接受。</p>
+<p>不过，虽如此设计，在真相揭晓之前，读者和智也始终认为这就是时间旅行。甚至因为他自己的这种意识如此强烈，真的当作时间旅行使用了，导致了一些不可预料的后果，种种反转最终指向了真相。</p>
+<hr>
+<p>(3) 匣子里面装的是记忆。</p>
+<p>把它想象成一个潘多拉魔盒，每次打开的时候，虽然空无一物，但是会有一些记忆涌现出来。</p>
+<p>这些记忆未必是智也的，但只要智也看到了，就会被当作自己的记忆。</p>
+<p>因此，失忆的智也一方面获得了一个完全不同的过去 —— 光这一点足够解释现在与未来的改变，另一方面也会因违和感而逐渐领会到自己的记忆被改写了。</p>
+<p>智也的终极目的，是把这些记忆还给原来的主人，并在旅途中找到自己的记忆。</p>
+<p>光是写到这里，可以作为 (2) 的一个补充，因为，如果匣子真的只是一个吉祥物，那也太不吉祥了。另一方面，哪怕当吉祥物也并非不可 —— 因为智也相信这个匣子能够进行时间旅行，所以才真正能做到类似于时间旅行的事情，如果他本来就不相信，什么都无法做到。</p>
+<p>但毕竟 …… 还有别的可能性在等着我们。</p>
+<p>过去，只是逻辑意义上的过去，这其中自然存在「未来的过去」。因为在未来的过去中看到现在，智也产生了既视感，同时又开始因为现在与记忆产生偏离而逐渐察觉到自己的记忆被改写了。</p>
+<p>死局的其中一环，就是「消除过去的自己的记忆」。如果消除记忆，那么这个故事根本无从发生。如果维持现状，死局也不会有任何改变。</p>
+<p>这时就要介绍另一种终极解决方案。如果原有体系自洽而无法改变，那么借助一点外力也是可以的。</p>
+<p>只需要「远方的朋友」相信这个匣子真的有时间旅行的能力，而将他们的记忆投射到过去。准确地说，两年前的过去，日期完全一致。</p>
+<p>但是远方的朋友并没有察觉到这种违和感。其实，他只要看一眼日历就能认出其中端倪，但对过去的想象刻意地模糊了任何有关年份的记忆。</p>
+<p>直到事情再也无法被掩盖，远方的朋友才会发现自己被瞒天过海了，又会将他们送回现在，但是改写历史的目的已经达到了。</p>
+<p>至于这个远方的朋友，是谁呢？ —— 你恐怕已经猜到了。</p>
+<hr>
+<p>(4) 时序之匣的真相</p>
+<p>我觉得写到这里已经尽兴了，留一点悬念吧。</p>
+<h2 id="动摇">动摇</h2>
+<p>现在你的内心极度动摇。</p>
+<p>这可能是你在人生中第一次如此强烈地犹豫。</p>
+<p>—— 对于生活中的绝大多数选择，人往往是带有一个预设的答案的。向别人征求意见，更多的是强化自己的想法，而不是真的想听取别人的意见。犹豫只是一种社会性的表演。</p>
+<p>但当你真正遇到一个有可比性而无确定性的选择时，犹豫会迅速崩解为恐惧、焦虑、甚至是绝望。</p>
+<p>你想要说服自己。你试着列了一个四象图来比对两者的优劣，但仍然无法提供强有力的证据。</p>
+<p>你想，如果无法从正面回答，可以考虑从反面回答。可惜，你最不希望的负面结果，两者都有可能发生。</p>
+<p>所以你似乎已经穷尽了办法。他人并不准备回答你的困惑。你的内心本来就没有一个定数。</p>
+<p>那么你到底该怎么办呢？是在截止日期之前疯狂地犹豫，还是两眼一黑，随便选一个就再也不想了呢？</p>
+<p>要知道，这可是很重要的选择。完全有可能改变你的人生轨迹。</p>
+<p>但正因此，你才越发犹豫。其实你并不清楚，潜在的回报和风险究竟有多大，毕竟这些也只是在道听途说之上的推测。</p>
+<p>那么你就无所谓这个选择吗？你唯一确定的是，现在必须做出一个选择。</p>
+<p>你如何选择呢？</p>
+<h2 id="■お幸せに">■お幸せに</h2>
+<p>↑这个标题的来源是，在漫画的结尾一般会用■おわり表示完。但是有个作者改成了■お幸せに，这就很有意思了。</p>
+<p>那么就写到这里吧。我还积累了一大堆音声想听，但是现在的我每天糖在床上刷手机，刷着刷着就过半夜了，所以始终找不到什么时间来听。</p>
+<p>人非常需要娱乐。但是娱乐也分种类：subconscious 和 conscious，无需思考的，和需要注意力集中的。</p>
+<p>刷短视频当然属于无意识娱乐。再比如，上课摸鱼（比如我现在就是如此），拖延工作，基本上都是无意识娱乐。</p>
+<p>与之相对的，意识娱乐就是需要注意力集中的，可能比起放松来说更像是一种锻炼。取决于你的兴趣有多强烈，很多事情都可以是无意识或者意识娱乐。比如，读书和游戏，可以漫不经心地当作消遣，也可以全神贯注地投入其中。</p>
+<p>于我而言，所有的作品都是意识娱乐。我很需要有意识感地去读小说、看动画、玩游戏，因此显然也带来了很多的负担。而且我并不怎么享受，因为我的动机并不强烈。</p>
+<p>意识娱乐的问题在于，想要最大化其效果，就必须投入大量的时间和精力。在一天时间内，除了睡觉和吃饭，剩下的时间不仅要工作学习、无意识娱乐，还要进行意识娱乐，想想就觉得很累 —— 也正因此年轻人经常牺牲睡眠时间来换取集中精力的机会。</p>
+<p>意识娱乐不仅不能恢复精力，反而会消耗精力，需要更多的无意识娱乐来弥补这一缺口。但是，长时间进行无意识娱乐也会强化焦虑，再按这样的逻辑很容易陷入恶性循环。</p>
+<p>这里不谈怎么解决这个问题，因为我确实没有什么想法。这个模式也可以解释为什么在假期里，我反而更有动力去尝试新的作品，因为去掉工作学习之后，一天确实多出来很多时间，仅此而已。</p>
+<hr>
+<p>哦对了，所以我现在犹豫的是一个选课问题，仅此而已。</p>
+<p>商院的课很容易给人一种敬而远之的感觉。如果遇到一门更难但只有 individual assignment 的课，比起一门更简单但 group project 占比很大的课，你会如何选择呢。</p>
+<p>嗯 …… 其实我觉得，以我的思维和行动能力，选啥结果都不会差太多。但是我还是无法说服自己，无法保证选课的下限，进而徒然陷入恐慌和焦虑之中。</p>
+<p>我不否认尝试并保留可能性的重要性，但是根据我第一周的上课体验，我看不到太多的可能性。</p>
+<p>所以有的时候，有选择对当事人并不是一件好事。CS 的必修课不管再难，我也不会有太多意见，毕竟你无论如何都要学。但是选择性必修课，就会让人陷入选择困难症之中。</p>
+<p>令我更不安的是，我现在就这么动摇，很难想象大三大四选 CS 选修课的时候会是什么样子。这时候可没有这么多学长学姐来给你指路了。</p>
+<p>■おたくに</p>
+
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">署名-相同方式共享 4.0 国际许可协议</a>，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/SP_Umi/">【なる】Summer Pockets REFLECTION BLUE 加藤うみ线 感想翻译</a></div></section></div>
+
+
+
+
+
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="mojimoon/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories/">分类</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">站点</span><a target="_blank" rel="noopener" href="https://steamcommunity.com/id/unreset/">Steam</a><a target="_blank" rel="noopener" href="https://bgm.tv/user/788548">Bangumi</a><a target="_blank" rel="noopener" href="https://github.com/mojimoon">Github</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/2023/about/">关于</a><a href="/">友链</a><a href="/">留言板</a></div></div><div class="text"><p><a target="_blank" rel="noopener" href="https://github.com/mojimoon">@mojimoon</a> Overclocked by <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/stellar/">Stellar</a></p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    
+<script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.23.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.23.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js","memos":"/js/plugins/memos.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@10.3/swiper-bundle.min.css","js":"https://unpkg.com/swiper@10.3/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".fancybox img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied","toast":"复制成功"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.error(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
