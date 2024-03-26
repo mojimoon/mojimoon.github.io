@@ -1,9 +1,0 @@
-/* override.css */
-
-.katex-html {
-    display: none;
-}
-
-.katex-mathml mo > mo {
-    display: none;
-}

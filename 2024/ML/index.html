@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.23.0" theme-name="Stellar" theme-version="1.23.0">
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>笔记：机器学习的基本工具 - もじもんの文字門</title>
+
+  
+    <meta name="description" content="本文介绍机器学习的基本 Python 工具和流程。所用算法包括决策树（Decision Tree）、随机森林（Random Forest）和 XGBoost。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="笔记：机器学习的基本工具">
+<meta property="og:url" content="https://mojimoon.github.io/2024/ML/index.html">
+<meta property="og:site_name" content="もじもんの文字門">
+<meta property="og:description" content="本文介绍机器学习的基本 Python 工具和流程。所用算法包括决策树（Decision Tree）、随机森林（Random Forest）和 XGBoost。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://storage.googleapis.com/kaggle-media/learn/images/R3ywQsR.png">
+<meta property="og:image" content="https://storage.googleapis.com/kaggle-media/learn/images/AXSEOfI.png">
+<meta property="article:published_time" content="2024-03-26T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-26T17:04:06.832Z">
+<meta property="article:author" content="mojimoon">
+<meta property="article:tag" content="mojimoon, computer science, python, blog, hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://storage.googleapis.com/kaggle-media/learn/images/R3ywQsR.png">
+  
+  
+  
+  <meta name="keywords" content="mojimoon, computer science, python, blog, hexo">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/image/favicon.png">
+  
+
+  
+
+  
+  
+  <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/override.css">
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="title" href="/"><div class="main" ff="title">もじもんの文字門</div><div class="sub normal cap">City University of Hong Kong</div><div class="sub hover cap" style="opacity:0"> Computer Science</div></a></div>
+
+<nav class="menu dis-select"></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc" collapse="false"><div class="widget-header cap dis-select"><span class="name">笔记：机器学习的基本工具</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-text"> 预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text"> 变量的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pandas"><span class="toc-text"> Pandas</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%84%E7%90%86"><span class="toc-text"> 预处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91-%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97"><span class="toc-text"> 决策树 &amp; 随机森林</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%8B%9F%E5%90%88-%E6%AC%A0%E6%8B%9F%E5%90%88"><span class="toc-text"> 过拟合 &amp; 欠拟合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0"><span class="toc-text"> 常用参数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="toc-text"> 数据处理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="toc-text"> 缺失值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%88%AB%E5%8F%98%E9%87%8F"><span class="toc-text"> 类别变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B3%84%E6%BC%8F"><span class="toc-text"> 数据泄漏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7"><span class="toc-text"> 模型构建工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#pipeline"><span class="toc-text"> Pipeline</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%B0%83%E4%BC%98"><span class="toc-text"> 参数调优</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81"><span class="toc-text"> 交叉验证</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xgboost"><span class="toc-text"> XGBoost</span></a></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Notes/">Notes</a></div><div id="post-meta"><span class="author">发布于</span>
+    <span class="created"><time datetime="2024-03-26T00:00:00.000Z">2024-03-26</time></span>
+    
+    <span class="updated">，更新于&nbsp;<time datetime="2024-03-26T17:04:06.832Z">2024-03-27</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>笔记：机器学习的基本工具</span></h1>
+<p>本文介绍机器学习的基本 Python 工具和流程。所用算法包括决策树（Decision Tree）、随机森林（Random Forest）和 XGBoost。</p>
+<span id="more"></span>
+<p>基于 Kaggle 教程 <a target="_blank" rel="noopener" href="https://www.kaggle.com/learn/intro-to-machine-learning">Intro to Machine Learning</a> 和 <a target="_blank" rel="noopener" href="https://www.kaggle.com/learn/intermediate-machine-learning">Intermediate Machine Learning</a>。</p>
+<h2 id="预备知识"><a class="markdownIt-Anchor" href="#预备知识"></a> 预备知识</h2>
+<h3 id="变量的类型"><a class="markdownIt-Anchor" href="#变量的类型"></a> 变量的类型</h3>
+<ul>
+<li>Categorical：人为定义的类别
+<ul>
+<li>Ordinal：有序类别（e.g. <code>Size: S &lt; M &lt; L</code>）</li>
+<li>Nominal：无序类别（e.g. <code>Color: Red, Green, Blue</code>）</li>
+</ul>
+</li>
+<li>Numerical：测量值
+<ul>
+<li>Discrete：离散取值，一般为整数</li>
+<li>Continuous：连续取值</li>
+</ul>
+</li>
+</ul>
+<h3 id="pandas"><a class="markdownIt-Anchor" href="#pandas"></a> Pandas</h3>
+<p>参考 <a href="../../2023/Pandas/">Pandas 的常用操作</a> 这篇笔记。</p>
+<h2 id="预处理"><a class="markdownIt-Anchor" href="#预处理"></a> 预处理</h2>
+<p>令完整数据集为 <code>home_data</code>，我们将其按 80:20 的比例分为 train 和 validation 两部分。test 数据集为 <code>test_data</code>。</p>
+<p>令输入特征为 <code>features</code>，目标变量为 <code>y</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">home_data = pd.read_csv(<span class="string">&#x27;data/train.csv&#x27;</span>)</span><br><span class="line"></span><br><span class="line">features = [<span class="string">&#x27;LotArea&#x27;</span>, <span class="string">&#x27;YearBuilt&#x27;</span>, <span class="string">&#x27;1stFlrSF&#x27;</span>, <span class="string">&#x27;2ndFlrSF&#x27;</span>, <span class="string">&#x27;FullBath&#x27;</span>, <span class="string">&#x27;BedroomAbvGr&#x27;</span>, <span class="string">&#x27;TotRmsAbvGrd&#x27;</span>]</span><br><span class="line">X = home_data[features]</span><br><span class="line">y = home_data.SalePrice</span><br><span class="line"></span><br><span class="line">train_X, val_X, train_y, val_y = train_test_split(X, y, random_state=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<p>指定 <code>random_state</code> 会使结果可复现。</p>
+<h2 id="决策树-随机森林"><a class="markdownIt-Anchor" href="#决策树-随机森林"></a> 决策树 &amp; 随机森林</h2>
+<p>决策树：将样本根据特征 (e.g. <code>LotArea &gt;= 11500</code> vs <code>LotArea &lt; 11500</code>) 分为两类，然后递归划分所有子集，直到深度达到阈值，或者每个叶子节点的样本数都小于阈值。将每个子集中所有样本的 <code>y</code> 的平均值作为预测值。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://storage.googleapis.com/kaggle-media/learn/images/R3ywQsR.png" alt="" /></p>
+<p>伪代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">decision_tree</span>(<span class="params">X, y</span>):</span><br><span class="line">    <span class="keyword">if</span> stopping_condition(X, y):</span><br><span class="line">        <span class="keyword">return</span> leaf_value(y)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        split_feature, split_value = find_best_split(X, y)</span><br><span class="line">        X_left, y_left, X_right, y_right = split(X, y, split_feature, split_value)</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            <span class="string">&#x27;split_feature&#x27;</span>: split_feature,</span><br><span class="line">            <span class="string">&#x27;split_value&#x27;</span>: split_value,</span><br><span class="line">            <span class="string">&#x27;left&#x27;</span>: decision_tree(X_left, y_left),</span><br><span class="line">            <span class="string">&#x27;right&#x27;</span>: decision_tree(X_right, y_right)</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>随机森林：建立多个决策树，每个决策树都是随机生成的。最终预测值为所有决策树的平均值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeRegressor</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestRegressor</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> mean_absolute_error</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_mae</span>(<span class="params">model, train_X, val_X, train_y, val_y</span>):</span><br><span class="line">    model.fit(train_X, train_y)</span><br><span class="line">    preds_val = model.predict(val_X)</span><br><span class="line">    <span class="keyword">return</span> mean_absolute_error(val_y, preds_val)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Decision Tree</span></span><br><span class="line">dt_model = DecisionTreeRegressor()</span><br><span class="line"><span class="built_in">print</span>(get_mae(dt_model, train_X, val_X, train_y, val_y))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Random Forest</span></span><br><span class="line">rf_model = RandomForestRegressor(n_estimators=<span class="number">100</span>)</span><br><span class="line"><span class="built_in">print</span>(get_mae(rf_model, train_X, val_X, train_y, val_y))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>MAE (Mean Absolute Error): <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mi>A</mi><mi>E</mi><mo stretchy="false">(</mo><mi>y</mi><mo separator="true">,</mo><mover accent="true"><mi>y</mi><mo>^</mo></mover><mo stretchy="false">)</mo><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mi mathvariant="normal">∣</mi><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><msub><mover accent="true"><mi>y</mi><mo>^</mo></mover><mi>i</mi></msub><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">MAE(y, \hat{y}) = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.190108em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">∣</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">∣</span></span></span></span>
+<ul>
+<li><code>mean_absolute_error(y_true, y_pred)</code></li>
+</ul>
+</li>
+<li>RMSE (Root Mean Squared Error): <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>R</mi><mi>M</mi><mi>S</mi><mi>E</mi><mo stretchy="false">(</mo><mi>y</mi><mo separator="true">,</mo><mover accent="true"><mi>y</mi><mo>^</mo></mover><mo stretchy="false">)</mo><mo>=</mo><msqrt><mrow><mfrac><mn>1</mn><mi>n</mi></mfrac><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo stretchy="false">(</mo><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><msub><mover accent="true"><mi>y</mi><mo>^</mo></mover><mi>i</mi></msub><msup><mo stretchy="false">)</mo><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">RMSE(y, \hat{y}) = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.00773em;">R</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.84em;vertical-align:-0.604946em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.235054em;"><span class="svg-align" style="top:-3.8em;"><span class="pstrut" style="height:3.8em;"></span><span class="mord" style="padding-left:1em;"><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.845108em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.740108em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span><span style="top:-3.195054em;"><span class="pstrut" style="height:3.8em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.8800000000000001em;"><svg width='400em' height='1.8800000000000001em' viewBox='0 0 400000 1944' preserveAspectRatio='xMinYMin slice'><path d='M983 90
+l0 -0
+c4,-6.7,10,-10,18,-10 H400000v40
+H1013.1s-83.4,268,-264.1,840c-180.7,572,-277,876.3,-289,913c-4.7,4.7,-12.7,7,-24,7
+s-12,0,-12,0c-1.3,-3.3,-3.7,-11.7,-7,-25c-35.3,-125.3,-106.7,-373.3,-214,-744
+c-10,12,-21,25,-33,39s-32,39,-32,39c-6,-5.3,-15,-14,-27,-26s25,-30,25,-30
+c26.7,-32.7,52,-63,76,-91s52,-60,52,-60s208,722,208,722
+c56,-175.3,126.3,-397.3,211,-666c84.7,-268.7,153.8,-488.2,207.5,-658.5
+c53.7,-170.3,84.5,-266.8,92.5,-289.5z
+M1001 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.604946em;"><span></span></span></span></span></span></span></span></span>
+<ul>
+<li><code>sqrt(mean_squared_error(y_true, y_pred))</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="过拟合-欠拟合"><a class="markdownIt-Anchor" href="#过拟合-欠拟合"></a> 过拟合 &amp; 欠拟合</h3>
+<p>绘制 <code>MAE(train)</code> 和 <code>MAE(validation)</code> 随模型复杂度的变化图，可以看出模型的过拟合和欠拟合情况。</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://storage.googleapis.com/kaggle-media/learn/images/AXSEOfI.png" alt="" /></p>
+<ul>
+<li>预期情况：<code>MAE(train)</code> 和 <code>MAE(validation)</code> 都下降，但 <code>MAE(validation)</code> 下降速度变慢。</li>
+<li>过拟合：<code>MAE(train)</code> 下降，<code>MAE(validation)</code> 上升，表示模型受到训练数据中的噪声影响。</li>
+<li>欠拟合：<code>MAE(train)</code> 和 <code>MAE(validation)</code> 都很高。</li>
+</ul>
+<p>在决策树中，模型复杂度受 <code>max_leaf_nodes</code> 和 <code>max_depth</code> 制约。（只能设置其中一个）</p>
+<p>在随机森林中，<code>n_estimators</code> 越大，模型复杂度越高。</p>
+<h3 id="常用参数"><a class="markdownIt-Anchor" href="#常用参数"></a> 常用参数</h3>
+<ul>
+<li><code>n_estimators</code>：决策树的数量</li>
+<li><code>criterion</code>：划分特征的标准
+<ul>
+<li>默认 <code>squared_error</code> (MSE)，用叶子结点的平均值作为预测值，最小化 L2 loss</li>
+<li>可选 <code>absolute_error</code> (MAE)，用叶子结点的中位数作为预测值，最小化 L1 loss</li>
+</ul>
+</li>
+<li><code>max_depth</code>：决策树的最大深度</li>
+<li><code>max_leaf_nodes</code>：叶子结点的最大数量</li>
+<li><code>min_samples_split</code>：如果一个结点的样本数小于该值，则不再划分（默认值为 2）</li>
+<li><code>splitter</code>：划分特征的策略（默认值为 <code>best</code>，即选择最佳划分；可选 <code>random</code>）</li>
+<li><code>max_features</code>：每次划分时考虑的特征数量（默认值等于 <code>n_features</code>，即考虑所有特征）</li>
+</ul>
+<h2 id="数据处理"><a class="markdownIt-Anchor" href="#数据处理"></a> 数据处理</h2>
+<h3 id="缺失值"><a class="markdownIt-Anchor" href="#缺失值"></a> 缺失值</h3>
+<p>选出有缺失值的列：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">missing_val_count_by_column = (X_train.isnull().<span class="built_in">sum</span>())</span><br><span class="line"><span class="built_in">print</span>(missing_val_count_by_column[missing_val_count_by_column &gt; <span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>处理缺失值：</p>
+<p>(1) 删除有缺失值的列：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cols_with_missing = [col <span class="keyword">for</span> col <span class="keyword">in</span> X_train.columns <span class="keyword">if</span> X_train[col].isnull().<span class="built_in">any</span>()]</span><br><span class="line"></span><br><span class="line">reduced_X_train = X_train.drop(cols_with_missing, axis=<span class="number">1</span>) <span class="comment"># axis=1 表示删除列</span></span><br><span class="line">reduced_X_valid = X_valid.drop(cols_with_missing, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>(2) 填充缺失值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.impute <span class="keyword">import</span> SimpleImputer</span><br><span class="line"></span><br><span class="line">imputer = SimpleImputer(</span><br><span class="line">    strategy=<span class="string">&#x27;mean&#x27;</span>, <span class="comment"># 可选 &#x27;median&#x27;, &#x27;most_frequent&#x27;, &#x27;constant&#x27;</span></span><br><span class="line">    <span class="comment"># fill_value=0, # strategy=&#x27;constant&#x27; 时使用</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">imputed_X_train = pd.DataFrame(imputer.fit_transform(X_train))</span><br><span class="line">imputed_X_valid = pd.DataFrame(imputer.transform(X_valid))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复列名</span></span><br><span class="line">imputed_X_train.columns = X_train.columns</span><br><span class="line">imputed_X_valid.columns = X_valid.columns</span><br></pre></td></tr></table></figure>
+<p>注意 <code>strategy</code> 的选择：ordinal 变量可能不适合用均值填充。（e.g. <code>YearBuilt</code> 应该用 <code>most_frequent</code> 或 <code>constant</code>）</p>
+<blockquote>
+<p>如果有非常少量的缺失值，可以使用 <code>X_train.dropna()</code> 删除行或 <code>X_train.fillna(0)</code> 填充缺失值。</p>
+</blockquote>
+<p>注意 <code>fit_transform</code> 和 <code>transform</code> 的区别：<code>fit_transform</code> 会在训练集上计算均值，然后将这个结果保存到 <code>imputer</code> 中，再在训练集和验证集上用同样的均值填充缺失值。（如果分开处理，会导致训练集和验证集的填充值不一致）</p>
+<p>(3) 填充并标记缺失值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">X_train_plus = X_train.copy()</span><br><span class="line">X_valid_plus = X_valid.copy()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> col <span class="keyword">in</span> cols_with_missing:</span><br><span class="line">    X_train_plus[col + <span class="string">&#x27;_was_missing&#x27;</span>] = X_train_plus[col].isnull()</span><br><span class="line">    X_valid_plus[col + <span class="string">&#x27;_was_missing&#x27;</span>] = X_valid_plus[col].isnull()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果 (row, col) 缺失，(row, col &#x27;_was_missing&#x27;) 为 True</span></span><br><span class="line"></span><br><span class="line">imputer = SimpleImputer()</span><br><span class="line"><span class="comment"># ...</span></span><br></pre></td></tr></table></figure>
+<h3 id="类别变量"><a class="markdownIt-Anchor" href="#类别变量"></a> 类别变量</h3>
+<p>查看类别变量：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = (X_train.dtypes == <span class="string">&#x27;object&#x27;</span>)</span><br><span class="line">object_cols = <span class="built_in">list</span>(s[s].index)</span><br></pre></td></tr></table></figure>
+<p>处理类别变量：</p>
+<p>(1) 删除类别变量：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop_X_train = X_train.select_dtypes(exclude=[<span class="string">&#x27;object&#x27;</span>])</span><br><span class="line">drop_X_valid = X_valid.select_dtypes(exclude=[<span class="string">&#x27;object&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<p>(2) Ordinal Encoding：将有序类别映射为整数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> OrdinalEncoder</span><br><span class="line"></span><br><span class="line">label_X_train = X_train.copy()</span><br><span class="line">label_X_valid = X_valid.copy()</span><br><span class="line"></span><br><span class="line">ordinal_encoder = OrdinalEncoder()</span><br><span class="line">label_X_train[object_cols] = ordinal_encoder.fit_transform(X_train[object_cols])</span><br><span class="line">label_X_valid[object_cols] = ordinal_encoder.transform(X_valid[object_cols])</span><br></pre></td></tr></table></figure>
+<p>OrdinalEncoder 会按照类别出现的顺序进行编码。因此，结果可能无关类别的实际含义。</p>
+<p>注意：如果验证集中出现了训练集中没有的类别，<code>transform</code> 会报错。</p>
+<p>e.g.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Unique values in &#x27;Condition2&#x27; column in training data: [&#x27;Norm&#x27; &#x27;PosA&#x27; &#x27;Feedr&#x27; &#x27;PosN&#x27; &#x27;Artery&#x27; &#x27;RRAe&#x27;]</span><br><span class="line">Unique values in &#x27;Condition2&#x27; column in validation data: [&#x27;Norm&#x27; &#x27;RRAn&#x27; &#x27;RRNn&#x27; &#x27;Artery&#x27; &#x27;Feedr&#x27; &#x27;PosN&#x27;]</span><br></pre></td></tr></table></figure>
+<p>由于 <code>RRAn</code>, <code>RRNn</code> 在训练集中没有，需要处理未知类别：</p>
+<p>(a) 删除在验证集中出现未知类别的列：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">object_cols = [col <span class="keyword">for</span> col <span class="keyword">in</span> X_train.columns <span class="keyword">if</span> X_train[col].dtype == <span class="string">&#x27;object&#x27;</span>]</span><br><span class="line">good_label_cols = [col <span class="keyword">for</span> col <span class="keyword">in</span> object_cols <span class="keyword">if</span> <span class="built_in">set</span>(X_valid[col]).issubset(X_train[col])]</span><br><span class="line">bad_label_cols = <span class="built_in">list</span>(<span class="built_in">set</span>(object_cols) - <span class="built_in">set</span>(good_label_cols))</span><br><span class="line"></span><br><span class="line">label_X_train = X_train.drop(bad_label_cols, axis=<span class="number">1</span>)</span><br><span class="line">label_X_valid = X_valid.drop(bad_label_cols, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>(b) 使用 <code>handle_unknown='use_encoded_value', unknown_value=&lt;value&gt;</code> 将未知类别映射为默认值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ordinal_encoder = OrdinalEncoder(handle_unknown=<span class="string">&#x27;use_encoded_value&#x27;</span>, unknown_value=-<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>(3) One-Hot Encoding：将无序类别映射为二进制向量（e.g. <code>(Red, Green, Blue)</code> → <code>(1, 0, 0), (0, 1, 0), (0, 0, 1)</code>）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> OneHotEncoder</span><br><span class="line"></span><br><span class="line">OH_encoder = OneHotEncoder(handle_unknown=<span class="string">&#x27;ignore&#x27;</span>, sparse=<span class="literal">False</span>)</span><br><span class="line">OH_cols_train = pd.DataFrame(OH_encoder.fit_transform(X_train[object_cols]))</span><br><span class="line">OH_cols_valid = pd.DataFrame(OH_encoder.transform(X_valid[object_cols]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复 index</span></span><br><span class="line">OH_cols_train.index = X_train.index</span><br><span class="line">OH_cols_valid.index = X_valid.index</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除原始 categorical variables</span></span><br><span class="line">num_X_train = X_train.drop(object_cols, axis=<span class="number">1</span>)</span><br><span class="line">num_X_valid = X_valid.drop(object_cols, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 One-Hot encoding 和 numerical variables 合并</span></span><br><span class="line">OH_X_train = pd.concat([num_X_train, OH_cols_train], axis=<span class="number">1</span>)</span><br><span class="line">OH_X_valid = pd.concat([num_X_valid, OH_cols_valid], axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将列名转换为 str</span></span><br><span class="line">OH_X_train.columns = OH_X_train.columns.astype(<span class="built_in">str</span>)</span><br><span class="line">OH_X_valid.columns = OH_X_valid.columns.astype(<span class="built_in">str</span>)</span><br></pre></td></tr></table></figure>
+<p><code>OneHotEncoder.transform</code> 返回的是稀疏矩阵，需要转换为 DataFrame。</p>
+<p>使用 <code>handle_unknown='ignore'</code> 将未知类别映射为全 0 向量。</p>
+<hr />
+<p>Cardinality：类别变量的不同取值数量。当 Cardinality 较高时，One-Hot Encoding 会导致维度爆炸。</p>
+<p>查看所有类别变量的 Cardinality：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">object_nunique = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> col: X_train[col].nunique(), object_cols))</span><br><span class="line"><span class="comment"># 对 object_cols 中的每个 col，构建 (col_id, nunique) 的 map，并将结果转换为 list（只保留 nunique 值）</span></span><br><span class="line">d = <span class="built_in">dict</span>(<span class="built_in">zip</span>(object_cols, object_nunique))</span><br><span class="line"><span class="comment"># 将 object_cols 和 object_nunique 中的元素一一对应，构建 dict</span></span><br><span class="line"><span class="built_in">sorted</span>(d.items(), key=<span class="keyword">lambda</span> x: x[<span class="number">1</span>])</span><br><span class="line"><span class="comment"># 按照 nunique 升序排序</span></span><br></pre></td></tr></table></figure>
+<p>e.g.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">object_nunique = [<span class="number">5</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">4</span>, ... ]</span><br><span class="line">object_cols = [<span class="string">&#x27;MSZoning&#x27;</span>, <span class="string">&#x27;Street&#x27;</span>, <span class="string">&#x27;LotShape&#x27;</span>, <span class="string">&#x27;LandContour&#x27;</span>, ... ]</span><br><span class="line">d = &#123;</span><br><span class="line">    <span class="string">&#x27;MSZoning&#x27;</span>: <span class="number">5</span>,</span><br><span class="line">    <span class="string">&#x27;Street&#x27;</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="string">&#x27;LotShape&#x27;</span>: <span class="number">4</span>,</span><br><span class="line">    <span class="string">&#x27;LandContour&#x27;</span>: <span class="number">4</span>,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>高 Cardinality 的类别变量可以删除或改为使用 Ordinal Encoding。</p>
+<h3 id="数据泄漏"><a class="markdownIt-Anchor" href="#数据泄漏"></a> 数据泄漏</h3>
+<p>数据泄漏：训练集中的特征包含了目标变量的信息，导致模型在验证集上表现良好，但在实际应用中表现糟糕。</p>
+<p>分为两种情况：</p>
+<ul>
+<li>Target Leakage：训练集中包含了在预测时间点之后才能获得的信息，导致目标变量和特征之间存在关联</li>
+<li>Train-Test Contamination：验证集影响了模型的训练过程（e.g. 对验证集进行 <code>fit_transform</code>，导致模型中包含了验证集的信息）</li>
+</ul>
+<p>辨别数据泄漏：相关性分析</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">expenditures_cardholders = X.expenditure[y]</span><br><span class="line">expenditures_noncardholders = X.expenditure[~y]</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Fraction of those who did not receive a card and had no expenditures: %.2f&#x27;</span> \</span><br><span class="line">      %((expenditures_noncardholders == <span class="number">0</span>).mean()))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Fraction of those who received a card and had no expenditures: %.2f&#x27;</span> \</span><br><span class="line">      %(( expenditures_cardholders == <span class="number">0</span>).mean()))</span><br></pre></td></tr></table></figure>
+<p>或者使用 <code>correlation</code> 函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numerical_X = X_train.select_dtypes(exclude=[<span class="string">&#x27;object&#x27;</span>])</span><br><span class="line">corr = numerical_X.corrwith(y)</span><br></pre></td></tr></table></figure>
+<h2 id="模型构建工具"><a class="markdownIt-Anchor" href="#模型构建工具"></a> 模型构建工具</h2>
+<h3 id="pipeline"><a class="markdownIt-Anchor" href="#pipeline"></a> Pipeline</h3>
+<p>Pipeline 将数据处理的步骤封装为一个整体，方便在不同数据集上重复使用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.compose <span class="keyword">import</span> ColumnTransformer</span><br><span class="line"><span class="keyword">from</span> sklearn.pipeline <span class="keyword">import</span> Pipeline</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对数值变量：缺失值填 0</span></span><br><span class="line">numercial_transformer = SimpleImputer(strategy=<span class="string">&#x27;constant&#x27;</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment"># 对类别变量：缺失值填 most frequent，One-Hot Encoding</span></span><br><span class="line">categorical_transformer = Pipeline(steps=[</span><br><span class="line">    (<span class="string">&#x27;imputer&#x27;</span>, SimpleImputer(strategy=<span class="string">&#x27;most_frequent&#x27;</span>)),</span><br><span class="line">    (<span class="string">&#x27;onehot&#x27;</span>, OneHotEncoder(handle_unknown=<span class="string">&#x27;ignore&#x27;</span>))</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="comment"># ColumnTransformer：对不同类型的列应用不同的处理方法</span></span><br><span class="line">preprocessor = ColumnTransformer(</span><br><span class="line">    transformers=[</span><br><span class="line">        (<span class="string">&#x27;num&#x27;</span>, numercial_transformer, numerical_cols),</span><br><span class="line">        (<span class="string">&#x27;cat&#x27;</span>, categorical_transformer, categorical_cols)</span><br><span class="line">    ]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 模型</span></span><br><span class="line">model = RandomForestRegressor(n_estimators=<span class="number">100</span>, random_state=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 完整的 Pipeline</span></span><br><span class="line">clf = Pipeline(steps=[</span><br><span class="line">    (<span class="string">&#x27;preprocessor&#x27;</span>, preprocessor),</span><br><span class="line">    (<span class="string">&#x27;model&#x27;</span>, model)</span><br><span class="line">])</span><br><span class="line">clf.fit(X_train, y_train)</span><br></pre></td></tr></table></figure>
+<h3 id="参数调优"><a class="markdownIt-Anchor" href="#参数调优"></a> 参数调优</h3>
+<p>Grid Search：遍历参数空间，找到最优参数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line"></span><br><span class="line">param_grid = &#123;</span><br><span class="line">    <span class="string">&#x27;preprocessor__num__strategy&#x27;</span>: [<span class="string">&#x27;mean&#x27;</span>, <span class="string">&#x27;median&#x27;</span>], <span class="comment"># preprocessor.num.imputer(strategy=...)</span></span><br><span class="line">    <span class="string">&#x27;preprocessor__cat__imputer__strategy&#x27;</span>: [<span class="string">&#x27;most_frequent&#x27;</span>, <span class="string">&#x27;constant&#x27;</span>], <span class="comment"># preprocessor.cat.imputer(strategy=...)</span></span><br><span class="line">    <span class="string">&#x27;model__n_estimators&#x27;</span>: [<span class="number">100</span>, <span class="number">200</span>, <span class="number">300</span>],</span><br><span class="line">    <span class="string">&#x27;model__max_depth&#x27;</span>: [<span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">12</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">grid_search = GridSearchCV(clf, param_grid, cv=<span class="number">5</span>)</span><br><span class="line">grid_search.fit(X_train, y_train)</span><br><span class="line"><span class="built_in">print</span>(grid_search.best_params_)</span><br><span class="line"></span><br><span class="line">preds = grid_search.predict(X_valid)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;MAE:&#x27;</span>, mean_absolute_error(y_valid, preds))</span><br></pre></td></tr></table></figure>
+<h3 id="交叉验证"><a class="markdownIt-Anchor" href="#交叉验证"></a> 交叉验证</h3>
+<p>如果训练集和验证集的划分方式影响了模型的性能评估，可以使用交叉验证。</p>
+<p>交叉验证不使用固定的验证集，而是将训练集分为 k 个子集，每次使用其中一个子集作为验证集，其余子集作为训练集。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_val_score</span><br><span class="line"></span><br><span class="line">scores = -<span class="number">1</span> * cross_val_score(clf, X, y, cv=<span class="number">5</span>, scoring=<span class="string">&#x27;neg_mean_absolute_error&#x27;</span>) <span class="comment"># 5-fold cross-validation</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;MAE scores:\n&#x27;</span>, scores) <span class="comment"># 5 scores, one for each fold as validation</span></span><br></pre></td></tr></table></figure>
+<hr />
+<p>语法糖练习一则：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">get_score</span>(<span class="params">n_estimators</span>):</span><br><span class="line">    my_pipeline = Pipeline(steps=[</span><br><span class="line">        (<span class="string">&#x27;preprocessor&#x27;</span>, preprocessor),</span><br><span class="line">        (<span class="string">&#x27;model&#x27;</span>, RandomForestRegressor(n_estimators=n_estimators, random_state=<span class="number">0</span>))</span><br><span class="line">    ])</span><br><span class="line">    scores = -<span class="number">1</span> * cross_val_score(my_pipeline, X, y, cv=<span class="number">3</span>, scoring=<span class="string">&#x27;neg_mean_absolute_error&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> scores.mean()</span><br><span class="line"></span><br><span class="line">results = &#123;n_estimators: get_score(n_estimators) <span class="keyword">for</span> n_estimators <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">50</span>, <span class="number">450</span>, <span class="number">50</span>)&#125;</span><br><span class="line"> <span class="comment"># 查找最小值对应的 key。遍历 dict 时只遍历 key，而 dict.get(key) 返回 value</span></span><br><span class="line">n_estimators_best = <span class="built_in">min</span>(results, key=results.get)</span><br></pre></td></tr></table></figure>
+<h2 id="xgboost"><a class="markdownIt-Anchor" href="#xgboost"></a> XGBoost</h2>
+<p>XGBoost 是一种梯度提升算法，通过多次迭代生成多个决策树，每个决策树都是对前一个决策树的残差进行拟合。</p>
+<p>e.g. <code>y = 20, pred[0] = 10</code>，就用 <code>y - pred[0] = 10</code> 作为下一个决策树的目标值；<code>pred[1] = 5</code>，<code>y - pred[0] - pred[1] = 5</code> 作为下一个决策树的目标值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xgboost <span class="keyword">import</span> XGBRegressor</span><br><span class="line"></span><br><span class="line">xgb_model = XGBRegressor(n_estimators=<span class="number">1000</span>, learning_rate=<span class="number">0.05</span>)</span><br><span class="line">xgb_model.fit(X_train, y_train, early_stopping_rounds=<span class="number">5</span>, eval_set=[(X_valid, y_valid)], verbose=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>参数：</p>
+<ul>
+<li><code>n_estimators</code>：迭代次数（过低会欠拟合，过高会过拟合，典型值为 100-1000）</li>
+<li><code>learning_rate</code>：每次迭代的步长（过低会收敛缓慢，过高会不收敛，典型值为 0.01-0.1）</li>
+<li><code>n_jobs</code>：并行计算的 CPU 核心数量</li>
+<li><code>early_stopping_rounds</code>：如果连续 <code>early_stopping_rounds</code> 次迭代都没有提升，停止训练（避免过拟合）
+<ul>
+<li><code>eval_set</code>：验证集</li>
+<li><code>eval_metric</code>：评估指标（默认 <code>rmse</code>）</li>
+</ul>
+</li>
+</ul>
+<p>可以将 XGBoost 加入到 Pipeline 中。</p>
+
+
+
+<div class="article-footer reveal fs14">
+    <section id="references">
+      <div class="header"><span>参考资料</span></div>
+      <div class="body">
+        <ul>
+        <li class="post-title">
+          <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40454401/article/details/122678075">scikit-learn 中决策树模型-参数说明、注解</a></p>
+
+        </li>
+        </ul>
+      </div>
+    </section>
+    
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh">署名-相同方式共享 4.0 国际许可协议</a>，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/202403/">2024 年 3 月：解密通信</a></div></section></div>
+
+
+
+
+
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="mojimoon/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories/">分类</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">站点</span><a target="_blank" rel="noopener" href="https://steamcommunity.com/id/unreset/">Steam</a><a target="_blank" rel="noopener" href="https://bgm.tv/user/788548">Bangumi</a><a target="_blank" rel="noopener" href="https://github.com/mojimoon">Github</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/2023/about/">关于</a><a href="/">友链</a><a href="/">留言板</a></div></div><div class="text"><p><a target="_blank" rel="noopener" href="https://github.com/mojimoon">@mojimoon</a> Overclocked by <a target="_blank" rel="noopener" href="https://xaoxuu.com/wiki/stellar/">Stellar</a></p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    
+<script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.23.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.23.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js","memos":"/js/plugins/memos.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@10.3/swiper-bundle.min.css","js":"https://unpkg.com/swiper@10.3/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".fancybox img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied","toast":"复制成功"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.error(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+  
+  <script defer src="https://gcore.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+  <script defer src="https://gcore.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"onload="renderMathInElement(document.body);"></script>
+
+
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
