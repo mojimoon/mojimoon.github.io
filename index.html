@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mojimoon · 个人主页</title>
+  <meta name="description" content="mojimoon 的个人主页 —— 轻小说文库、土豆兄弟图鉴、个人随笔与更多。" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="mojimoon 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <circle cx="16" cy="16" r="15" fill="url(#moonGrad)" />
+            <path d="M21 9.5a8 8 0 1 0 0 13 6.5 6.5 0 0 1 0-13Z" fill="#fff" opacity=".92" />
+            <defs>
+              <linearGradient id="moonGrad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7c5cff" />
+                <stop offset="1" stop-color="#43c6ff" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-name">mojimoon</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="主导航">
+        <a class="nav-link" href="https://github.com/mojimoon" target="_blank" rel="noopener">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+              d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.5-1.11-1.5-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+          </svg>
+          GitHub
+        </a>
+        <a class="nav-link" href="/about" rel="noopener">Resume</a>
+        <a class="nav-link" href="https://wenku.mojimoon.top" target="_blank" rel="noopener">Wenku</a>
+        <a class="nav-link" href="https://brotato.mojimoon.top" target="_blank" rel="noopener">Brotato</a>
+        <a class="nav-link" href="https://blog.mojimoon.top" target="_blank" rel="noopener">Blog</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">欢迎来到我的小角落</p>
+        <h1 class="hero-title">你好，我是 <span class="grad-text">mojimoon</span></h1>
+        <p class="hero-sub">
+          工具与资源，文字与代码，游戏与生活，都在这里分享与记录。
+          挑一个入口，慢慢逛。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/mojimoon" target="_blank" rel="noopener">前往 GitHub</a>
+          <a class="btn btn-ghost" href="/about" rel="noopener">查看简历</a>
+        </div>
+      </div>
+      <div class="hero-glow" aria-hidden="true"></div>
+    </section>
+
+    <section class="section" aria-labelledby="sites-title">
+      <div class="container">
+        <h2 class="section-title" id="sites-title">子站导航</h2>
+        <p class="section-desc">三个独立小站，各有各的玩法。</p>
+
+        <div class="cards">
+          <a class="card" href="https://wenku.mojimoon.top" target="_blank" rel="noopener">
+            <span class="card-icon icon-book" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M4 5a2 2 0 0 1 2-2h6v16H6a2 2 0 0 0-2 2V5Z" />
+                <path d="M20 5a2 2 0 0 0-2-2h-6v16h6a2 2 0 0 1 2 2V5Z" />
+              </svg>
+            </span>
+            <h3 class="card-title">轻小说文库</h3>
+            <p class="card-text">收集与整理 EPUB 格式的轻小说资源，方便下载与检索。</p>
+            <span class="card-go">wenku.mojimoon.top →</span>
+          </a>
+
+          <a class="card" href="https://brotato.mojimoon.top" target="_blank" rel="noopener">
+            <span class="card-icon icon-game" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v10M7 12h10" />
+                <circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none" />
+              </svg>
+            </span>
+            <h3 class="card-title">土豆兄弟图鉴</h3>
+            <p class="card-text">Brotato 全物品、角色与武器速查图鉴，集成价格、诅咒和攻速计算器。</p>
+            <span class="card-go">brotato.mojimoon.top →</span>
+          </a>
+
+          <a class="card" href="https://blog.mojimoon.top" target="_blank" rel="noopener">
+            <span class="card-icon icon-pen" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 20h9" />
+                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z" />
+              </svg>
+            </span>
+            <h3 class="card-title">个人随笔</h3>
+            <p class="card-text">记录想法、技术与生活碎碎念的博客。</p>
+            <span class="card-go">blog.mojimoon.top →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="links-title">
+      <div class="container">
+        <h2 class="section-title" id="links-title">快速链接</h2>
+        <p class="section-desc">想直接找我，或看看我是谁。</p>
+
+        <div class="quick">
+          <a class="quick-item" href="https://github.com/mojimoon" target="_blank" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor"
+                d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.5-1.11-1.5-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
+            </svg>
+            <span>
+              <strong>GitHub</strong>
+              <small>github.com/mojimoon</small>
+            </span>
+          </a>
+          <a class="quick-item" href="/about" rel="noopener">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+              <path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z" />
+              <path d="M9 13h6M9 17h4" />
+            </svg>
+            <span>
+              <strong>个人简历</strong>
+              <small>mojimoon.top/about</small>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> mojimoon · 用 ❤ 搭建</span>
+      <nav class="footer-links" aria-label="页脚导航">
+        <a href="https://github.com/mojimoon" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://steamcommunity.com/id/unreset/" target="_blank" rel="noopener">Steam</a>
+        <a href="https://space.bilibili.com/1206316599/" target="_blank" rel="noopener">Bilibili</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
