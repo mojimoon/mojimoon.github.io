@@ -100,8 +100,8 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: clamp(20px, 4vh, 40px) clamp(16px, 4vw, 32px);
+  justify-content: flex-start;
+  padding: clamp(28px, 10vh, 110px) clamp(16px, 4vw, 32px) clamp(20px, 4vh, 32px);
   gap: clamp(10px, 2vh, 18px);
   width: 100%;
   max-width: 100%;
@@ -135,8 +135,8 @@ a {
 }
 
 .avatar {
-  width: clamp(96px, 12vw, 160px);
-  height: clamp(96px, 12vw, 160px);
+  width: clamp(96px, 12vw, 140px);
+  height: clamp(96px, 12vw, 140px);
   border-radius: 4px;
   border: 2px solid rgba(255, 255, 255, 0.22);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
@@ -152,7 +152,7 @@ a {
 }
 
 .name {
-  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: 0.01em;
@@ -162,7 +162,7 @@ a {
 
 .bio {
   font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
-  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.02em;
 }
@@ -306,6 +306,41 @@ a {
   font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.45);
   margin-top: 4px;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  text-align: center;
+  padding: 10px 16px 14px;
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.02em;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+#hide-all {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Hide All：只隐藏主体内容与页脚，背景壁纸（含叠加层）保留用于欣赏 */
+.all-hidden>* {
+  display: none;
+}
+
+.all-hidden>.bg,
+.all-hidden>.bg-overlay {
+  display: block;
 }
 
 /* ---------- Responsive ---------- */
