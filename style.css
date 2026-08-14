@@ -1,0 +1,373 @@
+/* ==========================================================================
+   mojimoon.top — 个人主页样式
+   ========================================================================== */
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+  color: #f5f5f7;
+  background-color: #1a1530;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---------- Background ---------- */
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: url("assets/wp4979803-scenery-anime-aesthetic-wallpapers.png") center / cover no-repeat;
+  background-color: #1a1530;
+}
+
+/* 横屏（约 16:9 及以上）：以高度为主，裁左右 */
+@media (min-aspect-ratio: 1/1) {
+  .bg {
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+/* 竖屏（约 4:3 以下）：以高度为主裁两侧，但稍微往上偏，展示天空 */
+@media (max-aspect-ratio: 4/5) {
+  .bg {
+    background-size: cover;
+    background-position: center 38%;
+  }
+}
+
+/* 极窄竖屏（手机）：进一步上移 focus */
+@media (max-aspect-ratio: 9/16) {
+  .bg {
+    background-position: center 35%;
+  }
+}
+
+/* 超宽屏（带鱼屏）：以宽度为主，裁上下 */
+@media (min-aspect-ratio: 21/9) {
+  .bg {
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 75% 55% at center,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.25) 65%,
+      rgba(10, 5, 25, 0.5) 100%),
+    linear-gradient(180deg,
+      rgba(15, 8, 35, 0.25) 0%,
+      rgba(0, 0, 0, 0.2) 50%,
+      rgba(15, 8, 35, 0.45) 100%);
+  pointer-events: none;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vh, 40px) clamp(16px, 4vw, 32px);
+  gap: clamp(10px, 2vh, 18px);
+  width: 100%;
+  max-width: 100%;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.avatar-link {
+  display: inline-block;
+  line-height: 0;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.avatar-link:hover {
+  transform: scale(1.05);
+}
+
+.avatar {
+  width: clamp(64px, 9vw, 130px);
+  height: clamp(64px, 9vw, 130px);
+  border-radius: 4px;
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  object-fit: cover;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar-link:hover .avatar {
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.55),
+    0 0 0 4px rgba(255, 255, 255, 0.08);
+}
+
+.name {
+  font-size: clamp(1.3rem, 3.5vw, 1.75rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #ffffff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+  margin-top: 4px;
+}
+
+.bio {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  font-size: clamp(0.72rem, 1.4vw, 0.85rem);
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Section divider ---------- */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.22),
+      transparent);
+}
+
+.section-title {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ---------- Links container ---------- */
+.links {
+  display: flex;
+  gap: clamp(10px, 1.4vw, 14px);
+  width: 100%;
+}
+
+.main-links {
+  max-width: 460px;
+  justify-content: center;
+}
+
+.subsite-links {
+  max-width: 940px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: clamp(10px, 1.5vw, 14px) clamp(14px, 2vw, 18px);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  color: #f5f5f7;
+  text-decoration: none;
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 60%);
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card-icon {
+  flex-shrink: 0;
+  width: clamp(28px, 3.6vw, 36px);
+  height: clamp(28px, 3.6vw, 36px);
+  color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: clamp(0.92rem, 1.55vw, 1.02rem);
+  letter-spacing: 0.01em;
+  color: #ffffff;
+}
+
+.card-subtitle {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.card-desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.45;
+  margin-top: 4px;
+}
+
+.card-host {
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-top: 4px;
+}
+
+/* ---------- Responsive ---------- */
+/* 平板 / 窄桌面：子站 2 列，第 3 张横跨 */
+@media (max-width: 900px) {
+  .subsite-links {
+    max-width: 560px;
+  }
+
+  .subsite-card {
+    flex: 1 1 calc(50% - 7px);
+    min-width: 240px;
+  }
+}
+
+/* 手机：所有卡片纵向堆叠 */
+@media (max-width: 640px) {
+  .container {
+    justify-content: flex-start;
+    padding-top: clamp(24px, 6vh, 48px);
+    padding-bottom: clamp(24px, 6vh, 48px);
+  }
+
+  .main-links,
+  .subsite-links {
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .section-divider {
+    max-width: 260px;
+  }
+}
+
+/* 极矮屏幕（横屏手机等）：进一步压缩 */
+@media (max-height: 600px) {
+  .container {
+    gap: 8px;
+  }
+
+  .avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .name {
+    font-size: 1.15rem;
+  }
+
+  .card {
+    padding: 8px 14px;
+  }
+
+  .card-desc {
+    font-size: 0.78rem;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
