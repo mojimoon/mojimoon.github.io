@@ -1,7 +1,3 @@
-/* ==========================================================================
-   mojimoon.top — 个人主页样式
-   ========================================================================== */
-
 /* ---------- Reset ---------- */
 *,
 *::before,
@@ -42,7 +38,7 @@ a {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: url("https://cdn.jsdmirror.com/gh/mojimoon/mojimoon.github.io@v2/assets/wp4979803-scenery-anime-aesthetic-wallpapers.png") center / cover no-repeat;
+  background: url("https://cdn.jsdmirror.com/gh/mojimoon/mojimoon.github.io@v3/assets/wp4979803-scenery-anime-aesthetic-wallpapers.png") center / cover no-repeat;
   background-color: #1a1530;
 }
 
@@ -54,7 +50,7 @@ a {
   }
 }
 
-/* 竖屏（约 4:3 以下）：以高度为主裁两侧，但稍微往上偏，展示天空 */
+/* 竖屏（约 4:3 以下）：以高度为主裁两侧，但稍微往上偏 */
 @media (max-aspect-ratio: 4/5) {
   .bg {
     background-size: cover;
@@ -211,7 +207,7 @@ a {
 }
 
 .subsite-links {
-  max-width: 940px;
+  max-width: min(1280px, 92vw);
   justify-content: center;
   flex-wrap: wrap;
 }
