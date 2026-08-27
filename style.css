@@ -38,7 +38,7 @@ a {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: url("https://cdn.jsdmirror.com/gh/mojimoon/mojimoon.github.io@v3/assets/wp4979803-scenery-anime-aesthetic-wallpapers.png") center / cover no-repeat;
+  background: url("https://cdn.jsdmirror.com/gh/mojimoon/mojimoon.github.io@v4/assets/wp4979803-scenery-anime-aesthetic-wallpapers.png") center / cover no-repeat;
   background-color: #1a1530;
 }
 
@@ -231,7 +231,7 @@ a {
     border-color 0.25s ease,
     box-shadow 0.25s ease;
   flex: 1;
-  min-width: 0;
+  min-width: 260px;
   position: relative;
   overflow: hidden;
 }
@@ -268,6 +268,11 @@ a {
   z-index: 1;
 }
 
+.tool-card .card-icon {
+  width: clamp(22px, 2.8vw, 28px);
+  height: clamp(22px, 2.8vw, 28px);
+}
+
 .card-text {
   display: flex;
   flex-direction: column;
@@ -302,6 +307,59 @@ a {
   font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.45);
   margin-top: 4px;
+}
+
+/* ---------- Tools (collapsible) ---------- */
+.tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: min(1280px, 92vw);
+}
+
+.tools summary {
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.tools summary::-webkit-details-marker {
+  display: none;
+}
+
+.tools summary::before {
+  content: "▸";
+  font-size: 0.7rem;
+  transition: transform 0.25s ease;
+}
+
+.tools[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.tools summary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.tools-links {
+  margin-top: clamp(10px, 1.6vh, 14px);
+  max-width: min(1280px, 92vw);
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* ---------- Footer ---------- */
@@ -342,11 +400,13 @@ a {
 /* ---------- Responsive ---------- */
 /* 平板 / 窄桌面：子站 2 列，第 3 张横跨 */
 @media (max-width: 900px) {
-  .subsite-links {
+  .subsite-links,
+  .tools-links {
     max-width: 560px;
   }
 
-  .subsite-card {
+  .subsite-card,
+  .tool-card {
     flex: 1 1 calc(50% - 7px);
     min-width: 240px;
   }
@@ -380,7 +440,8 @@ a {
   }
 
   .main-links,
-  .subsite-links {
+  .subsite-links,
+  .tools-links {
     flex-direction: column;
     max-width: 100%;
   }

@@ -8,8 +8,8 @@
   <meta name="description" content="mojimoon 的个人主页 — 轻小说文库、土豆兄弟图鉴、随笔与更多。">
   <title>mojimoon.top</title>
   <link rel="icon" type="image/svg+xml"
-    href="https://cdn.jsdmirror.com/gh/mojimoon/mojimoon.github.io@v3/favicon.svg" />
-  <link rel="stylesheet" href="https://cdn.jsdmirror.com/gh/mojimoon/mojimoon.github.io@v3/style.css">
+    href="https://cdn.jsdmirror.com/gh/mojimoon/mojimoon.github.io@v4/favicon.svg" />
+  <link rel="stylesheet" href="https://cdn.jsdmirror.com/gh/mojimoon/mojimoon.github.io@v4/style.min.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
     <header class="hero">
       <a href="https://github.com/mojimoon" target="_blank" rel="noopener noreferrer" class="avatar-link"
         aria-label="GitHub @mojimoon">
-        <img src="https://cdn.jsdmirror.com/gh/mojimoon/mojimoon.github.io@v3/assets/109803649.png" alt="mojimoon"
+        <img src="https://cdn.jsdmirror.com/gh/mojimoon/mojimoon.github.io@v4/assets/109803649.png" alt="mojimoon"
           class="avatar" width="230" height="230">
       </a>
       <div class="hero-text">
@@ -102,22 +102,52 @@
         </div>
       </a>
 
-      <a href="https://cloud.mojimoon.top" target="_blank" rel="noopener noreferrer" class="card subsite-card">
-        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#c9a7ff" stroke-width="2" stroke-linecap="round"
-          stroke-linejoin="round" aria-hidden="true">
-          <path d="M11 14h10" />
-          <path d="M16 4h2a2 2 0 0 1 2 2v1.344" />
-          <path d="m17 18 4-4-4-4" />
-          <path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 1.793-1.113" />
-          <rect x="8" y="2" width="8" height="4" rx="1" />
-        </svg>
-        <div class="card-text">
-          <span class="card-title">CloudPaste</span>
-          <span class="card-desc">在线剪贴板与文件分享站</span>
-          <span class="card-host">cloud.mojimoon.top</span>
-        </div>
-      </a>
     </nav>
+
+    <details class="tools">
+      <summary>小工具</summary>
+      <nav class="links tools-links" aria-label="小工具">
+        <a href="https://www.mojimoon.top/steam-price" target="_blank" rel="noopener noreferrer" class="card tool-card">
+          <svg class="card-icon" viewBox="0 0 16 16" fill="currentColor" style="color:#6cb6ff" aria-hidden="true">
+            <path
+              d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.2 2.2 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.22 2.22 0 0 1-1.312-1.568L.33 10.333Z" />
+            <path
+              d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.7 1.7 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027m2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048" />
+          </svg>
+          <div class="card-text">
+            <span class="card-title">Steam 区域定价比较</span>
+            <span class="card-host">mojimoon.top/steam-price</span>
+          </div>
+        </a>
+
+        <a href="https://www.mojimoon.top/komiflo" target="_blank" rel="noopener noreferrer" class="card tool-card">
+          <svg class="card-icon" viewBox="0 0 16 16" fill="currentColor" style="color:#f78cc7" aria-hidden="true">
+            <path d="M6.826 10.88H10.5V12h-5V4.002h5v1.12H6.826V7.4h3.457v1.073H6.826z" />
+            <path
+              d="M2.5 0A2.5 2.5 0 0 0 0 2.5v11A2.5 2.5 0 0 0 2.5 16h11a2.5 2.5 0 0 0 2.5-2.5v-11A2.5 2.5 0 0 0 13.5 0zM1 2.5A1.5 1.5 0 0 1 2.5 1h11A1.5 1.5 0 0 1 15 2.5v11a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 13.5z" />
+          </svg>
+          <div class="card-text">
+            <span class="card-title">Komiflo Top50 排行榜</span>
+            <span class="card-host">mojimoon.top/komiflo</span>
+          </div>
+        </a>
+
+        <a href="https://www.mojimoon.top/mojiapps/terraria" target="_blank" rel="noopener noreferrer"
+          class="card tool-card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="#8ed081" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+          </svg>
+          <div class="card-text">
+            <span class="card-title">Terraria 1.4.5 种子生成器</span>
+            <span class="card-host">mojimoon.top/mojiapps/terraria</span>
+          </div>
+        </a>
+      </nav>
+    </details>
   </main>
 
   <footer class="site-footer">
