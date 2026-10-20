@@ -4,155 +4,137 @@
 <meta charset="UTF-8">
 <title>Fan Wang - CV</title>
 <style>
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 11mm 14mm 11mm; }
+  :root { --base-font-size: 11.2pt; font-size: var(--base-font-size); }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: "Calibri", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    font-size: 10pt; color: #222; line-height: 1.2;
-    width: 210mm; padding: 11mm 13mm;
+    font-family: "Carlito", "Calibri", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem; color: #222; line-height: 1.28;
   }
-  .header { text-align: center; border-bottom: 2px solid #1a3a5c; padding-bottom: 5px; margin-bottom: 8px; }
-  .header h1 { font-size: 19pt; letter-spacing: 3px; color: #1a3a5c; }
-  .header .objective { font-size: 9.5pt; color: #1a3a5c; margin-top: 2px; font-weight: 600; }
-  .header .contact { font-size: 9pt; color: #1a3a5c; margin-top: 3px; }
-  /*.header .contact a { color: #555; text-decoration: none; }*/
-  a, a:link, a:visited, a:hover, a:active { color: #337ab7; }
+  a, a:link, a:visited { color: #2a5d8f; text-decoration: none; }
+  .header { text-align: center; border-bottom: 2px solid #1a3a5c; padding-bottom: 5px; margin-bottom: 6px; }
+  .header h1 { font-size: 1.8rem; letter-spacing: 2.5px; color: #1a3a5c; }
+  .header .contact { font-size: 0.9rem; color: #333; margin-top: 3px; line-height: 1.35; }
+  .interests { font-size: 0.9rem; margin: 0 0 2px; }
   h2 {
-    font-size: 11pt; color: #1a3a5c; border-bottom: 1px solid #c5d3e0;
-    padding-bottom: 2px; margin: 9px 0 5px 0; font-variant-caps: small-caps;
+    font-size: 1.05rem; color: #1a3a5c; border-bottom: 1px solid #c5d3e0;
+    padding-bottom: 1px; margin: 11px 0 5px 0; font-variant-caps: small-caps; letter-spacing: .3px;
+    break-after: avoid;
   }
-  .item { margin-bottom: 6px; }
+  .item { margin-bottom: 7px; break-inside: avoid; }
   .row { display: flex; justify-content: space-between; align-items: baseline; }
-  .title { font-weight: 700; font-size: 9.8pt; }
-  .sub { color: #444; font-size: 8.8pt; }
-  .date { color: #666; font-size: 8.6pt; white-space: nowrap; margin-left: 12px; }
-  .loc { color: #666; font-size: 8.6pt; white-space: nowrap; }
-  ul { margin: 2px 0 0 16px; }
-  li { margin-bottom: 1.5px; }
+  .title { font-weight: 700; font-size: 0.95rem; }
+  .sub { color: #444; font-size: 0.9rem; }
+  .venue { font-weight: 700; color: #1a3a5c; }
+  .date, .loc { color: #666; font-size: 0.85rem; white-space: nowrap; margin-left: 12px; }
+  ul { margin: 2px 0 0 15px; }
+  li { margin-bottom: 1.5px; font-size: 0.95rem; }
   .tag { font-weight: 700; color: #1a3a5c; }
-  .skills p { margin-bottom: 2px; }
-  .publications .item { break-inside: avoid; }
-  .publications h2 { break-after: avoid; }
+  .me { font-weight: 700; text-decoration: underline; }
+  .pubs li { margin-bottom: 3px; }
+  .pubs .pt { font-style: italic; }
+  .skills li { list-style: none; margin-left: -15px; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>FAN WANG (王梵)</h1>
+  <h1>FAN WANG</h1>
   <div class="contact">
-    fanwang2004@proton.me &nbsp;|&nbsp; Cambridge, UK<br>
     <a href="https://www.linkedin.com/in/fan-wang-9831b82ab">linkedin.com/in/fan-wang-9831b82ab</a> &nbsp;|&nbsp;
     <a href="https://github.com/mojimoon">github.com/mojimoon</a> &nbsp;|&nbsp;
-    <a href="https://orcid.org/0009-0003-5444-1813">ORCid</a>
+    <a href="https://orcid.org/0009-0003-5444-1813">ORCID: 0009-0003-5444-1813</a>
   </div>
 </div>
 
+<p class="interests"><span class="tag">Research interests:</span> large language models; reliable and robust evaluation of LLMs; robustness under distribution shift; LLM post-training (SFT / preference optimisation) and tool-using agents; spoken language processing.</p>
+
 <h2>Education</h2>
 <div class="item">
-  <div class="row"><span class="title">University of Cambridge (QS #6)</span><span class="date">Sep 2026 – Aug 2027 (expected)</span></div>
-  <div class="row"><span class="sub">MPhil in Machine Learning and Machine Intelligence, Machine Intelligence Laboratory; Supervisor: Prof. Bill Byrne</span><span class="loc">Cambridge, UK</span></div>
+  <div class="row"><span class="title">University of Cambridge</span><span class="date">Sep 2026 – Aug 2027 (expected)</span></div>
+  <div class="row"><span class="sub">MPhil in Machine Learning and Machine Intelligence (Speech and Language Processing track), Department of Engineering</span><span class="loc">Cambridge, UK</span></div>
   <ul>
-      <li><span class="tag">Lucy Cavendish College–CityU Full Scholarship</span>, £74,000 (covering tuition and maintenance), 2026-2027</li>
+    <li><span class="tag">Lucy Cavendish College–CityU Full Scholarship</span> (£71,403, covering tuition and maintenance), 2026–2027</li>
   </ul>
 </div>
 <div class="item">
-  <div class="row"><span class="title">City University of Hong Kong (QS #52)</span><span class="date">Aug 2022 – Jun 2026</span></div>
-  <div class="row"><span class="sub">BSc in Computer Science</span><span class="loc">Hong Kong, China</span></div>
+  <div class="row"><span class="title">City University of Hong Kong</span><span class="date">Aug 2022 – Jun 2026</span></div>
+  <div class="row"><span class="sub">BSc in Computer Science</span><span class="loc">Hong Kong</span></div>
   <ul>
-    <li><span class="tag">GPA 4.12/4.30, ranked 1/190</span>; graduated with highest honors (summa cum laude); Dean's List for seven times.</li>
-    <li>Core courses: Data Structures (A+), Computer Vision and Image Processing (A+), Fundamentals of Data Science (A+), Artificial Intelligence (A+), Design and Analysis of Algorithms (A).</li>
-    <li><span class="tag">HKSAR Government Scholarship Fund – Outstanding Performance Scholarship</span>, HK$160,000 (2 years), 2024-2026</li>
+    <li><span class="tag">GPA 4.12/4.30, ranked 1st of 200</span>; graduated with highest honours (summa cum laude); Dean's List seven times.</li>
+    <li>Selected courses: Artificial Intelligence (A+), Fundamentals of Data Science (A+), Computer Vision and Image Processing (A+), Data Structures (A+), Design and Analysis of Algorithms (A).</li>
+    <li><span class="tag">HKSAR Government Scholarship Fund – Outstanding Performance Scholarship</span> (HK$160,000 over two years), 2024–2026</li>
   </ul>
 </div>
 
-<div class="publications">
-<h2>Research &amp; Publications</h2>
+<h2>Publications</h2>
+<ul class="pubs">
+  <li><span class="pt">Empirical Insights of Test Selection Metrics under Multiple Testing Objectives and Distribution Shifts.</span> <span class="venue">FSE 2026</span> (ACM International Conference on the Foundations of Software Engineering). <a href="https://doi.org/10.1145/3797086">doi:10.1145/3797086</a></li>
+  <li><span class="pt">Ensemble-Based Test Selection for Fault Detection and Retraining in Deep Neural Networks.</span> <span class="venue">Information and Software Technology</span>, under review, 2026.</li>
+  <li><span class="pt">DSFANet: Dual-Stream Feature Aggregation Network with Adaptive Retraining for Robust Network Intrusion Detection.</span> <span class="venue">ICONIP 2026</span>, accepted. <b>(First author)</b></li>
+  <li><span class="pt">Modeling Salary and Job Attractiveness from LinkedIn Descriptions with NLP.</span> <span class="venue">ICCTech 2026</span>. <a href="https://doi.org/10.23919/icctechcps00032.2026.00012">doi:10.23919/icctechcps00032.2026.00012</a> <b>(First author)</b></li>
+</ul>
+
+<h2>Research Experience</h2>
 <div class="item">
-  <div class="title">DSFANet: Dual-Stream Feature Aggregation Network with Adaptive Retraining for Robust Network Intrusion Detection</div>
-  <div class="row"><span class="sub">First Author | Prof. Wong Ka Chun, City University of Hong Kong</span><span class="loc">Accepted, ICONIP 2026</span></div>
+  <div class="row"><span class="title">Test Selection and Robustness of Deep Neural Networks under Distribution Shift</span><span class="date">Jul 2024 – Sep 2025</span></div>
+  <div class="row"><span class="sub">Research Assistant | Advisor: Prof. Jacky Keung, City University of Hong Kong</span><span class="loc">FSE 2026; IST</span></div>
   <ul>
-    <li><span class="tag">Architecture:</span> Developed a dual-stream network combining a dense static-feature encoder with a 1D-CNN/BiLSTM temporal encoder and multi-head attention; built a 5-model stacking ensemble with an XGBoost meta-learner.</li>
-    <li><span class="tag">Adaptive retraining:</span> Designed EBASS to select informative samples using predictive entropy and geometric diversity; assessed concept-drift robustness across 6,300 configurations on CIC-IDS 2018, ToN-IoT, and UNSW-NB15, achieving 99.30% and 97.85% accuracy on the first two datasets, respectively.</li>
+    <li><span class="tag">Large-scale empirical study:</span> Evaluated 15 test-selection metrics for fault detection, performance estimation and retraining guidance across 13 DNNs, 5 out-of-distribution (OOD) shift types and 3 data modalities (1,640 scenarios); analysed budget sensitivity and runtime trade-offs, finding diversity-based metrics most effective for performance estimation.</li>
+    <li><span class="tag">Ensemble selection framework:</span> Contributed to a scale-unified ensemble combining uncertainty and diversity signals via empirical p-values and Fisher's method; designed experiments on Android malware and autonomous-driving data under adversarial, natural and temporal shifts (1,000+ configurations), with statistically significant gains over 5 single metrics and 2 ensemble baselines.</li>
   </ul>
 </div>
 <div class="item">
-  <div class="row"><span class="title">Modeling Salary and Job Attractiveness from LinkedIn Descriptions with NLP</span><span class="date">Mar 2025 – Sep 2025</span></div>
-  <div class="row"><span class="sub">First Author | Dr. Patrick Houlihan, Columbia Unievrsity</span><span class="loc">Published, ICCTech 2026</span></div>
-    <div class="sub">DOI: <a href="https://doi.org/10.23919/icctechcps00032.2026.00012">10.23919/icctechcps00032.2026.00012</a></div>
+  <div class="row"><span class="title">DSFANet: Robust Network Intrusion Detection under Concept Drift</span><span class="date">2025 – 2026</span></div>
+  <div class="row"><span class="sub">First Author | Advisor: Prof. Wong Ka Chun, City University of Hong Kong</span><span class="loc">ICONIP 2026</span></div>
   <ul>
-    <li><span class="tag">NLP and regression:</span> Built a salary-prediction pipeline for 120,000+ LinkedIn postings, combining TF-IDF and BERT representations with structured employer and experience features; evaluated Random Forest, XGBoost, LightGBM, and an ensemble achieving R² = 0.7447.</li>
-    <li><span class="tag">Interpretability:</span> Used SHAP to identify key compensation drivers, including pay period, experience level, and job-description features; proposed a job-attractiveness index to support opportunity evaluation.</li>
+    <li><span class="tag">Architecture:</span> Built a dual-stream network combining a dense static-feature encoder with a 1D-CNN/BiLSTM temporal encoder and multi-head attention, plus a 5-model stacking ensemble with an XGBoost meta-learner.</li>
+    <li><span class="tag">Adaptive retraining:</span> Designed EBASS, which selects informative samples using predictive entropy and geometric diversity; assessed drift robustness over 6,300 configurations on CIC-IDS 2018, ToN-IoT and UNSW-NB15 (99.30% and 97.85% accuracy on the first two).</li>
   </ul>
 </div>
 <div class="item">
-  <div class="row"><span class="title">Empirical Insights of Test Selection Metrics under Multiple Testing Objectives and Distribution Shifts</span><span class="date">Mar 2025 – Sep 2025</span></div>
-  <div class="row"><span class="sub">Research Assistant | Prof. Jacky Keung, City University of Hong Kong</span><span class="loc">Published, FSE 2026</span></div>
-    <div class="sub">DOI: <a href="https://doi.org/10.1145/3797086">10.1145/3797086</a></div>
+  <div class="row"><span class="title">NLP Modelling of Salary and Job Attractiveness</span><span class="date">Mar 2025 – Sep 2025</span></div>
+  <div class="row"><span class="sub">First Author | Advisor: Dr. Patrick Houlihan, Columbia University</span><span class="loc">ICCTech 2026</span></div>
   <ul>
-    <li><span class="tag">Empirical evaluation:</span> Evaluated 15 test-selection metrics across fault detection, performance estimation, and retraining guidance; covered 13 DNNs, 5 out-of-distribution (OOD) shift types, and 3 data modalities in 1,640 experimental scenarios.</li>
-    <li><span class="tag">Practical insights:</span> Analyzed selection-budget sensitivity and runtime trade-offs; identified diversity-based metrics as effective for performance estimation and used Silhouette and DBCV scores to investigate cluster-to-fault correspondence for targeted retraining.</li>
+    <li>Built a salary-prediction pipeline for 120,000+ LinkedIn postings combining TF-IDF and BERT representations with structured features; an ensemble of Random Forest, XGBoost and LightGBM reached R² = 0.745. Used SHAP to identify compensation drivers and proposed a job-attractiveness index.</li>
   </ul>
 </div>
-<div class="item">
-  <div class="row"><span class="title">Ensemble-Based Test Selection for Fault Detection and Retraining in Deep Neural Networks</span><span class="date">Jul 2024 – May 2025</span></div>
-  <div class="row"><span class="sub">Research Assistant | Prof. Jacky Keung, City University of Hong Kong</span><span class="loc">Accepted, Information and Software Technology</span></div>
-  <ul>
-    <li><span class="tag">Scale-unified selection:</span> Contributed to an ensemble framework combining uncertainty and diversity signals through empirical p-value scoring and Fisher's method, followed by suite-level selection.</li>
-    <li><span class="tag">Robustness evaluation:</span> Designed and conducted experiments on Android malware and autonomous driving datasets under adversarial, natural, and temporal OOD shifts; evaluated 1,000+ parameter configurations and demonstrated statistically significant gains over 5 individual metrics and 2 ensemble baselines in fault detection and retraining guidance.</li>
-  </ul>
-</div>
-</div>
+
 <h2>Professional Experience</h2>
 <div class="item">
   <div class="row"><span class="title">Hangzhou Institute for Advanced Study, University of Chinese Academy of Sciences</span><span class="date">Jul 2026 – Sep 2026</span></div>
-  <div class="row"><span class="sub">LLM Algorithm Intern | Space-based Computing Group</span><span class="loc">Hangzhou, China</span></div>
+  <div class="row"><span class="sub">LLM Algorithm Intern, Space-based Computing Group | Supervisor: Dr. Yisheng Zhao</span><span class="loc">Hangzhou, China</span></div>
   <ul>
-    <li><span class="tag">Data engineering:</span> Contributed to a data-driven remote sensing algorithm orchestration system; built a 100k+ instruction-tuning dataset for remote sensing with multi-source cleaning, formatting, and quality-filtering pipelines covering 20+ tasks.</li>
-    <li><span class="tag">Agent fine-tuning:</span> Led SFT of the plugin-selection module, improving tool-calling and task-planning accuracy of a lightweight on-edge VLM under the compute constraints of satellite deployment.</li>
-    <li><span class="tag">Evaluation loop:</span> Built an LLM-based automatic evaluation pipeline that scores agent task completion and tool-call correctness, driving iterative data and training-strategy refinement.</li>
+    <li><span class="tag">Agent system:</span> Designed the chain-of-agents pipeline of <i>Space Agent</i>, a four-phase remote-sensing algorithm orchestration system (VLM plugin selection → plugin execution → VLM summarisation → LLM evaluation), covering 20+ remote-sensing scenarios.</li>
+    <li><span class="tag">Data and fine-tuning:</span> Built a 100k+ instruction-tuning dataset over 20+ tasks with multi-source cleaning and quality filtering; led SFT of the plugin-selection module, improving tool-calling and task-planning accuracy of a lightweight on-edge VLM under satellite compute constraints.</li>
+    <li><span class="tag">Evaluation loop:</span> Built an LLM-as-judge pipeline scoring task completion and tool-call correctness, used to drive iterative refinement of data and training strategy.</li>
   </ul>
 </div>
 <div class="item">
   <div class="row"><span class="title">Google Information Technology (Shanghai) Co., Ltd.</span><span class="date">Jun 2025 – Sep 2025</span></div>
-  <div class="row"><span class="sub">Data Analyst Intern | AI Department</span><span class="loc">Shanghai, China</span></div>
+  <div class="row"><span class="sub">Data Analyst Intern, AI Department</span><span class="loc">Shanghai, China</span></div>
   <ul>
-    <li><span class="tag">Proposed and validated</span> a study correlating Indian reservoir water levels, sugarcane yield, and international sugar futures prices; collected and preprocessed 10 years / 1M+ records of multi-granularity data (satellite geospatial, water-level, yield, and price indices).</li>
-    <li><span class="tag">Modeling:</span> Applied ensemble learning and LSTM to quantify short- and long-term impacts on yield and futures prices; insights adopted by Google AI to improve search and promotion models.</li>
+    <li>Proposed and carried out a study linking Indian reservoir water levels, sugarcane yield and international sugar futures prices; collected and preprocessed 10 years / 1M+ records of multi-granularity data (satellite geospatial, water-level, yield and price indices).</li>
+    <li>Applied ensemble learning and LSTMs to quantify short- and long-term effects on yield and futures prices; presented the findings to the team as input for related modelling work.</li>
   </ul>
 </div>
 <div class="item">
   <div class="row"><span class="title">Universal Innotech Group Co., Ltd.</span><span class="date">Jul 2024 – May 2025</span></div>
-  <div class="row"><span class="sub">Junior Software Engineer | R&amp;D Department</span><span class="loc">Hong Kong, China</span></div>
+  <div class="row"><span class="sub">Junior Software Engineer, R&amp;D Department</span><span class="loc">Hong Kong</span></div>
   <ul>
-    <li><span class="tag">Design and Implemented</span> a full-stack insurance brokerage management system (Next.js + Prisma + MongoDB; GitLab + AWS).</li>
-    <li><span class="tag">Recognition System:</span> Built an OCR + NLP recognition system for bank and commission statements, processing 10,000+ statements from 50 clients and reducing manual entry by 90%.</li>
-    <li><span class="tag">Fine-tuned Agent:</span> Fine-tuned an LLM with SFT and RLHF on 1,000+ insurance knowledge items and policy data for automated customer inquiry answering, improving average response speed by 40%.</li>
-  </ul>
-</div>
-
-<h2>Selected Projects</h2>
-<div class="item">
-  <div class="row"><span class="title">Space Agent – A Data-Driven Remote Sensing Algorithm Orchestration System</span><span class="date">Jul 2026 – Sep 2026</span></div>
-  <div class="row"><span class="sub">Primary Researcher | Dr. Yisheng Zhao, University of Chinese Academy of Sciences</span><span class="loc">Hangzhou, China</span></div>
-  <ul>
-    <li><span class="tag">Architecture:</span> Designed a Chain-of-Agents orchestration pipeline — input → VLM plugin selection → plugin execution → VLM summarization → LLM evaluation — forming a closed loop for automated composition of remote sensing algorithms.</li>
-    <li><span class="tag">Edge deployment:</span> Aligned an on-edge lightweight model via SFT for satellite-borne deployment; supports 20+ remote sensing scenarios and was validated on a 100k+ dataset.</li>
+    <li>Fine-tuned an LLM with SFT and RLHF on 1,000+ insurance knowledge items and policy documents for automated customer-enquiry answering, improving average response speed by 40%.</li>
+    <li>Built an OCR + NLP system for bank and commission statements (10,000+ statements from 50 clients), reducing manual entry by 90%; designed and implemented a full-stack brokerage management system (Next.js, Prisma, MongoDB, AWS).</li>
   </ul>
 </div>
 
 <h2>Awards &amp; Skills</h2>
-<div class="skills">
-  <p><span class="tag">Awards:</span>Bronze Medal, ICPC East Asia Regional Contest (Hangzhou), 2024
-  </p>
-  <p><span class="tag">Technical:</span>
-      <ul>
-          <li><span class="tag">Programming Languages:</span> Python, C++, Java, JS / TS, SQL, C#</li>
-          <li><span class="tag">Machine Learning:</span> PyTorch, TensorFlow, Scikit-learn, SFT / RLHF</li>
-          <li><span class="tag">Tools:</span> Git, Docker, GitLab CI, AWS, Cloudflare</li>
-      </ul>
-  </p>
-  <p><span class="tag">Languages:</span> Mandarin (native), English (IELTS 8.0)</p>
-</div>
+<ul class="skills">
+  <li><span class="tag">Awards:</span> Bronze Medal, ICPC East Asia Regional Contest (Hangzhou), 2024</li>
+  <li><span class="tag">Programming:</span> Python, C++, Java, JavaScript / TypeScript, SQL, C#</li>
+  <li><span class="tag">Machine learning:</span> PyTorch, TensorFlow, scikit-learn; SFT / RLHF</li>
+  <li><span class="tag">Tools:</span> Git, Docker, GitLab CI, AWS, Cloudflare</li>
+  <li><span class="tag">Languages:</span> Mandarin (native), English (IELTS 8.0)</li>
+</ul>
 
 </body>
 </html>
