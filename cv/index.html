@@ -51,11 +51,11 @@
   </div>
 </div>
 
-<p class="interests"><span class="tag">Research interests:</span> large language models; reliable and robust evaluation of LLMs; robustness under distribution shift; LLM post-training (SFT / preference optimisation) and tool-using agents; spoken language processing.</p>
+<p class="interests"><span class="tag">Research interests:</span> large language models; reliable and robust evaluation of LLM agents; robustness under distribution shift; LLM post-training (SFT / preference optimisation); close-loop LLM applications with chain-of-agents and safeguards</p>
 
 <h2>Education</h2>
 <div class="item">
-  <div class="row"><span class="title">University of Cambridge</span><span class="date">Sep 2026 – Aug 2027 (expected)</span></div>
+  <div class="row"><span class="title">University of Cambridge</span><span class="date">Oct 2026 – Aug 2027 (expected)</span></div>
   <div class="row"><span class="sub">MPhil in Machine Learning and Machine Intelligence (Speech and Language Processing track), Department of Engineering</span><span class="loc">Cambridge, UK</span></div>
   <ul>
     <li><span class="tag">Lucy Cavendish College–CityU Full Scholarship</span> (£71,403, covering tuition and maintenance), 2026–2027</li>
@@ -65,7 +65,7 @@
   <div class="row"><span class="title">City University of Hong Kong</span><span class="date">Aug 2022 – Jun 2026</span></div>
   <div class="row"><span class="sub">BSc in Computer Science</span><span class="loc">Hong Kong</span></div>
   <ul>
-    <li><span class="tag">GPA 4.12/4.30, ranked 1st of 200</span>; graduated with highest honours (summa cum laude); Dean's List seven times.</li>
+    <li><span class="tag">GPA 4.12/4.30, ranked 1st of 190</span>; graduated with highest honours (summa cum laude); Dean's List seven times.</li>
     <li>Selected courses: Artificial Intelligence (A+), Fundamentals of Data Science (A+), Computer Vision and Image Processing (A+), Data Structures (A+), Design and Analysis of Algorithms (A).</li>
     <li><span class="tag">HKSAR Government Scholarship Fund – Outstanding Performance Scholarship</span> (HK$160,000 over two years), 2024–2026</li>
   </ul>
@@ -109,9 +109,10 @@
   <div class="row"><span class="title">Hangzhou Institute for Advanced Study, University of Chinese Academy of Sciences</span><span class="date">Jul 2026 – Sep 2026</span></div>
   <div class="row"><span class="sub">LLM Algorithm Intern, Space-based Computing Group | Supervisor: Dr. Yisheng Zhao</span><span class="loc">Hangzhou, China</span></div>
   <ul>
-    <li><span class="tag">Agent system:</span> Designed the chain-of-agents pipeline of <i>Space Agent</i>, a four-phase remote-sensing algorithm orchestration system (VLM plugin selection → plugin execution → VLM summarisation → LLM evaluation), covering 20+ remote-sensing scenarios.</li>
-    <li><span class="tag">Data and fine-tuning:</span> Built a 100k+ instruction-tuning dataset over 20+ tasks with multi-source cleaning and quality filtering; led SFT of the plugin-selection module, improving tool-calling and task-planning accuracy of a lightweight on-edge VLM under satellite compute constraints.</li>
-    <li><span class="tag">Evaluation loop:</span> Built an LLM-as-judge pipeline scoring task completion and tool-call correctness, used to drive iterative refinement of data and training strategy.</li>
+    <li><span class="tag">Agent design:</span> Designed the chain-of-agents pipeline of <i>Space Agent</i>, a four-stage remote-sensing orchestrator (VLM plugin selection, execution, summarisation, evaluation), covering 20+ scenarios. 
+    <li><span class="tag">Robustness:</span> First-pass structured-output reliability stayed above 99.5% on 77,442 cases from 15 datasets.</li>
+    <li><span class="tag">Data and fine-tuning:</span> Built a 100k+ instruction-tuning dataset with multi-source cleaning and quality filtering; led SFT of a lightweight on-edge VLM under satellite compute constraints.</li>
+    <li><span class="tag">Evaluation:</span> Built the LLM-as-judge pipeline of the evaluation stage, scoring task completion to drive iterative refinement of data and training strategy.</li>
   </ul>
 </div>
 <div class="item">
